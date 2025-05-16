@@ -1,3 +1,10 @@
+"""
+Core module for optimizing fuel efficiency.
+
+This module contains the function `optimize_fuel_efficiency` which calculates
+fuel efficiency based on thrust, drag, and specific fuel consumption (sfc).
+"""
+
 def optimize_fuel_efficiency(thrust, drag, sfc):
     """
     Calculate fuel efficiency based on thrust, drag, and specific fuel consumption (sfc).
