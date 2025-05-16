@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opt_fuel"
+version = "0.1.0"
+description = "A Python package for optimizing fuel efficiency."
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/opt_fuel"
+
+[tool.setuptools.packages.find]
+where = ["opt_fuel"]
+
+[tool.setuptools]
+packages = ["opt_fuel"]
+
+[tool.pint]
+default_enforce_units = true
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+
+[tool.hypothesis]
+deadline = 200
