@@ -99,3 +99,24 @@ The GAIA-QAO Space Systems portfolio represents a significant investment opportu
 ---
 
 *This document is part of the GAIA-QAO Aerospace General Index (AGI) and should be considered in conjunction with other project documentation for the Ampel360 BWB Q100 aircraft certification process.*
+
+## Development Environment
+
+To set up the development environment using the provided devcontainer, follow these steps:
+
+1. Install Visual Studio Code (VS Code) and the Remote - Containers extension.
+2. Clone the repository to your local machine.
+3. Open the repository in VS Code.
+4. When prompted, reopen the repository in the container.
+
+The devcontainer is configured to install necessary dependencies and compile the Fortran modules using `f2py`.
+
+## Running Tests
+
+To run the tests using `pytest`, follow these steps:
+
+1. Open a terminal in the devcontainer.
+2. Run the following command to execute the tests:
+   ```
+   pytest
+   ```
