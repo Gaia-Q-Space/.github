@@ -120,3 +120,19 @@ To run the tests using `pytest`, follow these steps:
    ```
    pytest
    ```
+
+## Encoding Detection and Conversion
+
+The `detect_and_convert_encoding.py` script is designed to detect the encoding of the `fortran/calculate_emissions.f90` file and convert it to UTF-8 if necessary. This ensures that the file is in the correct encoding format for further processing.
+
+### Running the Script
+
+To run the `detect_and_convert_encoding.py` script, follow these steps:
+
+1. Open a terminal in the devcontainer.
+2. Run the following command to execute the script:
+   ```
+   python detect_and_convert_encoding.py
+   ```
+
+The script will detect the encoding of the `fortran/calculate_emissions.f90` file and convert it to UTF-8 if it is not already in that format. If an error occurs during encoding detection, the script will log the error message to the console and set the default encoding to UTF-8.
