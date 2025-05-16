@@ -6,6 +6,7 @@
   },
   "postCreateCommand": "pip install numpy && f2py -c -m emissions fortran/calculate_emissions.f90 && f2py -c -m efficiency fortran/optimize_fuel_efficiency.f90 && f2py -c -m tradeoffs fortran/analyze_trade_offs.f90",
   "tasks": {
-    "build": "sudo apt-get update && sudo apt-get install -y gfortran python3-pip && pip install numpy && f2py -c -m emissions fortran/calculate_emissions.f90 && f2py -c -m efficiency fortran/optimize_fuel_efficiency.f90 && f2py -c -m tradeoffs fortran/analyze_trade_offs.f90"
+    "build": "sudo apt-get update && sudo apt-get install -y gfortran python3-pip && pip install numpy && f2py -c -m emissions fortran/calculate_emissions.f90 && f2py -c -m efficiency fortran/optimize_fuel_efficiency.f90 && f2py -c -m tradeoffs fortran/analyze_trade_offs.f90",
+    "test": "pytest"
   }
 }
