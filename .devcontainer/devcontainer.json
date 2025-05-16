@@ -1,5 +1,8 @@
 {
-  "tasks": {
-    "build": "No build commands are necessary."
-  }
+  "name": "FortranDev",
+  "image": "mcr.microsoft.com/devcontainers/python",
+  "features": {
+    "ghcr.io/devcontainers/features/fortran:1": {}
+  },
+  "postCreateCommand": "pip install numpy && f2py -c -m emissions fortran/calculate_emissions.f90 && f2py -c -m efficiency fortran/optimize_fuel_efficiency.f90 && f2py -c -m tradeoffs fortran/analyze_trade_offs.f90"
 }
