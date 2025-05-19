@@ -1,431 +1,3 @@
-# Project Management Plan: [GAIA-Q-SPACE-TEAM-PROJECT]
-
----
-## 0. Foundational Disambiguation: Components vs. Modules
-(Quantum Collapsing Principle for Systems Integration)
-
-### 0.1 Purpose
-To prevent ambiguity (“superposition” of meaning) in technical, organizational, and certification documentation, the following explicit definitions and classification boundaries are established for components and modules within the GAIA-QAO project management and systems engineering context.
-
-### 0.2 Definitions
-
-| Term      | Definition                                                                                                                                                                                             | Example in GAIA-QAO                                                                                                |
-| :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
-| Component | A fundamental, physically or logically distinct part of a system that provides a specific function or capability. Components may be hardware, software, data, or organizational artifacts, and are typically “atomic” in the sense that they are not subdivided further for design, manufacturing, or traceability purposes within the current system boundary. | “Antenna”, “Quantum Sensor”, “Flight Control Board”, “Telemetry Processor”, “Encryption Algorithm”                 |
-| Module    | A composite, higher-order construct formed by a collection of components (and possibly sub-modules), representing a complete functional block or deployable unit within the system. Modules define clear interfaces, support reuse, and serve as the main units of integration, certification, and configuration management. | “Communications Module” (includes: Antenna + Transceiver + Encryption Component), “Power Module”, “Propulsion Module”, “User Interface Module” |
-
-**Quantum Collapsing Metaphor:**
-
-In GAIA-QAO, component and module distinctions are “collapsed” from conceptual superposition (where a part could be ambiguously both) into a single, explicit identity at each level of the WBS, documentation, and digital twin.
-
-### 0.3 Boundary Rules & Principles
-* **Traceability:** Every deliverable, requirement, and change must clearly reference either a component or a module (never both at once at a given level of breakdown).
-* **Certification:** Certification, quality, and compliance processes are performed at the module level (with components forming auditable build/config records).
-* **Reusability:** Components may be reused across modules; modules are the main units of system reconfiguration or up-versioning.
-* **Unique Identification:**
-    * Components: `GAIA-QAO-COMP-[Domain]-[Type]-[ID]`
-    * Modules:    `GAIA-QAO-MOD-[Domain]-[Type]-[ID]`
-    * All traceable in MetaNube and project configuration baselines.
-* **Quantum Collapsing in Documentation:** At each integration or breakdown point (TPSL, TPWD, WBS), ambiguity is resolved:
-    * Is this an indivisible “building block” (component) or an integrable, certifiable “block” (module)?
-    * No “Schrödinger parts”—every part is resolved to one state by explicit declaration.
-
-### 0.4 Example Table
-
-| Item                 | Type      | ID Example                  | Notes                                  |
-| :------------------- | :-------- | :-------------------------- | :------------------------------------- |
-| High-Gain Antenna    | Component | GAIA-QAO-COMP-COMM-HGA-0001 | Used in multiple modules               |
-| Telemetry Subsystem  | Module    | GAIA-QAO-MOD-AVIO-TEL-0010  | Contains sensor & data units           |
-| Quantum Key Chip     | Component | GAIA-QAO-COMP-SEC-QKC-0005  | Embedded in Secure Module              |
-| Power Control Module | Module    | GAIA-QAO-MOD-POWR-PCM-0002  | Includes PCBs & software               |
-
-### 0.5 Practical Implementation
-* Every WBS element and requirement must resolve (“collapse”) to a declared component or module.
-* All documentation, versioning, and approval workflows must reference the explicit ID and type.
-* Digital twin and compliance traces in MetaNube must enforce this disambiguation at ingestion and change.
-
-This “foundational disambiguation” section is to be placed immediately before the main Project Management Plan to ensure universal clarity and to align all project actors, agents, and systems (human and AI) with GAIA-QAO’s quantum-informed documentation standard.
-
----
-## Document Control
-
-* **Document Title:** Project Management Plan for [Project Name]
-* **Document ID:** [GAIA-QAO-PMP-YYYY-NNNN]
-* **Version:** [X.Y]
-* **Date:** [YYYY-MM-DD]
-* **Project Manager:** [Name of Project Manager]
-* **Issuing Authority:** [e.g., GAIA-QAO Project Management Office]
-* **Security Classification:** [e.g., Unclassified, GAIA-Q Internal Use]
-* **Approval Signatures:**
-    * Project Manager: \_________________________ Date: \___________
-    * Project Sponsor: \_________________________ Date: \___________
-    * (Other Key Stakeholders as needed)
-
----
-## Revision History
-
-| Version | Date       | Author(s)     | Change Description Summary                     | Approver(s) |
-| :------ | :--------- | :------------ | :--------------------------------------------- | :---------- |
-| 0.1     | [YYYY-MM-DD] | [Name]        | Initial Draft                                  | [Name]      |
-| 1.0     | [YYYY-MM-DD] | [Name]        | First Approved Release for [Project Phase]     | [Name]      |
-| ...     | ...        | ...           | ...                                            | ...         |
-
----
-## Table of Contents
-
-*(Note: Generate a Table of Contents if your Markdown viewer supports it, or list key sections manually)*
-
-1.  Introduction
-2.  Project Scope Management
-3.  Work Breakdown Structure (WBS)
-4.  Project Organization & Stakeholders
-5.  Schedule Management
-6.  Cost Management
-7.  Quality Management
-8.  Resource Management
-9.  Communication Management
-10. Risk Management
-11. Change Management
-12. Project Acceptance Criteria
-13. Supporting Documents & Appendices
-
----
-
-## 1. Introduction
-
-### 1.1 Project Purpose
-This Project Management Plan (PMP) defines how the [Project Name] project (hereafter "the Project") will be executed, monitored, controlled, and closed.
-
-The primary purpose of the Project is to:
-* [Clearly state the main purpose of the Project, e.g., "develop and deploy the new Crew Communication System for the GAIA-Next Generation Spacecraft."]
-* This project addresses the requirements outlined in [Reference to TPSL or other governing specification, e.g., "TPSL-CCS-2025-001"].
-
-### 1.2 Project Goals and Success Criteria
-
-**Project Goals:** (SMART: Specific, Measurable, Achievable, Relevant, Time-bound)
-* **Goal 1:** [e.g., "Complete the design, development, and testing of the Crew Communication System by [YYYY-MM-DD]."]
-* **Goal 2:** [e.g., "Ensure the system meets all performance specifications outlined in TPSL-CCS-2025-001, Section 4."]
-* **Goal 3:** [e.g., "Deliver the project within the approved budget of €X,XXX,XXX."]
-* **Goal 4:** [e.g., "Achieve user acceptance from the Astronaut Office by [YYYY-MM-DD]."]
-
-**Success Criteria:** (How project success will be measured)
-* **Criterion 1:** [e.g., "All critical system functionalities (as defined in TPSL Section 3.X) are verified through formal testing."]
-* **Criterion 2:** [e.g., "Project expenditure does not exceed the allocated budget by more than [Y]% without approved change requests."]
-* **Criterion 3:** [e.g., "No 'Severity 1' defects outstanding at the time of final system deployment."]
-* **Criterion 4:** [e.g., "Key stakeholders (listed in Section 4.3) formally sign off on project completion."]
-
----
-
-## 2. Project Scope Management
-
-### 2.1 Project Scope Statement
-The scope of the Project includes:
-* [Provide a concise summary of the project scope, including major objectives and key activities. Example: "The project encompasses the full lifecycle of the Crew Communication System, from detailed design through component procurement, software development, system integration, comprehensive testing (unit, integration, system, user acceptance), documentation, and readiness for operational deployment. This includes development of new antenna subsystems, transceiver modules, and user interface software."]
-
-### 2.2 Key Project Deliverables
-The following are the major deliverables for this Project:
-1.  **D01:** [Deliverable Name, e.g., "Detailed System Design Document"] ([Format, e.g., "PDF, S1000D XML Data Modules"])
-2.  **D02:** [Deliverable Name, e.g., "Hardware Prototypes (Antenna, Transceiver)"] ([Format, e.g., "Physical Units, Test Reports"])
-3.  **D03:** [Deliverable Name, e.g., "Software Build vX.Y (UI & Control)"] ([Format, e.g., "Executable, Source Code in MetaNube"])
-4.  **D04:** [Deliverable Name, e.g., "Integrated Crew Communication System"] ([Format, e.g., "Verified System Unit"])
-5.  **D05:** [Deliverable Name, e.g., "Complete Test Documentation (Procedures, Reports)"] ([Format, e.g., "PDF, Data in MetaNube"])
-6.  **D06:** [Deliverable Name, e.g., "User Manuals and Training Materials"] ([Format, e.g., "IETP, PDF"])
-
-### 2.3 Scope Exclusions
-The following items are explicitly excluded from the scope of this Project:
-* [e.g., "Long-term operational maintenance and support of the deployed system (to be covered by a separate service agreement)."]
-* [e.g., "Development of the ground control segment interface (provided by a separate project team)."]
-* [e.g., "Certification for non-nominal operational environments beyond those specified in TPSL-CCS-2025-001."]
-
-### 2.4 Project Assumptions
-The execution of this Project is based on the following assumptions:
-* [e.g., "Required test facilities and specialized equipment will be available as per the project schedule."]
-* [e.g., "Key personnel identified in this plan will remain available for the project duration."]
-* [e.g., "Dependent components from other projects/suppliers will be delivered on time and to specification."]
-
-### 2.5 Project Constraints
-The Project must operate within the following constraints:
-* **Schedule:** Project completion by [Fixed Date] due to [Reason, e.g., "integration window with spacecraft assembly"].
-* **Budget:** Total project budget not to exceed [€X,XXX,XXX].
-* **Resources:** Maximum of [N] Full-Time Equivalent (FTE) personnel allocated from [Department(s)].
-* **Technical:** Adherence to [Specific Standard, e.g., "S1000D for documentation, ECSS-E-ST-50C for communications"].
-* **Regulatory:** Compliance with [e.g., "EASA Part-21 Subpart J for design changes"].
-
----
-
-## 3. Work Breakdown Structure (WBS)
-
-### 3.1 WBS Overview
-The Project's total scope of work is decomposed into manageable work packages using a Work Breakdown Structure (WBS). The WBS serves as the foundation for planning, scheduling, costing, and progress tracking.
-
-* The WBS is structured [hierarchically by phase / by major deliverable].
-* A detailed WBS Dictionary, outlining each work package's description, deliverables, responsible owner, effort, and dependencies, is maintained at: `[Link to WBS Dictionary Document or MetaNube Location]`
-
-### 3.2 WBS Summary (Top Levels)
-* **1.0 [Project Name]**
-    * **1.1 Project Management**
-        * 1.1.1 Project Planning & Control
-        * 1.1.2 Stakeholder & Risk Management
-    * **1.2 System Design & Engineering**
-        * 1.2.1 Requirements Finalization
-        * 1.2.2 Architectural Design (PDR)
-        * 1.2.3 Detailed Design (CDR)
-    * **1.3 Hardware Development & Procurement**
-        * 1.3.1 [Component A] Development
-        * 1.3.2 [Component B] Procurement
-    * **1.4 Software Development**
-        * 1.4.1 [Module X] Development
-        * 1.4.2 [Module Y] Development
-    * **1.5 System Integration & Verification**
-        * 1.5.1 Hardware-Software Integration
-        * 1.5.2 System Level Testing
-        * 1.5.3 User Acceptance Testing (UAT)
-    * **1.6 Documentation, Training & Deployment Preparation**
-        * 1.6.1 Technical Documentation (S1000D)
-        * 1.6.2 User Training Program
-        * 1.6.3 Deployment Package Preparation
-
----
-
-## 4. Project Organization & Stakeholders
-
-### 4.1 Project Team Structure
-* A visual Project Organization Chart is available at: `[Link to Org Chart Image/Document]`
-* The project team operates within the [GAIA-QAO Program Name] structure and reports to [Steering Committee/Program Manager Name].
-
-### 4.2 Key Roles & Responsibilities
-
-| Role                    | Name / Department        | Key Responsibilities                                                                 |
-| :---------------------- | :----------------------- | :----------------------------------------------------------------------------------- |
-| Project Sponsor         | [Name]                   | Champions the project, provides resources, ultimate decision-maker.                  |
-| Project Manager         | [Name]                   | Overall execution, planning, control, risk, budget, schedule, team leadership.       |
-| Lead Systems Engineer   | [Name / Systems Eng. Dept] | Technical integrity, requirements, architecture, V&V lead.                             |
-| Hardware Lead           | [Name / HW Dept]         | Manages hardware design, development, procurement, and testing activities.           |
-| Software Lead           | [Name / SW Dept]         | Manages software design, development, integration, and testing activities.           |
-| QA Manager              | [Name / QA Dept]         | Ensures quality processes, conducts audits, reviews deliverables for compliance.       |
-| Procurement Officer     | [Name / Procurement Dept]| Manages acquisition of external components and services.                             |
-| User Representative(s)  | [e.g., Astronaut Office] | Provides user input, participates in UAT, validates usability.                       |
-| MetaNube Admin          | [Name / IT Dept]         | Manages project documentation and data configuration in MetaNube.                    |
-
-### 4.3 Stakeholder Management
-Key stakeholders for this Project include:
-
-| Stakeholder Group        | Key Contact(s) | Interest / Influence                                      | Engagement Strategy                                 |
-| :----------------------- | :------------- | :-------------------------------------------------------- | :-------------------------------------------------- |
-| GAIA-QAO Program Office  | [Name]         | Funding, oversight, strategic alignment                   | Monthly progress reports, steering committee meetings |
-| Astronaut Office         | [Name]         | End-user requirements, operational usability, UAT         | Regular demos, UAT participation, feedback sessions |
-| EASA/FAA Regulatory Body | [Name]         | Compliance with aerospace standards, certification        | Formal review submissions, audit support            |
-| Engineering Departments  | Dept. Heads    | Resource allocation, technical expertise                  | Bi-weekly coordination meetings                     |
-| External Suppliers       | Account Mgrs.  | Component delivery, technical support                     | Regular supplier reviews, contract management       |
-
-A detailed Stakeholder Register and Engagement Plan is maintained at: `[Link to Stakeholder Register]`
-
----
-
-## 5. Schedule Management
-
-### 5.1 Master Schedule / Timeline Summary
-* A detailed Project Schedule (Gantt chart) is maintained in [Scheduling Tool, e.g., MS Project Online] and accessible via: `[Link to Live Schedule]`
-* **Projected Start Date:** [YYYY-MM-DD]
-* **Projected End Date:** [YYYY-MM-DD]
-* **Total Estimated Duration:** [Number] Weeks/Months
-
-### 5.2 Key Milestones
-
-| ID  | Milestone Description                       | Planned Date | Responsible       | Verification Method                         |
-| :-- | :------------------------------------------ | :----------- | :---------------- | :------------------------------------------ |
-| M01 | Project Kick-Off                            | [YYYY-MM-DD] | Project Manager   | Meeting Minutes & Plan Baseline Approved    |
-| M02 | System Requirements Review (SRR) Successful | [YYYY-MM-DD] | Lead Systems Eng. | SRR Board Approval                          |
-| M03 | Preliminary Design Review (PDR) Successful  | [YYYY-MM-DD] | Lead Systems Eng. | PDR Board Approval                          |
-| M04 | Critical Design Review (CDR) Successful     | [YYYY-MM-DD] | Lead Systems Eng. | CDR Board Approval                          |
-| M05 | Key Long-Lead Items Procured                | [YYYY-MM-DD] | Procurement       | Goods Received & Inspected                  |
-| M06 | Software Alpha Release Complete             | [YYYY-MM-DD] | Software Lead     | Alpha Test Report                           |
-| M07 | Hardware Prototypes Ready                   | [YYYY-MM-DD] | Hardware Lead     | Hardware Test Readiness Review (TRR)        |
-| M08 | System Integration Complete                 | [YYYY-MM-DD] | Lead Systems Eng. | Integration Test Report                     |
-| M09 | User Acceptance Testing (UAT) Complete      | [YYYY-MM-DD] | User Rep.         | UAT Sign-off                                |
-| M10 | Final Project Deliverables Accepted         | [YYYY-MM-DD] | Project Manager   | Project Sponsor Sign-off                    |
-| M11 | Project Closure                             | [YYYY-MM-DD] | Project Manager   | Closure Report Approved                     |
-
-### 5.3 Schedule Management Approach
-* The schedule will be baselined after initial approval of this PMP.
-* Progress will be tracked against the baseline schedule on a [weekly/bi-weekly] basis.
-* The critical path will be monitored closely. Any delays impacting the critical path by more than [X days] will trigger an immediate review and corrective action plan.
-* Schedule performance will be reported using Earned Value Management (EVM) metrics where appropriate.
-
----
-
-## 6. Cost Management
-
-### 6.1 Overall Project Budget
-* Total Approved Project Budget: **€[XXX,XXX.XX]**
-* Budget Baseline Date: [YYYY-MM-DD]
-
-### 6.2 Budget Allocation Summary (by WBS Top Level or Cost Category)
-
-| WBS / Cost Category    | Allocated Budget (€) | Notes                                          |
-| :--------------------- | :------------------- | :--------------------------------------------- |
-| 1.1 Project Management | [Amount]             | Labor, PM tools                                |
-| 1.2 System Engineering | [Amount]             | Labor, simulation tools                        |
-| 1.3 Hardware Dev.      | [Amount]             | Labor, materials, components, test equipment   |
-| 1.4 Software Dev.      | [Amount]             | Labor, licenses, development tools             |
-| 1.5 Integration & V&V  | [Amount]             | Labor, lab fees, consumables                   |
-| 1.6 Documentation etc. | [Amount]             | Labor, publication costs                       |
-| Travel                 | [Amount]             | For reviews, supplier visits, site integration |
-| Contingency Reserve    | [Amount]             | ([Y]% of total, for identified risks)          |
-| Management Reserve     | [Amount]             | (For unidentified risks, requires sponsor approval) |
-| **Total Budget** | **[Amount]** |                                                |
-
-A detailed cost baseline is maintained at: `[Link to Detailed Budget Spreadsheet/System]`
-
-### 6.3 Cost Management Approach
-* Costs will be tracked against WBS elements using [Financial System Name].
-* Budget performance will be reviewed [monthly] by the Project Manager and reported to the Project Sponsor/Steering Committee.
-* Earned Value Management (EVM) will be used to assess cost performance (CPI, CV).
-* Any anticipated overrun exceeding [Z]% of a WBS element's budget or [Q]% of the total project budget requires a formal change request (see Section 11).
-
----
-
-## 7. Quality Management
-
-### 7.1 Quality Objectives
-The Project aims to:
-* Ensure all deliverables meet or exceed the requirements specified in [TPSL Document ID] and other applicable standards.
-* Adhere to GAIA-QAO quality processes and aerospace best practices (e.g., S1000D, ATA, STE).
-* Minimize rework through proactive quality assurance and verification activities.
-* Achieve high stakeholder satisfaction with project deliverables.
-
-### 7.2 Key Quality Activities
-* **Reviews:** Formal reviews at key milestones (SRR, PDR, CDR, TRR, FAR). Peer reviews for design documents and code.
-* **Audits:** [Periodic/milestone-based] internal quality audits. Support for external regulatory audits.
-* **Testing:** Comprehensive V&V testing at all levels (unit, integration, system, UAT) as per the Test Plan: `[Link to Test Plan]`.
-* **Standards Compliance:** Adherence to specified documentation standards (S1000D, STE) and technical standards ([ECSS, MIL-STD, etc.]). Automated checks (e.g., BREX for S1000D) will be used where applicable.
-* **Non-conformance Management:** A process for identifying, documenting, tracking, and resolving non-conformances will be implemented using [Tool/System Name].
-
-The overall Quality Management Plan for GAIA-QAO projects can be found at: `[Link to GAIA-QAO QMP]`
-
----
-
-## 8. Resource Management
-
-### 8.1 Key Resources Required
-* **Personnel:** [List key roles and number of FTEs, e.g., "2x Senior Hardware Engineers, 3x Software Developers, 1x Technical Writer"].
-* **Equipment:** [e.g., "Spectrum Analyzers, High-Performance Computing Cluster for simulations, Specific Test Rigs"].
-* **Facilities:** [e.g., "Clean Room Access, RF Anechoic Chamber, Integration Lab Space"].
-* **Software/Tools:** [e.g., "CAD Software (CATIA), PLM (MetaNube), Simulation Software (ANSYS), S1000D CSDB"].
-
-### 8.2 Resource Allocation and Management
-* Resources will be allocated based on the project schedule and WBS task requirements.
-* A detailed Resource Plan is available at: `[Link to Resource Plan]`
-* Resource availability and potential conflicts will be reviewed [weekly/bi-weekly] by the Project Manager in coordination with department heads.
-* Any critical resource shortages will be escalated to the Project Sponsor.
-
----
-
-## 9. Communication Management
-
-### 9.1 Communication Strategy
-Effective communication is critical for project success. The strategy includes:
-
-| Audience                 | Communication Vehicle              | Frequency     | Owner           | Purpose                                         |
-| :----------------------- | :--------------------------------- | :------------ | :-------------- | :---------------------------------------------- |
-| Project Team             | Daily Stand-ups / Weekly Meetings  | Daily / Weekly| Project Manager | Progress, issues, coordination                  |
-| Project Sponsor/Steering | Formal Progress Reports / Meetings | Monthly       | Project Manager | Status, risks, decisions needed                 |
-| Key Stakeholders         | Email Updates / Review Meetings    | As Needed / Milestone | Project Manager | Information, feedback, involvement              |
-| Wider GAIA-QAO Org.      | Intranet Updates / Newsletters     | Quarterly     | PM / Comms      | General awareness, major achievements         |
-| Regulatory Bodies        | Formal Submissions / Audits        | As Required   | PM / QA Manager | Compliance, certification                       |
-
-### 9.2 Reporting Plan
-* **Weekly Status Snippets:** To Project Team and direct line management.
-* **Bi-Weekly Progress Summaries:** To key internal stakeholders.
-* **Monthly Formal Progress Reports:** To Project Sponsor and Steering Committee. Includes schedule, cost, risk, and quality updates. Template: `[Link to Report Template]`
-* All formal project documentation will be managed and versioned in the MetaNube repository: `[Link to Project's MetaNube Folder]`
-
----
-
-## 10. Risk Management
-
-### 10.1 Risk Management Approach
-A proactive approach to risk management will be followed throughout the project lifecycle:
-1.  **Risk Identification:** Risks will be identified through team brainstorming, lessons learned, expert interviews, and checklists.
-2.  **Risk Analysis:** Each identified risk will be assessed for its probability and impact (e.g., on cost, schedule, scope, quality).
-3.  **Risk Evaluation/Prioritization:** Risks will be prioritized based on their overall score.
-4.  **Risk Treatment:** Mitigation, avoidance, transference, or acceptance strategies will be developed for high-priority risks.
-5.  **Risk Monitoring & Review:** Risks will be regularly monitored, and the Risk Register updated. New risks will be identified as they emerge.
-
-### 10.2 Risk Register
-A detailed Risk Register is maintained at: `[Link to Risk Register]`
-This register includes: Risk ID, Description, Category, Probability, Impact, Overall Score, Owner, Response Plan, Status.
-
-### 10.3 Initial Key Risks (Examples)
-* **R001:** Delays in procurement of critical long-lead hardware components.
-* **R002:** Unforeseen technical challenges during system integration.
-* **R003:** Loss of key personnel with specialized skills.
-* **R004:** Changes in regulatory requirements impacting design.
-
----
-
-## 11. Change Management
-
-### 11.1 Change Control Process
-All changes to the project scope, schedule, cost, or quality baselines must follow a formal change control process:
-1.  **Change Request (CR) Submission:** Any stakeholder can submit a CR using the official form: `[Link to Change Request Form]`. The CR must detail the proposed change, justification, and potential impacts.
-2.  **CR Logging & Review:** The Project Manager logs the CR and conducts an initial impact assessment.
-3.  **Impact Analysis:** Relevant team members analyze the full impact of the proposed change (technical, schedule, cost, resources, risk).
-4.  **Change Control Board (CCB) Review:** The CCB (comprising [Project Manager, Project Sponsor, Key Technical Leads, QA Rep]) reviews the CR and impact analysis.
-5.  **Decision & Communication:** The CCB approves or rejects the CR. The decision is documented and communicated to all relevant stakeholders.
-6.  **Implementation:** If approved, the Project Manager updates project plans, baselines, and directs implementation of the change.
-
-### 11.2 Change Control Board (CCB)
-* **Chair:** [Project Manager / Project Sponsor]
-* **Members:** [List key roles]
-* **Meeting Frequency:** [As needed / Bi-weekly]
-
----
-
-## 12. Project Acceptance Criteria
-
-The overall Project will be considered complete and accepted when the following criteria are met:
-1.  All key deliverables listed in Section 2.2 have been completed, formally reviewed, and accepted by the designated approvers (including the Project Sponsor).
-2.  All critical success criteria defined in Section 1.2 have been demonstrably achieved.
-3.  All mandatory requirements in the governing specification ([TPSL Document ID]) have been verified as per the V&V plan.
-4.  User Acceptance Testing (UAT) has been successfully completed, and formal sign-off received from [User Representative Body, e.g., Astronaut Office].
-5.  The Project has been completed within the approved budget and schedule, or any deviations have been formally approved through the change control process.
-6.  A Final Project Report, including lessons learned, has been submitted and approved. `[Link to Final Project Report Template]`
-
----
-
-## 13. Supporting Documents & Appendices
-
-* **Referenced TPSL:** `[Link to TPSL Document]`
-* **Detailed WBS & Dictionary:** `[Link]`
-* **Detailed Project Schedule:** `[Link]`
-* **Detailed Budget & Cost Baseline:** `[Link]`
-* **Risk Register:** `[Link]`
-* **Stakeholder Register & Engagement Plan:** `[Link]`
-* **Quality Management Plan (Project Specific, if any):** `[Link]`
-* **Test Plans & Procedures:** `[Link]`
-* **Change Request Log:** `[Link]`
-* **Lessons Learned Register:** `[Link]`
-* **(Other relevant documents as needed)**
-
----
-**End of Project Management Plan**
-You're absolutely right! My apologies. In my enthusiasm to structure the Q-SPACE focused AGI, I presented the content for Parts 0, 1 (outline), and 2 (outline) without explicitly re-generating the full, detailed Markdown for them based on your "Prose Report" and "HIL Thinking" inputs *within this specific Q-SPACE focused output*.
-
-Let's fix that immediately. I will now generate:
-
-1.  **Part 0: Framework Overview** (as it was in Turn 131, which is good).
-2.  **Part 1: Programming Languages, Development Environments, and Libraries in Aerospace and Defense Software** - This will be the **full prose report** you provided (from "paste.txt" / Turn 119 / Turn 123), with its internal headings correctly mapped to the AGI subsections 1.1 through 1.10 (with 1.11 for its references). I will ensure all tables from your prose report are included.
-3.  **Part 2: Hardware-in-the-Loop (HIL) Thinking Specification** - This will include the **full "IDEA SUMMARY" and then the detailed sections 2.1 through 2.9**, fleshed out as we developed them, including the placeholder for your Mermaid diagram in 2.4.
-
-This will correctly establish the beginning of the Q-SPACE focused AGI Master Document with the complete foundational content for Parts 0, 1, and 2. After this, we can then proceed to Part 3 (Object ID System, which you've just refined) and then Part 4 (SP Model Registry).
-
-Thank you for catching that and keeping me on track!
-
-Here are Parts 0, 1, and 2 fully marked down for the GAIA-QAO AGI (Q-SPACE Sector Focus):
-
----
-
 
 **Author:** Amedeo Pelliccia
 © GAIA-QAO / Quantum Aerospace Organization
@@ -543,7 +115,7 @@ _The following is the GAIA-QAO Aerospace Documentation (Conceptual Master Versio
     2.1 Introduction (to HIL Thinking Specification)
     2.2 Core Principles of HIL Thinking
     2.3 Implementation Example: (e.g., AI-driven satellite anomaly diagnosis using HIL)
-    2.4 Active Inference Loop Architecture (with Mermaid Diagram Placeholder)
+    2.4 Active Inference Loop Architecture (with Mermaid Diagram Placeholder - User to provide code)
     2.5 Technical Requirements for HIL Thinking (Tailored for space HIL testbeds)
     2.6 Benefits of HIL Thinking (For space system V&V)
     2.7 Integration with GAIA-Q Architecture (Focus on Q-SPACE applications)
@@ -603,34 +175,129 @@ _The following is the GAIA-QAO Aerospace Documentation (Conceptual Master Versio
 
 ## Part 8: GAIA-Q-UI System Specification
     8.0 Introduction and Purpose (GAIA-Q-UI)
+        8.0.1 Goals (GAIA-Q-UI)
+        8.0.2 Guiding Principle: Leveraging AI in Development (GAIA-Q-UI)
     8.1 UI Architecture Overview (GAIA-Q-UI)
+        8.1.1 Design Philosophy
+        8.1.2 Key UI Components Diagram
+        8.1.3 Technology Stack Considerations
+        8.1.4 Performance, Scalability, and Reliability Considerations
     8.2 AI Model Routing Engine Logic (GAIA-Q-UI)
+        8.2.1 Input Analysis for Routing
+        8.2.2 Routing Logic Approach
+        8.2.3 Model Selection Criteria (Examples)
+        8.2.4 Fallback and Error Handling
+        8.2.5 Aerospace Task-Specific Model Prioritization (Examples)
+        8.2.6 Handling Quantum-Specific Data and Models
     8.3 MCP Event Schemas (GAIA-Q-UI)
+        8.3.1 General Event Structure
+        8.3.2 Example Event Types and Payloads
     8.4 AGAD–InfoCode Trace Integration (GAIA-Q-UI)
+        8.4.1 Session Management & InfoCoding
+        8.4.2 Log Structure and Content
+        8.4.3 Audit Trail Generation
+        8.4.4 Data Lineage
     8.5 Initial Development Roadmap & Next Steps (GAIA-Q-UI)
     8.6 Security and Data Privacy Framework (GAIA-Q-UI)
+        8.6.1 Data Security
+        8.6.2 Access Control
+        8.6.3 Data Privacy & Sovereignty (Q-SPACE Considerations)
+        8.6.4 Secure Development Lifecycle (SDL)
 
 ## Part 9: Implementation Guidelines (Overall System)
-    9.1 Database Implementation
-    9.2 User Interface Recommendations
+    9.1 Database Implementation Guidelines
+    9.2 User Interface Recommendations (Registry UI & GAIA-Q-UI)
     9.3 Documentation Governance & Standards (GAIA-CO-ASD-LIB)
         9.3.1 INFOCODE-INDEX System
-        9.3.2 GAIA-CO-ASD-LIB Standard Details
+        9.3.2 GAIA-CO-ASD-LIB Standard Details (Content & Data Management)
+            9.3.2.1 File Formats & Data Exchange
+            9.3.2.2 File Naming Convention
+            9.3.2.3 Metadata Requirements
         9.3.3 Document Lifecycle and Control
         9.3.4 Standard AGI/AToC for System Technical Libraries (Focus on SS 00-99 for Space)
-    9.4 Meta-Documentation
-    9.5 Next Steps
+    9.4 Meta-Documentation (Management of GAIA-QAO Framework Documentation)
+    9.5 Next Steps (Overall Project Implementation - Q-SPACE Focus)
 
 ## Appendices
-    Appendix A: Top-Level Object Category Sub-Type (ST) Codes
-        A.1 Air Systems (AS) Object Category ST Codes *(Referenced)*
-        A.2 Space Systems (SP) Object Category ST Codes *(Fully listed)*
-    Appendix B: ID Examples *(Focus on SP examples with new Tier 1 ID structure)*
+    Appendix A: Top-Level Object Type (ST) Codes
+        A.1 Air Systems (AS) Object Types (ST Codes) *(Referenced)*
+        A.2 Space Systems (SP) Object Types (ST Codes) *(Fully listed)*
+    Appendix B: ID Examples (Q-SPACE Focus)
+        B.1 Tier 1: Top-Level Space Object ID Examples
+        B.2 Tier 2: Subsystem ID Examples (Q-SPACE Context)
     Appendix C: Database Schema Diagrams (Illustrative)
+        C.1 Core ID Component Tables and Relationships (Tier 1 Focus)
     Appendix D: Illustrative Aerospace Use Cases for GAIA-Q-UI *(Focus on space use cases)*
+        D.1 Use Case: In-Flight/In-Orbit Anomaly Diagnosis and Resolution Support
+        D.2 Use Case: Preliminary Design Review Support for a Quantum Sensor Integration (Q-SPACE Focus)
+        D.3 Use Case: AI-Assisted Illustrated Parts Catalog (IPC) Page Generation (Q-SPACE Focus)
     Appendix E: Note on Detailed Survey of Aerospace Software Technologies
-    Appendix F: Subsystem Type (SSS) Codes List (Initial Proposal - Highlighting SP)
-    Appendix G: Documentation Templates *(Highlighting G.5 Space System & G.6 Quantum System)*
+    Appendix F: Subsystem Type (SSS) Codes List (Initial Proposal - Q-SPACE Emphasis)
+    Appendix G: Documentation Templates *(Highlighting G.5 Space System, G.6 Quantum System, & G.7 PMP)*
+        G.1 System Specification Template
+            G.1.1 Document Control
+            G.1.2 Introduction
+            G.1.3 System Requirements
+            G.1.4 Verification and Validation (V&V) Overview
+            G.1.5 Appendix A (within G.1): Traceability Matrix (Example Stub)
+        G.2 Interface Control Document (ICD) Template
+            G.2.1 Document Control
+            G.2.2 Introduction
+            G.2.3 Interface Definition
+            G.2.4 Interface Verification Matrix
+            G.2.5 Appendix A (within G.2): Connector Pinout Details
+            G.2.6 Appendix B (within G.2): Data Dictionary
+        G.3 Test Procedure Template
+            G.3.1 Document Control
+            G.3.2 Introduction
+            G.3.3 Test Requirements to be Verified
+            G.3.4 Test Setup
+            G.3.5 Test Execution Steps
+            G.3.6 Data Recording
+            G.3.7 Pass/Fail Criteria
+            G.3.8 Post-Test Procedures
+            G.3.9 Safety Precautions
+        G.4 Air System (ATA-based) Technical Document Template
+            G.4.1 Description and Operation
+            G.4.2 Maintenance Procedures
+            G.4.3 Troubleshooting
+            G.4.4 Appendix A (within G.4): Illustrations
+        G.5 Space System (SS-based) Technical Document Template
+            G.5.1 System Description and Operation
+            G.5.2 Operational Procedures
+            G.5.3 Telemetry and Telecommand List
+            G.5.4 FDIR & Contingency Procedures
+            G.5.5 Appendix A (within G.5): System Block Diagram
+            G.5.6 Appendix B (within G.5): Interface Summary
+        G.6 Quantum System Specification Template
+            G.6.1 Document Control
+            G.6.2 Introduction
+            G.6.3 Quantum Operational Principles and Architecture
+            G.6.4 Q-System Performance Specifications
+            G.6.5 Q-System Interface Requirements
+            G.6.6 Q-System Environmental Requirements (Space Specific)
+            G.6.7 Q-System Software Requirements (Control & Data Processing)
+            G.6.8 Q-System Verification and Validation (V&V) Approach
+            G.6.9 Appendix A (within G.6): Detailed Quantum Parameters
+            G.6.10 Appendix B (within G.6): Q-System Operational Concept
+        G.7 Project Management Plan (PMP) Template
+            G.7.0 Foundational Disambiguation: Components vs. Modules
+            G.7.1 Document Control (for this PMP)
+            G.7.2 Revision History (for this PMP)
+            G.7.3 Table of Contents (for this PMP)
+            G.7.4 Introduction (PMP Section 1)
+            G.7.5 Project Scope Management (PMP Section 2)
+            G.7.6 Work Breakdown Structure (WBS) (PMP Section 3)
+            G.7.7 Project Organization & Stakeholders (PMP Section 4)
+            G.7.8 Schedule Management (PMP Section 5)
+            G.7.9 Cost Management (PMP Section 6)
+            G.7.10 Quality Management (PMP Section 7)
+            G.7.11 Resource Management (PMP Section 8)
+            G.7.12 Communication Management (PMP Section 9)
+            G.7.13 Risk Management (PMP Section 10)
+            G.7.14 Change Management (PMP Section 11)
+            G.7.15 Project Acceptance Criteria (PMP Section 12)
+            G.7.16 Supporting Documents & Appendices (for this PMP)
 
 ---
 
@@ -1451,7 +1118,6 @@ A central GAIA-QAO Registry (conceptually part of MetaNube) is responsible for:
 This refined GQOIS structure provides enhanced clarity for attribution (via CCC) and functional categorization (via ST for Tier 1 and SSS for Tier 2), while robustly supporting the identification needs of complex Q-SPACE assets and their subsystems.
 
 ---
-**---
 ## Part 4: Top-Level Object Model Registry
 
 This part details the registry of GAIA-QAO Top-Level Object Models (`MDL` codes), which are a crucial component of the Tier 1 Object Identification System (GQOIS) defined in Part 3. Each registered model represents a specific design or variant of a top-level aerospace object (Platform, System, or Equipment).
@@ -1489,8 +1155,9 @@ Where:
 **Key Attributes of a Registered Model (`MDL`):**
 Each `MDL` entry in the GAIA-QAO registry (`object_models` table, see Part 7.1) is uniquely defined and includes:
 *   The `model_code` itself (e.g., `Q1A`).
-*   A link to its **Object Type (`ST`)** (which in turn links to its Domain `DO` and Asset Class `A`).
+*   A link to its **Object Type (`object_type_id`)** (which defines the `ST` code and links to its Domain `DO` and Asset Class `A`).
 *   Its inherent **Autonomy Level (`autonomy_code`)** (`M` or `U`).
+*   The **Controlling Organization (`organization_code`)** for this model definition.
 *   A descriptive `name` (e.g., "QuantumComSecure QCS-200A").
 *   A `description`.
 *   `introduction_date` and other lifecycle dates.
@@ -1504,33 +1171,31 @@ Refer to the complete GAIA-QAO Aerospace General Index Master Document for the d
 
 ### 4.3 Space Systems (SP) Top-Level Object Models (Expanded Catalog for Q-SPACE)
 
-This section provides the expanded catalog of conceptualized GAIA-QAO Top-Level Object Models for Space Systems (`DO=SP`). These models are categorized by their **Object Type (`ST`)**, assuming Asset Class `A=P` (Platform) for most examples unless otherwise specified for `A=S` (System) or `A=E` (Equipment). The `CCC` (Controlling Organization Code) in the example ID is typically `QAO` for GAIA-QAO internal designs or a placeholder like `AGC` (Agency/Commercial).
+This section provides the expanded catalog of conceptualized GAIA-QAO Top-Level Object Models for Space Systems (`DO=SP`). These models are categorized by their **Object Type (`ST`)**, assuming Asset Class `A=P` (Platform) for most examples unless otherwise specified for `A=S` (System) or `A=E` (Equipment). The `CCC` (Controlling Organization Code) in the example ID is typically `QAO` for GAIA-QAO internal designs or a placeholder like `ESA`, `NAS`, or `COM` (Commercial).
 
-#### 4.3.1 Satellite (SAT) Models
-**(Domain: SP, Asset Class: P (Platform), Object Type: SAT)**
+#### 4.3.1 Satellite (Object Type `ST=SAT`) Models
+**(Domain: SP, Asset Class: P (Platform))**
 
-| MDL Code | Autonomy | Model Name                 | Description                                                       | Key Quantum Enhancements (Conceptual) & Key Specs (Illustrative)                                     | **GAIA-QAO ID Example (Instance)**                                                                                                                                                                                   |
+| MDL Code | Autonomy | Model Name                 | Description                                                       | Key Quantum Enhancements (Conceptual) & Key Specs (Illustrative)                                     | **GAIA-QAO ID Example (Instance)** (using `CCC=QAO` unless specified)                                                                                                                            |
 | :------- | :------- | :------------------------- | :---------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Q2A      | U        | **QuantumComSecure QCS-200A** | Medium LEO/MEO quantum communications & QKD satellite         | QKD transceiver, Entanglement source, Quantum-repeater node capability. Mass: 350 kg, Data Rate: Multi-Gbps (classical) + kbps (QKD). | `SP-P-QAO-SAT-Q2A-00001-A1` <br> **Notes:** Provides ultra-secure communication links using Quantum Key Distribution. Part of a global QKD network. Full specs in GAIA-QAO Registry.                               |
-| A3H      | U        | **AeroLink GEO-Com ALGC-3H** | High-throughput GEO conventional communications satellite       | Advanced digital payload, High-power amplifiers. Mass: 6,000 kg, Capacity: >1 Tbps.                      | `SP-P-AGC-SAT-A3H-00002-A1` <br> **Notes:** Conventional GEO communications satellite for broadband services by Agency/Commercial partner. No direct Q-enhancement. Full specs in GAIA-QAO Registry.                                         |
+| A3H      | U        | **ComSat GEO-Conventional CCH-3H** | High-throughput GEO conventional communications satellite       | Advanced digital payload, High-power amplifiers. Mass: 6,000 kg, Capacity: >1 Tbps.                      | `SP-P-COM-SAT-A3H-00002-A1` <br> **Notes:** Conventional GEO communications satellite for broadband services by Commercial Org. No direct Q-enhancement. Full specs in GAIA-QAO Registry.                                         |
 | Q2B      | U        | **QuantumNav PNT-Q2B**      | MEO quantum-enhanced navigation satellite                     | Onboard quantum atomic clocks (optical/ion), Quantum gyroscopes/accelerometers for autonomous orbit determination. Mass: 400 kg, PNT Accuracy: <1cm. | `SP-P-QAO-SAT-Q2B-00003-A1` <br> **Notes:** Provides PNT services with unprecedented accuracy and resilience to jamming, leveraging quantum timing and inertial sensing. Full specs in GAIA-QAO Registry. |
-| S2A      | U        | **NavSat Gen5 NS5-2A**      | Standard GNSS-compatible navigation satellite                 | Conventional atomic clocks, Standard signal structure. Mass: 700 kg, PNT Accuracy: <1m.                   | `SP-P-ESA-SAT-S2A-00004-A1` <br> **Notes:** Conventional navigation satellite, compatible with existing GNSS constellations. Full specs in GAIA-QAO Registry.                                               |
+| S2A      | U        | **NavSat Standard NSS-2A**  | Standard GNSS-compatible navigation satellite                 | Conventional atomic clocks, Standard signal structure. Mass: 700 kg, PNT Accuracy: <1m.                   | `SP-P-ESA-SAT-S2A-00004-A1` <br> **Notes:** Conventional navigation satellite, compatible with existing GNSS constellations. Full specs in GAIA-QAO Registry.                                               |
 | Q2H      | U        | **QuantumEarthObserver QEO-2H**| High-performance quantum-enhanced Earth observation satellite | Quantum ghost imaging, Quantum radar, Hyperspectral Q-sensors. Mass: 600 kg, Resolution: <0.15m (optical equiv.), Enhanced sub-surface/foliage penetration. | `SP-P-QAO-SAT-Q2H-00005-A1` <br> **Notes:** Leverages quantum sensing for superior imaging capabilities, low-light performance, and novel data products (e.g., quantum gravimetric mapping). Full specs in GAIA-QAO Registry. |
 | A3L      | U        | **TerraView OptiSat TVO-3L**| Large conventional optical/multispectral EO satellite         | High-res optical telescope, SWIR/MWIR bands. Mass: 2,500 kg, Resolution: 0.3m.                          | `SP-P-NAS-SAT-A3L-00006-A1` <br> **Notes:** Advanced conventional Earth observation satellite for high-resolution imaging. Full specs in GAIA-QAO Registry.                                                |
 | Q2S      | U        | **QuantumCosmosExplorer QCE-2S**| Special purpose quantum scientific research satellite       | Quantum interferometers, Quantum particle detectors, High-stability Q-clocks for fundamental physics. Mass: 500 kg. | `SP-P-QAO-SAT-Q2S-00007-A1` <br> **Notes:** Platform for in-space quantum physics experiments (e.g., testing general relativity, searching for dark matter/energy signatures). Full specs in GAIA-QAO Registry. |
-| P3H      | U        | **AstroPhysLab APL-3H**     | Large space telescope for astrophysics (conventional optics)    | UV/Optical/IR telescope, Advanced spectrographs. Mass: 6,500 kg.                                       | `SP-P-JAX-SAT-P3H-00008-A1` <br> **Notes:** Hubble/Webb class conventional space telescope. Full specs in GAIA-QAO Registry.                                                                 |
-| Q1A      | U        | **QuantumCubelet QCub-1A**  | Quantum technology demonstration CubeSat/SmallSat             | Miniaturized Q-sensor/Q-comm payload, Modular 6U-27U bus. Mass: 10-50 kg.                            | `SP-P-QAO-SAT-Q1A-00009-A1` <br> **Notes:** Versatile small satellite platform for rapid prototyping and in-orbit validation of GAIA-QAO quantum components and algorithms. Full specs in GAIA-QAO Registry.  |
-| S1B      | U        | **EduSat Standard ES-1B**   | Standardized CubeSat bus for education/basic research       | COTS components, University payload interface. Mass: 1-10 kg (1U-6U).                                   | `SP-P-UNI-SAT-S1B-00010-A1` <br> **Notes:** Basic CubeSat platform for educational missions (UNI as example org). Full specs in GAIA-QAO Registry.                                                                 |
-| Q2A      | U        | **QuantumLinkRelay QLR-2A** | Quantum communication relay satellite                         | Entanglement swapping modules, Quantum memory buffer, Inter-satellite Q-links. Mass: 350 kg.           | `SP-P-QAO-SAT-Q2A-00011-A1` <br> **Notes:** Node in a global quantum internet, extending QKD range and enabling distributed quantum sensing/computing. (Note: Q2A MDL reused, context implies different purpose). Full specs in GAIA-QAO Registry.                      |
-| Q3H      | U        | **QuantumNexus Hub QNH-3H** | Large orbital quantum computing & networking hub          | >50 logical qubit QPU (target), Multi-node quantum network interface, Advanced cryogenics. Mass: 800 kg. | `SP-P-QAO-SAT-Q3H-00012-A1` <br> **Notes:** Flagship GAIA-QAO orbital platform for advanced quantum computation and as a central node for a quantum network. Full specs in GAIA-QAO Registry.     |
-| P1B      | U        | **TechDemoSat-Q TDSQ-1B** | Small satellite for demonstrating novel quantum tech        | Modular quantum experiment bay, Advanced data downlink. Mass: 50kg.                                    | `SP-P-QAO-SAT-P1B-00013-A1` <br> **Notes:** Platform for TRL advancement of specific GAIA-QAO quantum components in space. Full specs in GAIA-QAO Registry.                                          |
-
-*(Note: In a real registry, `MDL` codes like Q2A would be unique globally within their `ST`, or the combination of `ST`+`MDL` would be unique. Here, Q2A is reused for QuantumComSecure and QuantumLinkRelay; a real system would assign distinct MDLs, e.g., QCS2A and QLR2A, or they would be different Object Types (ST). For this catalog, we assume the textual name and description differentiate them for now.)*
+| P3H      | U        | **AstroPhys Telescope APT-3H**| Large space telescope for astrophysics (conventional optics)    | UV/Optical/IR telescope, Advanced spectrographs. Mass: 6,500 kg.                                       | `SP-P-JAX-SAT-P3H-00008-A1` <br> **Notes:** Hubble/Webb class conventional space telescope by JAXA. Full specs in GAIA-QAO Registry.                                                                 |
+| Q1A      | U        | **QuantumCubelet QCub-1A**  | Quantum technology demonstration CubeSat/SmallSat             | Miniaturized Q-sensor/Q-comm payload, Modular 6U-27U bus. Mass: 10-50 kg.                            | `SP-P-QAO-SAT-Q1A-00009-A1` <br> **Notes:** Versatile small satellite platform for rapid prototyping and in-orbit validation of GAIA-QAO quantum components and algorithms. (ST could be 'XPS' if purely experimental). Full specs in GAIA-QAO Registry.  |
+| S1B      | U        | **EduSat Standard ES-1B**   | Standardized CubeSat bus for education/basic research       | COTS components, University payload interface. Mass: 1-10 kg (1U-6U).                                   | `SP-P-UNI-SAT-S1B-00010-A1` <br> **Notes:** Basic CubeSat platform for educational missions (UNI as example org code). Full specs in GAIA-QAO Registry.                                                                 |
+| Q2R      | U        | **QuantumLinkRelay QLR-2R** | Quantum communication relay satellite with repeater tech      | Entanglement swapping modules, Quantum memory buffer, Inter-satellite Q-links. Mass: 350 kg. 'R' for Relay variant. | `SP-P-QAO-SAT-Q2R-00011-A1` <br> **Notes:** Node in a global quantum internet, extending QKD range and enabling distributed quantum sensing/computing. Full specs in GAIA-QAO Registry.                      |
+| Q3H      | U        | **QuantumNexus Hub QNH-3H** | Large orbital quantum computing & networking hub satellite    | >50 logical qubit QPU (target), Multi-node quantum network interface, Advanced cryogenics. Mass: 800 kg. | `SP-P-QAO-SAT-Q3H-00012-A1` <br> **Notes:** Flagship GAIA-QAO orbital satellite for advanced quantum computation and as a central node for a quantum network. (Could also be ST=QCS if primary function is service). Full specs in GAIA-QAO Registry.     |
+| P1B      | U        | **TechDemoSat-Q TDSQ-1B** | Small satellite for demonstrating novel quantum tech        | Modular quantum experiment bay, Advanced data downlink. Mass: 50kg.                                    | `SP-P-QAO-SAT-P1B-00013-A1` <br> **Notes:** Platform for TRL advancement of specific GAIA-QAO quantum components in space. (Could also be ST=XPS). Full specs in GAIA-QAO Registry.                                          |
 
 #### 4.3.2 Orbital Platform/Vehicle (ORB) Models
 **(Domain: SP, Asset Class: P (Platform), Object Type: ORB)**
 
-| MDL Code | Autonomy | Model Name                 | Description                                                       | Key Quantum Enhancements (Conceptual) & Key Specs (Illustrative)                                                  | **GAIA-QAO ID Example (Instance)**                                                                                                                                                                                                   |
+| MDL Code | Autonomy | Model Name                 | Description                                                       | Key Quantum Enhancements (Conceptual) & Key Specs (Illustrative)                                                  | **GAIA-QAO ID Example (Instance)** (using `CCC=QAO` unless specified)                                                                                                                                                                    |
 | :------- | :------- | :------------------------- | :---------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Q3A      | M        | **GAIA-StationCore QSC-3A**| Core module for a quantum-focused modular space station           | Integrated Q-Labs, Q-sensor arrays, Q-secure C&C. Mass: 80,000 kg, Crew: 6-12, Vol: 800 m³.                      | `SP-P-QAO-ORB-Q3A-00001-A1` <br> **Notes:** Central hub for GAIA-QAO in-space quantum research and technology development. Modular design for expansion. Full specs in GAIA-QAO Registry.                                 |
 | A4S      | M        | **LEO-Habitat Alpha LHA-4S**| Standard commercial LEO habitat module                            | Conventional life support, research racks. Mass: 100,000 kg, Crew: 8.                                            | `SP-P-COM-ORB-A4S-00002-A1` <br> **Notes:** Conventional crewed habitat module for LEO by Commercial Org. Full specs in GAIA-QAO Registry.                                                                                           |
@@ -1540,13 +1205,13 @@ This section provides the expanded catalog of conceptualized GAIA-QAO Top-Level 
 | Q2B      | U        | **QuantumCargoFreighter QCF-2B**| Autonomous quantum-secured orbital cargo vehicle                | QKD for command link, Q-sensor for autonomous RPO, modular cargo bay. Mass: 12,000 kg payload.                     | `SP-P-QAO-ORB-Q2B-00006-A1` <br> **Notes:** Delivers cargo to orbital platforms with high security and precision docking using quantum-enhanced systems. Full specs in GAIA-QAO Registry.                                 |
 | Q2A      | U        | **QuantumOrbitalSupport QOS-2A**| Autonomous service module with quantum diagnostics              | Q-enhanced health monitoring for attached modules, efficient Q-optimized station keeping. Mass: 10,000 kg.          | `SP-P-QAO-ORB-Q2A-00007-A1` <br> **Notes:** Provides power, propulsion, and C&DH for orbital experiments, with quantum prognostics. (Note MDL Q2A reuse context). Full specs in GAIA-QAO Registry.                                   |
 | Q2A      | M        | **QuantumHabitatModule QHM-2A**| Advanced habitation module with quantum environmental systems     | Q-sensors for atmosphere/water purity, Q-enhanced radiation shielding research. Mass: 22,000 kg, Crew: 4.           | `SP-P-QAO-ORB-Q2A-00008-A1` <br> **Notes:** Long-duration crewed habitation with quantum-based environmental monitoring. (Note MDL Q2A reuse context). Full specs in GAIA-QAO Registry.        |
-| Q2H      | U        | **QuantumRoboticServicer QRS-2H**| High-dexterity autonomous orbital servicer/tug              | Quantum machine vision for inspection/docking, Q-feedback robotic arms, Q-NDT. Mass: 8,000 kg.                    | `SP-P-QAO-ORB-Q2H-00009-A1` <br> **Notes:** Performs in-orbit servicing, repair, refueling, and orbital transfer using quantum-enhanced robotics and sensing. Full specs in GAIA-QAO Registry.                        |
-| P3S      | U        | **QuantumGenesisPlatform QGP-3S**| Large experimental uncrewed orbital quantum research platform | Dedicated bays for diverse Q-experiments (computing, sensing, comms, materials). Mass: 30,000 kg.                 | `SP-P-QAO-ORB-P3S-00010-A1` <br> **Notes:** A GAIA-QAO flagship for large-scale, long-duration in-space quantum research. Full specs in GAIA-QAO Registry.      |
+| Q2H      | U        | **QuantumRoboticServicer QRS-2H**| High-dexterity autonomous orbital servicer/tug (ISAM focus)   | Quantum machine vision for inspection/docking, Q-feedback robotic arms, Q-NDT. Mass: 8,000 kg.                    | `SP-P-QAO-ORB-Q2H-00009-A1` <br> **Notes:** Performs in-orbit servicing, repair, refueling, and assembly (ISAM) using quantum-enhanced robotics and sensing. (Could also be ST=ISS). Full specs in GAIA-QAO Registry.                        |
+| P3S      | U        | **QuantumGenesisPlatform QGP-3S**| Large experimental uncrewed orbital quantum research platform | Dedicated bays for diverse Q-experiments (computing, sensing, comms, materials). Mass: 30,000 kg.                 | `SP-P-QAO-ORB-P3S-00010-A1` <br> **Notes:** A GAIA-QAO flagship for large-scale, long-duration in-space quantum research. (Could also be ST=XPS or ST=QCS depending on primary role). Full specs in GAIA-QAO Registry.      |
 
 #### 4.3.3 Launch System (LCH) Models
 **(Domain: SP, Asset Class: P (Platform), Object Type: LCH)**
 
-| MDL Code | Autonomy | Model Name           | Description                                         | Key Quantum Enhancements (Conceptual) & Key Specs (Illustrative)                                                  | **GAIA-QAO ID Example (Instance)**                                                                                                                                                                                            |
+| MDL Code | Autonomy | Model Name           | Description                                         | Key Quantum Enhancements (Conceptual) & Key Specs (Illustrative)                                                  | **GAIA-QAO ID Example (Instance)** (using `CCC=QAO` unless specified)                                                                                                                                                             |
 | :------- | :------- | :----------------------- | :-------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Q1A      | U        | **QuantumLeapLight QLL-1A**| Small Q-enhanced expendable launch vehicle            | Q-gyroscopes for precise GNC, QAOA for ascent optimization. Payload to LEO: 2 MT, Height: 30 m.               | `SP-P-QAO-LCH-Q1A-00001-A1` <br> **Notes:** Optimized for dedicated small satellite and CubeSat constellation deployment with high insertion accuracy. Full specs in GAIA-QAO Registry.                               |
 | Q2B      | U        | **QuantumAscentMed QAM-2B**| Medium Q-enhanced expendable launch vehicle           | Q-sensors for engine health monitoring, Q-algorithms for dynamic trajectory control. Payload to LEO: 8 MT, Height: 50 m. | `SP-P-QAO-LCH-Q2B-00002-A1` <br> **Notes:** Versatile medium-lift launcher for commercial and scientific payloads, with quantum-enhanced reliability. Full specs in GAIA-QAO Registry.                             |
@@ -1555,18 +1220,18 @@ This section provides the expanded catalog of conceptualized GAIA-QAO Top-Level 
 | Q2R      | U        | **QuantumPhoenix QPh-2R** | Medium Q-enhanced reusable launch vehicle (1st stage) | Q-assisted autonomous landing, rapid Q-diagnostics for reuse. Payload to LEO: 7 MT (reusable mode). Variant 'R' for Reusable. | `SP-P-QAO-LCH-Q2R-00005-A1` <br> **Notes:** Focus on cost reduction through reusability, with quantum systems enhancing autonomous recovery and turnaround. Full specs in GAIA-QAO Registry.                             |
 | Q1S      | U        | **QuantumPegasus QPL-1S**| Small Q-enhanced air-launched system                | Q-navigation for precise drop & ignition, compact Q-avionics. Payload to LEO: 0.5 MT.                            | `SP-P-QAO-LCH-Q1S-00006-A1` <br> **Notes:** Provides flexible, rapid-response launch capability for small payloads from a carrier aircraft. (Post-release autonomy). Full specs in GAIA-QAO Registry.                     |
 | P3S      | U        | **QuantumDriveExplorer QDE-3S**| Experimental launch system with novel Q-propulsion stage| Testbed for conceptual quantum drives (e.g., vacuum energy, Q-plasma). Payload to LEO: TBD (tech demo).          | `SP-P-QAO-LCH-P3S-00007-A1` <br> **Notes:** Highly experimental, focused on demonstrating feasibility of direct quantum propulsion principles. High risk, high reward. Full specs in GAIA-QAO Registry.      |
-| Q2A      | U        | **QuantumOrbiterStage QOS-2A**| Q-enhanced chemical upper stage / kick stage        | Q-optimized propellant management, precision Q-GNC for complex orbit insertion. Delta-V: ~5 km/s.                 | `SP-P-QAO-LCH-Q2A-00008-A1` <br> **Notes:** High-performance upper stage for precise multi-payload deployment or challenging orbital maneuvers, using quantum algorithms. (Could be Asset Class 'E' if sold separately). Full specs in GAIA-QAO Registry.        |
+| Q2A      | U        | **QuantumOrbiterStage QOS-2A**| Q-enhanced chemical upper stage / kick stage        | Q-optimized propellant management, precision Q-GNC for complex orbit insertion. Delta-V: ~5 km/s.                 | `SP-E-QAO-LCH-Q2A-00008-A1` <br> **Notes:** (Asset Class E for Equipment if sold as separate stage). High-performance upper stage. Full specs in GAIA-QAO Registry.        |
 
 #### 4.3.4 Probe (PRB) Models
 **(Domain: SP, Asset Class: P (Platform), Object Type: PRB)**
 
-| MDL Code | Autonomy | Model Name                 | Description                                                       | Key Quantum Enhancements (Conceptual) & Key Specs (Illustrative)                                                          | **GAIA-QAO ID Example (Instance)**                                                                                                                                                                                                                            |
+| MDL Code | Autonomy | Model Name                 | Description                                                       | Key Quantum Enhancements (Conceptual) & Key Specs (Illustrative)                                                          | **GAIA-QAO ID Example (Instance)** (using `CCC=QAO` unless specified)                                                                                                                                                                                     |
 | :------- | :------- | :------------------------- | :---------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Q2A      | U        | **QuantumLunaOrbiter QLO-2A**| Medium quantum-enhanced lunar orbiter/relay                   | Q-gravimeter for detailed gravity mapping, QKD for Earth-Moon link. Mass: 1,200 kg.                                       | `SP-P-QAO-PRB-Q2A-00001-A1` <br> **Notes:** High-resolution lunar reconnaissance and communications relay, potentially supporting future GAIA-QAO lunar surface assets with Q-secure comms. Full specs in GAIA-QAO Registry.                                     |
 | Q2L      | U        | **QuantumLunaLander QLL-2L** | Medium quantum-enhanced lunar lander with rover option          | Q-sensors for in-situ resource analysis (water ice), Q-robotics for sample collection. Lander Mass: 1,500kg + Rover.          | `SP-P-QAO-PRB-Q2L-00002-A1` <br> **Notes:** Precision lunar landing and surface exploration, utilizing quantum instruments for geological and resource assessment. Full specs in GAIA-QAO Registry.                                             |
-| Q2L      | U        | **QuantumMarsExplorer QME-2L**| Medium long-duration quantum-enhanced Mars rover/orbiter        | Q-biosignature detection suite, Q-enhanced atmospheric sensors, Q-secure deep space comms. Mass: 1,500 kg (rover).           | `SP-P-QAO-PRB-Q2L-00003-A1` <br> **Notes:** Focus on astrobiological investigations and detailed Martian environment characterization using advanced quantum sensing. (Note MDL Q2L reuse context). Full specs in GAIA-QAO Registry.                                            |
-| Q2B      | U        | **QuantumVenusAtmosphere QVA-2B**| Medium quantum-enhanced Venus atmospheric probe/orbiter         | Q-spectrometers for high-res atmospheric composition, Q-sensors for extreme environment survival. Mass: 1,300 kg.           | `SP-P-QAO-PRB-Q2B-00004-A1` <br> **Notes:** Designed to study Venusian atmosphere and potentially surface, with quantum sensors hardened for harsh conditions. Full specs in GAIA-QAO Registry.                                                 |
-| Q2A      | U        | **QuantumMercuryOrbiter QMO-2A**| Medium quantum-enhanced Mercury orbiter                       | Q-magnetometer array for detailed magnetosphere study, Q-enhanced thermal imaging. Mass: 1,100 kg.                          | `SP-P-QAO-PRB-Q2A-00005-A1` <br> **Notes:** Investigates Mercury's magnetic field, surface composition, and exosphere with quantum instruments. (Note MDL Q2A reuse context). Full specs in GAIA-QAO Registry.                             |
+| Q2L      | U        | **QuantumMarsExplorer QME-2L**| Medium long-duration quantum-enhanced Mars rover/orbiter        | Q-biosignature detection suite, Q-enhanced atmospheric sensors, Q-secure deep space comms. Mass: 1,500 kg (rover).           | `SP-P-NAS-PRB-Q2L-00003-A1` <br> **Notes:** (NASA-led). Focus on astrobiological investigations and detailed Martian environment characterization using advanced quantum sensing. (Note MDL Q2L reuse context). Full specs in GAIA-QAO Registry.                  |
+| Q2B      | U        | **QuantumVenusAtmosphere QVA-2B**| Medium quantum-enhanced Venus atmospheric probe/orbiter         | Q-spectrometers for high-res atmospheric composition, Q-sensors for extreme environment survival. Mass: 1,300 kg.           | `SP-P-ESA-PRB-Q2B-00004-A1` <br> **Notes:** (ESA-led). Designed to study Venusian atmosphere and potentially surface, with quantum sensors hardened for harsh conditions. Full specs in GAIA-QAO Registry.                                                 |
+| Q2A      | U        | **QuantumMercuryOrbiter QMO-2A**| Medium quantum-enhanced Mercury orbiter                       | Q-magnetometer array for detailed magnetosphere study, Q-enhanced thermal imaging. Mass: 1,100 kg.                          | `SP-P-JAX-PRB-Q2A-00005-A1` <br> **Notes:** (JAXA-led). Investigates Mercury's magnetic field, surface composition, and exosphere with quantum instruments. (Note MDL Q2A reuse context). Full specs in GAIA-QAO Registry.                             |
 | Q3S      | U        | **QuantumJupiterExplorer QJE-3S**| Large quantum-enhanced Jupiter system explorer (orbiter & probe)| Q-plasma wave instrument, Q-enhanced deep atmospheric probe sensors, QKD for secure data return. Mass: 2,800 kg.           | `SP-P-QAO-PRB-Q3S-00006-A1` <br> **Notes:** Comprehensive study of Jupiter's atmosphere, magnetosphere, and moons, using quantum sensors to probe extreme environments. Full specs in GAIA-QAO Registry.                               |
 | Q3L      | U        | **QuantumIceGiantOrbiter QIO-3L**| Large long-duration quantum-enhanced Uranus/Neptune orbiter   | Advanced Q-spectrometers, Q-magnetometers for ice giant interiors, Long-life Q-power source concept. Mass: 2,500 kg.         | `SP-P-QAO-PRB-Q3L-00007-A1` <br> **Notes:** Dedicated mission to explore Uranus or Neptune, leveraging quantum sensors for detailed atmospheric and magnetic field characterization. Full specs in GAIA-QAO Registry.                     |
 | Q2A      | U        | **QuantumCometHarvester QCH-2A**| Medium quantum-enhanced asteroid/comet rendezvous & sample return| Q-mass spectrometer for isotopic analysis, Q-robotic sampler, Q-navigation for precision RPO. Mass: 1,000 kg.            | `SP-P-QAO-PRB-Q2A-00008-A1` <br> **Notes:** Collects and returns samples from small bodies, with quantum instruments for preliminary analysis. (Note MDL Q2A reuse context). Full specs in GAIA-QAO Registry.          |
@@ -1577,7 +1242,7 @@ This section provides the expanded catalog of conceptualized GAIA-QAO Top-Level 
 #### 4.3.5 Experimental (Space) (XPS) Models
 **(Domain: SP, Asset Class: P (Platform) or S (System), Object Type: XPS)**
 
-| MDL Code | Autonomy | Model Name                 | Description                                                       | Key Quantum Enhancements (Conceptual) & Key Specs (Illustrative)                                                  | **GAIA-QAO ID Example (Instance)**                                                                                                                                                                                                                            |
+| MDL Code | Autonomy | Model Name                 | Description                                                       | Key Quantum Enhancements (Conceptual) & Key Specs (Illustrative)                                                  | **GAIA-QAO ID Example (Instance)** (using `CCC=QAO`)                                                                                                                                                                                               |
 | :------- | :------- | :------------------------- | :---------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | P2A      | U        | **SpaceTechOrbiter STO-2A**| Medium orbital platform for space technology demonstration        | Modular bays for various tech demos including Q-components, reconfigurable data links. Mass: 1,500 kg.            | `SP-P-QAO-XPS-P2A-00001-A1` <br> **Notes:** Versatile platform for in-orbit validation of new space technologies, including GAIA-QAO quantum subsystems before operational deployment. Full specs in GAIA-QAO Registry.                 |
 | P2S      | U        | **QuantumPropulsionTestbed QPT-2S**| Dedicated orbital testbed for novel/quantum space propulsion  | Test stands for Q-drives (e.g., QCMTS), advanced EP, NTP elements. Mass: 2,000 kg.        | `SP-S-QAO-XPS-P2S-00002-A1` <br> **Notes:** (Asset Class S for System Testbed). In-space laboratory for testing and characterizing performance of next-generation propulsion systems, including those based on quantum principles. Full specs in GAIA-QAO Registry. |
@@ -1590,13 +1255,13 @@ This section provides the expanded catalog of conceptualized GAIA-QAO Top-Level 
 #### 4.3.6 Space Defense (DEF) Models
 **(Domain: SP, Asset Class: P (Platform) or S (System), Object Type: DEF)**
 
-| MDL Code | Autonomy | Model Name                 | Description                                                       | Key Quantum Enhancements (Conceptual) & Key Specs (Illustrative)                                                       | **GAIA-QAO ID Example (Instance)**                                                                                                                                                                                                                               |
+| MDL Code | Autonomy | Model Name                 | Description                                                       | Key Quantum Enhancements (Conceptual) & Key Specs (Illustrative)                                                       | **GAIA-QAO ID Example (Instance)** (using `CCC=NAT` for generic National org)                                                                                                                                                               |
 | :------- | :------- | :------------------------- | :---------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Q2A      | U        | **QuantumSentinel QSD-2A** | Medium quantum-enhanced Space Domain Awareness (SDA) satellite  | Q-enhanced optical telescope array, Quantum radar elements for tracking small/dark objects. Mass: 1,200 kg.            | `SP-P-NAT-DEF-Q2A-00001-A1` <br> **Notes:** (NAT for National Org). Provides enhanced SDA using quantum sensors for improved sensitivity and resolution. Full specs in GAIA-QAO Registry.                  |
+| Q2A      | U        | **QuantumSentinel QSD-2A** | Medium quantum-enhanced Space Domain Awareness (SDA) satellite  | Q-enhanced optical telescope array, Quantum radar elements for tracking small/dark objects. Mass: 1,200 kg.            | `SP-P-NAT-DEF-Q2A-00001-A1` <br> **Notes:** Provides enhanced SDA using quantum sensors for improved sensitivity and resolution. Full specs in GAIA-QAO Registry.                  |
 | Q2S      | U        | **QuantumAegis QAM-2S**    | Space-based quantum sensor for missile defense early warning/track| Wide-field Q-IR sensor array, Quantum LIDAR for discrimination & tracking. Mass: 1,800 kg.                              | `SP-S-NAT-DEF-Q2S-00002-A1` <br> **Notes:** (Asset S for System). Contributes to missile defense by providing high-fidelity, resilient tracking data using quantum optical sensors. Full specs in GAIA-QAO Registry.                                           |
 | Q2H      | U        | **QuantumNetWarden QNW-2H**| High-performance quantum-secure C3 satellite for space defense| QKD for all C2 links, Onboard Q-AI for resilient network management & decision support. Mass: 2,000 kg.                 | `SP-P-NAT-DEF-Q2H-00003-A1` <br> **Notes:** Serves as a robust and secure C3 node for coordinating space defense assets, hardened against cyber and EW threats. Full specs in GAIA-QAO Registry.            |
 | Q2B      | U        | **QuantumSpectre QSI-2B**  | Quantum-enhanced space intelligence (SIGINT/ELINT/GEOINT) sat | Q-receiver for wideband SIGINT, Q-imaging for GEOINT in challenging conditions. Mass: 1,500 kg.                          | `SP-P-NAT-DEF-Q2B-00004-A1` <br> **Notes:** Collects strategic/tactical intelligence using quantum sensors to detect, identify, and locate targets/signals with enhanced precision/stealth. Full specs in GAIA-QAO Registry. |
-| Q3S      | U        | **QuantumFortress QDF-3S** | Large multirole orbital platform for quantum defense applications | Integrated Q-sensing, Q-comms, Q-EW, potential for Q-information warfare research. Mass: 3,000 kg.                   | `SP-P-QAO-DEF-Q3S-00005-A1` <br> **Notes:** Comprehensive orbital asset integrating multiple GAIA-QAO quantum defense technologies for advanced strategic capabilities and R&D. Full specs in GAIA-QAO Registry.           |
+| Q3S      | U        | **QuantumFortress QDF-3S** | Large multirole orbital platform for quantum defense applications | Integrated Q-sensing, Q-comms, Q-EW, potential for Q-information warfare research. Mass: 3,000 kg.                   | `SP-P-QAO-DEF-Q3S-00005-A1` <br> **Notes:** (GAIA-QAO design). Comprehensive orbital asset integrating multiple GAIA-QAO quantum defense technologies for advanced strategic capabilities and R&D. Full specs in GAIA-QAO Registry.           |
 | A2A      | U        | **OrbitalGuardian OGS-2A** | Conventional orbital asset protection / bodyguard satellite   | Defensive countermeasures (non-quantum), proximity operations capabilities. Mass: 1,000 kg.                               | `SP-P-NAT-DEF-A2A-00006-A1` <br> **Notes:** Designed to protect other high-value space assets using conventional defensive technologies. Could incorporate Q-sensors for threat detection. Full specs in GAIA-QAO Registry. |
 
 ### 4.4 Implementation Guidelines (Top-Level Object Models)
@@ -1604,31 +1269,35 @@ This section provides the expanded catalog of conceptualized GAIA-QAO Top-Level 
 The registration and management of Top-Level Object Models (`MDL`) in the GAIA-QAO system are critical for maintaining a standardized and coherent catalog.
 
 1.  **Model Proposal and Registration:**
-    *   New `MDL` codes must be proposed to the GAIA-QAO Registry Authority (or a designated working group for Q-SPACE models).
-    *   The proposal must include the `model_code` (`[G][N][V]`), its assigned `name`, a comprehensive `description`, its inherent `autonomy_code` (`M` or `U`), the `subtype_id` it belongs to (linking it to `ST`, `CCC`, `A` (Asset Class), and `DO`), planned `introduction_date`, and preliminary `technical_specifications`.
-    *   The Registry Authority verifies uniqueness of the `model_code` within its parent `object_types` entry (defined by DO-A-CCC-ST).
+    *   New `MDL` codes must be proposed to the GAIA-QAO Registry Authority (or a designated working group, e.g., for Q-SPACE models).
+    *   The proposal must include:
+        *   The target Domain (`DO`), Asset Class (`A`), Controlling Organization (`CCC`), and Object Type (`ST`) under which the new model falls.
+        *   The proposed `model_code` (`[G][N][V]`).
+        *   Its assigned `name` and a comprehensive `description`.
+        *   Its inherent `autonomy_code` (`M`, `U`, or `O`).
+        *   Planned `introduction_date`.
+        *   Preliminary `technical_specifications`.
+    *   The Registry Authority verifies uniqueness of the `model_code` for the given `DO-A-CCC-ST` combination.
 2.  **Database Entry:**
-    *   Approved models are entered into the `object_models` table in the GAIA-QAO database (see Part 7.1 for schema).
-    *   The `technical_specifications` field, being JSONB, should follow a standardized schema or template for each Object Type (`ST`) to ensure consistency and queryability (e.g., all `SAT` models might have standard keys for mass, power, dimensions, primary payload type).
+    *   Approved models are entered into the `object_models` table in the GAIA-QAO database (see Part 7.1 for schema). The `object_models` table links to `object_types` (for ST, which links to DO and A), `organizations` (for CCC), and `autonomy_levels`.
+    *   The `technical_specifications` field (JSONB) should ideally follow a predefined schema template for each Object Type (`ST`) to ensure consistency and queryability. For example, all `ST=SAT` models might have standard keys for common satellite parameters like dry_mass_kg, max_power_W, dimensions_stowed_m, primary_payload_capacity_kg, design_life_years, orbital_regimes (LEO, MEO, GEO, HEO, Interplanetary).
 3.  **Lifecycle Management:**
     *   The `object_models` table includes fields like `introduction_date` and `end_of_production_date` to track the model's lifecycle.
     *   An `is_active` flag indicates if the model is currently in production or actively supported.
-    *   Major revisions to a model that significantly alter its form, fit, or function may warrant a new Variant letter (`V`) in the `MDL` code and thus a new model entry, or be managed through high-level Configuration Codes (`CC`) for instances of the existing model. The GAIA-QAO CCB process (Part 6) would govern this.
+    *   Major revisions to a model that significantly alter its form, fit, function, or key performance parameters (KPPs) typically warrant a new Variant letter (`V`) in the `MDL` code, resulting in a new model entry. Minor changes might be managed through Configuration Codes (`CC`) at the instance level (Part 6). The GAIA-QAO CCB process would govern these decisions.
 4.  **Link to Documentation:**
-    *   Each registered `MDL` should have associated GAIA-QAO technical documentation (e.g., System Specification, ICDs) linked via its unique identification. The INFOCODE system (Part 9.3.1) will use the model's defining ID elements.
+    *   Each registered `MDL` should have associated GAIA-QAO technical documentation (e.g., System Specification, Operations Manuals, ICDs) linked via its unique identification attributes. The INFOCODE system (Part 9.3.1) will use the model's defining ID elements (DO, A, CCC, ST, MDL) in the INFOCODE structure for these documents.
 5.  **Queryability:**
-    *   The structured `MDL` code and the rich metadata in the `object_models` table are designed to be easily queryable, allowing users and systems (like GAIA-Q-UI) to find models based on generation, size, variant, technical characteristics, or quantum enhancements.
+    *   The structured `MDL` code and the rich metadata in the `object_models` table, combined with its links to `object_types`, `organizations`, and `autonomy_levels`, are designed to be easily queryable. This allows users and systems (like GAIA-Q-UI) to find models based on their generation, size/capability, variant, controlling organization, object type, domain, asset class, technical characteristics, or specific quantum enhancements detailed in the `technical_specifications`.
 
-Adherence to these guidelines ensures that the Top-Level Object Model Registry remains a valuable and reliable resource for all GAIA-QAO stakeholders, particularly within the demanding Q-SPACE sector.
-
----
+Adherence to these guidelines ensures that the Top-Level Object Model Registry remains a valuable, reliable, and consistent resource for all GAIA-QAO stakeholders, particularly for managing the diverse and advanced assets within the Q-SPACE sector.
 
 ---
 ## Part 5: Subsystem Identification & Registry
 
 This part details the Tier 2 of the GAIA-QAO Object Identification System (GQOIS), focusing on the identification and cataloging of major subsystems or Line Replaceable Units (LRUs) within a Tier 1 Top-Level Object (defined in Part 3 and Part 4). For the Q-SPACE sector, this includes critical spacecraft subsystems such as propulsion units, GNC components, power systems, thermal control elements, communication arrays, scientific instruments, and quantum-specific payloads or processing units.
 
-The aim is to provide a standardized methodology for tracking, managing, and documenting these vital components throughout their lifecycle, from design and integration to in-orbit operation, potential servicing, and eventual decommissioning.
+The aim is to provide a standardized methodology for tracking, managing, and documenting these vital components throughout their lifecycle, from design and integration to in-orbit operation, potential servicing, and eventual decommissioning. This facilitates detailed technical documentation (linking to SS 00-99 chapters, see Part 9.3.4), precise configuration management, and accurate digital twin representations.
 
 A Subsystem ID is contextually linked to its parent Top-Level Object ID and follows the conceptual structure:
 `{Parent_Tier_1_ID} :: SSS-MDLs-SERs[-CCs]`
@@ -1636,60 +1305,56 @@ A Subsystem ID is contextually linked to its parent Top-Level Object ID and foll
 
 ### 5.1 Defining Subsystem Type Codes (SSS)
 
-The **Subsystem Type Code (SSS)** is a 3-character alphanumeric code that categorizes the general type or primary function of the subsystem. This classification is crucial for organizing subsystem data, standardizing interfaces, managing technical documentation (linking to SS 00-99 chapters, see Part 9.3.4), and facilitating system-level analysis and integration.
+The **Subsystem Type Code (SSS)** is a 3-character alphanumeric code that categorizes the general type or primary function of the subsystem. This classification is crucial for organizing subsystem data, standardizing interfaces, and facilitating system-level analysis and integration.
 
 *   **Basis for SSS Codes for Q-SPACE:**
-    *   Derived from common spacecraft subsystem breakdowns used by agencies like NASA and ESA.
-    *   Aligned with the GAIA-QAO Space Systems (SS 00-99) classification used for technical documentation structure (see Part 9.3.4, Section Part II: Space Systems). For example, `SSS=PROP` might map to SS 01, `SSS=GNCS` (GNC Sensors) to parts of SS 17 and SS 08.
-    *   Designed to be granular enough for meaningful differentiation but broad enough to group similar functional units.
-    *   Includes codes for emerging quantum-specific subsystems.
+    *   Derived from common spacecraft subsystem breakdowns used by agencies like NASA (e.g., Work Breakdown Structure standards) and ESA (e.g., ECSS system engineering standards).
+    *   Aligned with the GAIA-QAO Space Systems (SS 00-99) classification used for technical documentation structure (see Part 9.3.4, Section Part II: Space Systems). For example, an SSS code like `PROP` (Propulsion Subsystem) would typically contain components detailed under SS 01. An SSS code like `AOCS` (Attitude & Orbit Control System) would map to SS 17.
+    *   Designed to be granular enough for meaningful differentiation of major functional blocks but broad enough to group similar units.
+    *   Includes codes for emerging quantum-specific subsystems, often mapping to SS 19 or specialized subsections of other SS chapters.
 
 *   **Structure and Management:**
-    *   Each SSS code will have a defined name and a detailed description outlining its scope and typical constituent components.
-    *   The `subsystem_types` table in the GAIA-QAO database (see Part 7.2) serves as the master registry for all SSS codes. It includes fields for `sss_code` (PK), `name`, `description`, and `applicable_domain_code` (which would be `SP` for most Q-SPACE relevant SSS codes, or `CS` for Common System if applicable across AS/SP).
-    *   New SSS codes are proposed and approved via the GAIA-QAO governance process (Part 0.5), with input from the GAIA-Q-SPACE technical working group.
+    *   Each SSS code will have a defined `name` and a detailed `description` outlining its scope, typical constituent components, and primary functions.
+    *   The `subsystem_types` table in the GAIA-QAO database (see Part 7.2) serves as the master registry for all SSS codes. It includes fields for `sss_code` (PK), `name`, `description`, `applicable_domain_code` (which would be `SP` for most Q-SPACE relevant SSS codes, or `CS` for Common System if applicable across AS/SP), and optional `ss_xx_mapping` / `ata_chapter_mapping` fields.
+    *   New SSS codes are proposed and approved via the GAIA-QAO governance process (Part 0.5), with input from the GAIA-Q-SPACE Technical Working Group to ensure alignment with space system engineering practices.
 
 *   **Referencing:** A comprehensive list of proposed SSS codes relevant to Q-SPACE, their names, descriptions, and typical SS 00-99 mapping is provided in **Appendix F: Subsystem Type (SSS) Codes List**.
 
 **Example SSS Codes (Illustrative for Q-SPACE - see Appendix F for more detail):**
 
-| SSS Code | Name                                     | Typical SS 00-99 Mapping (Conceptual) | Notes for Q-SPACE                                       |
+| SSS Code | Name                                     | Typical SS XX Mapping (Conceptual) | Notes for Q-SPACE                                       |
 | :------- | :--------------------------------------- | :------------------------------------ | :------------------------------------------------------ |
-| `PROP`   | Propulsion Subsystem (Main)              | SS 01                                 | Chemical engines, electric thrusters, propellant tanks. |
-| `AOCS`   | Attitude & Orbit Control Subsystem       | SS 17                                 | Sensors, actuators, control algorithms as a suite.      |
-| `STRK`   | Star Tracker Unit                        | SS 17.1.1, SS 08.1                      | Individual star tracker assembly.                       |
-| `RWAS`   | Reaction Wheel Assembly                  | SS 17.1.3                               | Individual reaction wheel unit.                         |
-| `EPSU`   | Electrical Power Subsystem Unit          | SS 03                                 | Power generation (solar arrays), storage (batteries), PMAD. |
-| `SOLA`   | Solar Array Assembly                     | SS 03.1.1                               | Deployable or body-mounted solar panels.                |
-| `BATT`   | Battery Assembly                         | SS 03.2.1                               | Main power storage batteries.                           |
+| `PROP`   | Propulsion Subsystem (Main & ACS)        | SS 01                                 | Chemical engines, electric thrusters, propellant tanks, ACS. |
+| `AOCS`   | Attitude & Orbit Control System        | SS 17                                 | Sensors, actuators, GNC computer, algorithms as a suite. |
+| `EPSU`   | Electrical Power Subsystem             | SS 03                                 | Power generation, storage, conditioning, distribution.  |
 | `TCSM`   | Thermal Control Subsystem Module         | SS 14                                 | Radiators, heat pipes, MLI, cryocoolers as a system.    |
-| `CDHS`   | Command & Data Handling Subsystem        | SS 02.2.1, SS 11                        | Onboard computer, data recorder, bus interfaces.        |
-| `COMS`   | Communication Subsystem (RF)             | SS 05.2                                 | Transponders, RF antennas, amplifiers.                  |
-| `OPTC`   | Optical Communication Subsystem          | SS 05.1                                 | Laser terminal, PAT system.                             |
-| `PLDI`   | Payload Instrument (Specific Type)       | SS 08 (as specific instrument)        | e.g., an Earth Observation Imager, Spectrometer.        |
-| `QCSM`   | Quantum Computing Subsystem Module       | SS 02.1.3, SS 10, SS 19               | Onboard quantum processor unit, control electronics.    |
-| `QKDS`   | Quantum Key Distribution Subsystem       | SS 05.5.2, SS 19                        | Entanglement source, QKD transceivers.                  |
-| `QSNA`   | Quantum Sensor Array/Unit              | SS 08, SS 19                            | e.g., Quantum Gravimeter, Quantum Magnetometer unit.    |
-| `ROBA`   | Robotic Arm Assembly                     | SS 04.3.1                               | Manipulator arm, end-effector, control unit.            |
-| `STRC`   | Structural Assembly (Primary/Deployable) | SS 12.2                                 | e.g., Satellite bus structure, deployable boom.         |
+| `CDHS`   | Command & Data Handling Subsystem        | SS 02, SS 11                          | Onboard computer(s), data recorder, bus interfaces, FSW. |
+| `COMS`   | Communication Subsystem (RF)             | SS 05.2                               | Transponders, RF antennas, amplifiers.                  |
+| `OPTC`   | Optical Communication Subsystem          | SS 05.1                                 | Laser terminal, PAT system, modem.                       |
+| `STRC`   | Structural Subsystem/Assembly            | SS 12                                 | Primary bus structure, deployable booms, solar array structures. |
+| `PLDI`   | Payload/Instrument (Primary)           | SS 08                                 | Main scientific or mission instrument package.          |
+| `QKDP`   | Quantum Key Distribution Payload         | SS 05.5.2, SS 19.1                    | Entanglement source, QKD transceivers, quantum memory.    |
+| `QSEN`   | Quantum Sensor Unit/Package              | SS 08.4, SS 19.2                        | e.g., Quantum Gravimeter, Atomic Clock, Q-Magnetometer. |
+| `ROBS`   | Robotic System (Arm, Rover, etc.)        | SS 04                                 | Manipulator arms, rovers, end-effectors, control units.   |
+| `EDLS`   | Entry, Descent & Landing System          | SS 09                                 | Heat shields, parachutes, landing gear, retro-rockets.  |
 
 ### 5.2 Subsystem Model Coding (`MDLs` for Subsystems)
 
-The **Subsystem Model Code (`MDLs`)** is a 3 to 5 character alphanumeric code. It is assigned by the subsystem's Original Equipment Manufacturer (OEM) or, for standardized GAIA-QAO designed/specified components, by the GAIA-QAO registry. This code uniquely identifies a specific make, model, or part number of a subsystem within a given Subsystem Type (`SSS`).
+The **Subsystem Model Code (`MDLs`)** is a 3 to 5 character alphanumeric code. It is assigned by the subsystem's Original Equipment Manufacturer (OEM) or, for standardized GAIA-QAO designed/specified components (e.g., reference designs for quantum sensors), by the GAIA-QAO registry. This code uniquely identifies a specific make, model, or part number of a subsystem within a given Subsystem Type (`SSS`) and manufacturer.
 
-*   **Purpose:** To differentiate between various specific designs of a subsystem type. For example, within `SSS=STRK` (Star Tracker Unit), there might be `MDLs=AQST1` (Advanced Quantum Star Tracker Model 1 by GAIA-QAO) and `MDLs=V01X5` (Vendor 01's X5 Model Star Tracker).
-*   **Uniqueness:** An `MDLs` code must be unique within the combination of its `SSS` code and the `manufacturer` field. This allows different manufacturers to potentially have similar model numbers for different products, but the combination will be unique.
+*   **Purpose:** To differentiate between various specific designs or product lines of a subsystem type. For example, within `SSS=STRK` (Star Tracker Unit), there might be `MDLs=AQST1` (Advanced Quantum Star Tracker Model 1 by GAIA-QAO, `manufacturer_org_code=QAO`) and `MDLs=V01X5` (Vendor 01's X5 Model Star Tracker, `manufacturer_org_code=V01`).
+*   **Uniqueness:** An `MDLs` code must be unique within the combination of its `SSS` code and the `manufacturer_org_code`. This allows different manufacturers to use similar model numbers for different products, but the combination of `SSS-Manufacturer-MDLs` will be unique.
 *   **Structure:**
-    *   The format is flexible (3-5 alphanumeric characters) to accommodate existing OEM part numbering conventions or to allow for a GAIA-QAO structured code.
-    *   A GAIA-QAO structured `MDLs` for an internally designed subsystem might follow a pattern like `Q[SEQ][VAR]`, e.g., `Q01A` (GAIA-QAO Quantum Subsystem, Series 01, Variant A).
-*   **Registry:** `MDLs` codes are registered in the `subsystem_models` table in the GAIA-QAO database (Part 7.2). Each entry links to an `SSS` code and includes fields for `manufacturer`, a descriptive `name` for the subsystem model, and its `technical_specifications` (JSONB).
+    *   The format is flexible (3-5 alphanumeric characters) to accommodate existing OEM part numbering conventions (which can be very diverse) or to allow for a GAIA-QAO structured code for its own designs.
+    *   A GAIA-QAO structured `MDLs` for an internally designed/specified subsystem might follow a pattern like `Q[TYP][SER][VAR]`, where `Q` indicates GAIA-QAO Quantum, `TYP` is a type hint, `SER` is a series, and `VAR` is a variant. Example: `QMG1A` (GAIA-QAO Quantum Magnetometer, Series 1, Variant A).
+*   **Registry:** `MDLs` codes are registered in the `subsystem_models` table in the GAIA-QAO database (Part 7.2). Each entry links to an `SSS` code and includes fields for `manufacturer_org_code` (FK to `organizations` table), a descriptive `name` for the subsystem model, the `part_number_oem` (if applicable), and its `technical_specifications` (JSONB).
 
-**Examples of `MDLs` (Illustrative for Q-SPACE):**
-*   For SSS=`CDHS`, `MDLs=QOBC1` (Quantum On-Board Computer Model 1 by GAIA-QAO)
-*   For SSS=`PROP` (Electric Propulsion), `MDLs=XHAL5` (Xenon Hall Thruster 5kW by VendorA)
-*   For SSS=`PLDI` (EO Imager), `MDLs=HRSI2` (High-Resolution Space Imager Model 2 by VendorB)
-*   For SSS=`QKDS`, `MDLs=ENTG1` (Entanglement Source Module Gen1 by GAIA-Q-Crypto)
-*   For SSS=`QSNA` (Quantum Gravimeter), `MDLs=QGRV3` (Quantum Gravimeter Model 3 by GAIA-Q-Sensors)
+**Examples of `MDLs` (Illustrative for Q-SPACE Subsystems):**
+*   For SSS=`OBCP` (On-Board Computer), `MDLs=QRV7A` (Quantum RISC-V Space Computer Model 7A, `manufacturer_org_code=QAO`)
+*   For SSS=`EPTH` (Electric Propulsion Thruster), `MDLs=XH5K2` (Xenon Hall Thruster 5kW Model 2, `manufacturer_org_code=V01` - Vendor 01)
+*   For SSS=`PLIM` (Payload Imager), `MDLs=HRISM1` (High-Res Multispectral Imager Model 1, `manufacturer_org_code=V02` - Vendor 02)
+*   For SSS=`QKDP` (QKD Payload), `MDLs=ESPM1` (Entanglement Source & Photon-detector Module 1, `manufacturer_org_code=QAO`)
+*   For SSS=`QSEN` (Quantum Sensor), `MDLs=QGRAV3B` (Quantum Gravimeter Model 3B, `manufacturer_org_code=QAO`)
 
 ### 5.3 Subsystem Serialization (`SERs` for Subsystems)
 
@@ -1697,99 +1362,98 @@ The **Subsystem Serial Number (`SERs`)** is a 4 to 7 character alphanumeric code
 
 *   **Purpose:** To track individual hardware units (Line Replaceable Units - LRUs, or significant components) through their lifecycle: manufacturing, integration into a parent platform, in-orbit operation, maintenance (if applicable, e.g., on a space station), removal, and decommissioning.
 *   **Uniqueness:** A `SERs` must be unique for each instance of a particular `subsystem_models.subsystem_model_id` (i.e., unique per specific make/model from a specific manufacturer).
-*   **Format:** Flexible (4-7 alphanumeric characters) to accommodate diverse OEM serialization schemes. The GAIA-QAO registry will store this OEM-assigned serial number.
+*   **Format:** Flexible (4-7 alphanumeric characters) to accommodate diverse OEM serialization schemes. The GAIA-QAO registry will store this OEM-assigned serial number. For GAIA-QAO internally serialized subsystems, a pattern like `[YR][WK][SEQ]` (Year, Week, Sequence) could be used.
 *   **Registry:** Individual subsystem instances are registered in the `subsystem_instances` table (Part 7.2), linking to their `subsystem_model_id` and storing their `serial_number` (`SERs`). This table also tracks the current status and, critically, its installation history via the `object_subsystem_installations` table.
 
 **Examples of `SERs`:**
-*   `SNX780B`
-*   `PPU0012A`
-*   `ANTQR005`
-*   `QPROC003`
+*   `SNX780B` (OEM specific)
+*   `PPU0012A` (OEM specific)
+*   `ANTQR005` (OEM specific)
+*   `QPRC003` (OEM specific)
+*   `2501001` (GAIA-QAO: Year 2025, Week 01, Sequence 001)
 
 ### 5.4 Example Subsystem Catalog Entries (Q-SPACE Focus)
 
-The GAIA-QAO registry's `subsystem_models` table would contain detailed entries for various subsystem models. The `subsystem_instances` table would then track individual serialized units. Examples below use GAIA-QAO internal or generic designators.
+The GAIA-QAO registry's `subsystem_models` table would contain detailed entries for various subsystem models. The `subsystem_instances` table would then track individual serialized units. Examples below use generic or GAIA-QAO internal designators and focus on Q-SPACE applications.
 
 #### 5.4.1 Avionics Subsystems (Space Examples)
 
-| SSS Code | MDLs    | Subsystem Model Name                      | Manufacturer (Example) | Key Specs (Illustrative for Model)                               | Example SERs for an Instance |
+| SSS Code | MDLs    | Subsystem Model Name                      | Manufacturer (`CCC`) | Key Specs (Illustrative for Model)                               | Example SERs for an Instance |
 | :------- | :------ | :---------------------------------------- | :--------------------- | :--------------------------------------------------------------- | :--------------------------- |
-| `OBCP`   | `GQBC1A`| GAIA-Q On-Board Computer Mk1A             | GAIA-Q-SPACE Avionics  | Rad-Hard RISC-V QuadCore, 1TB NVMe, SpaceVPX, Q-RTOS Capable   | `GQBC1A-00101`               |
-| `SSDR`   | `SSD5T` | Solid State Data Recorder 5TB             | SpaceData Corp.        | 5 TB NAND Flash, 2 Gbps I/O, CCSDS Reed-Solomon, AES-256 Encrypt | `SDC-SSD5T-SN078`            |
-| `RTU`    | `GRTU2` | GAIA-Q Remote Terminal Unit Gen2          | GAIA-Q-SPACE Avionics  | MIL-STD-1553 & SpaceWire I/F, 64 Analog Ch, 128 Digital I/O  | `GRTU2-B0045`                |
-| `QPROC`  | `QAPU1` | Quantum Annealing Processor Unit          | Quantum AI Systems     | 500-Qubit Annealer, Cryo-Interface, Low-Power Operation        | `QAS-QAPU1-X003`             |
+| `OBCP`   | `QRV7A` | GAIA-Q RISC-V Space Computer Mk7A         | QAO                    | Rad-Hard Quad-Core RISC-V, 2TB NVMe, SpaceVPX, Q-RTOS Support    | `2430001`                    |
+| `SSDR`   | `NVM10T`| Non-Volatile Memory Unit 10TB             | V01                    | 10 TB NAND Flash, 5 Gbps I/O, CCSDS Compliant, AES-512 HW Encrypt| `NVM10T-SN1009`              |
+| `RIFS`   | `SPWGW2`| SpaceWire Gateway & RTU Gen2              | QAO                    | 8x SpaceWire Ports, MIL-STD-1553 I/F, 128 A/D Ch, FPGA-based | `SPWGW2-B0050`               |
+| `QPROC`  | `QAPU2B`| Quantum Annealing Co-Processor Unit Mod2B | QAI (Quantum AI Systems) | 1024-Qubit Annealer, Integrated Cryo-Interface, Space-Qualified| `QAI-QAPU2B-X007`            |
 
 #### 5.4.2 Propulsion Subsystems (Space Examples)
 
-| SSS Code | MDLs    | Subsystem Model Name                      | Manufacturer (Example) | Key Specs (Illustrative for Model)                               | Example SERs for an Instance |
+| SSS Code | MDLs    | Subsystem Model Name                      | Manufacturer (`CCC`) | Key Specs (Illustrative for Model)                               | Example SERs for an Instance |
 | :------- | :------ | :---------------------------------------- | :--------------------- | :--------------------------------------------------------------- | :--------------------------- |
-| `EPTH`   | `XHET5K`| Xenon Hall Effect Thruster 5kW            | Orbital Propulsion Inc.| 5 kW, 250 mN Thrust, Isp 1800s, Magnetic Shielding              | `OPI-XHET5K-0112`            |
-| `CPTR`   | `HYD10N`| Hydrazine Monopropellant Thruster 10N     | SpaceChem Thrusters    | 10 Newton, Isp 220s, Catalytic Bed, Dual Seat Valve            | `SCT-HYD10N-C0077`           |
-| `PPU`    | `EPP5KV`| Electric Propulsion PPU 5kV Variable      | PowerSys Space         | Input 100VDC, Output 300-5000V, 5kW, 96% Efficiency, Rad-Hard   | `PSS-EPP5KV-A0031`           |
-| `PTNK`   | `XETK50`| Xenon Propellant Tank 50kg Capacity       | TankSys GmbH           | 50kg Xenon, COPV, 150 bar MEOP, Fill/Drain Valve               | `TSG-XETK50-0015`            |
-| `QDRV`   | `QCMT1A`| Quantum C-Metric Thruster Demonstrator 1A | GAIA-Q-Propulsion Lab  | Conceptual Quantum Drive, Low Thrust, High Isp (Theoretical)     | `GQP-QCMT1A-EXP01`           |
+| `EPTH`   | `XHET10K`| Xenon Hall Effect Thruster 10kW           | V02 (OrbitalProp Inc.) | 10 kW, 500 mN Thrust, Isp 2500s, Advanced Magnetic Shielding    | `OPIXHET10K-0055`            |
+| `CPTR`   | `MNT5N` | Hydrazine Monoprop Thruster 5N Class      | V03 (SpaceChem)        | 5 Newton (avg), Isp 225s, Dual Catalyst Bed, Redundant Valves  | `SCTMNT5N-D0103`             |
+| `PPU`    | `EPP10KVH`| Electric Propulsion PPU 10kV High-Eff    | QAO                    | Input 100-200VDC, Output 300-8000V, 10kW, >97% Efficiency, GaN | `QPP10KVH-A0005`             |
+| `PTNK`   | `XETK100`| Xenon Propellant Tank 100kg Capacity      | V04 (TankWorks)        | 100kg Xenon, COPV Type IV, 200 bar MEOP, PMD, QLIs             | `TWKXETK100-0023`            |
+| `QDRV`   | `QCMT2A`| Quantum C-Metric Thruster Array Mod 2A    | QAO                    | Conceptual Quantum Drive Array, Scalable, Low Thrust Signature   | `GQP-QCMT2A-EM02`            |
 
 #### 5.4.3 Structural Subsystems (Space Examples)
 
-| SSS Code | MDLs    | Subsystem Model Name                      | Manufacturer (Example) | Key Specs (Illustrative for Model)                               | Example SERs for an Instance |
+| SSS Code | MDLs    | Subsystem Model Name                      | Manufacturer (`CCC`) | Key Specs (Illustrative for Model)                               | Example SERs for an Instance |
 | :------- | :------ | :---------------------------------------- | :--------------------- | :--------------------------------------------------------------- | :--------------------------- |
-| `SBUS`   | `CSB12U`| CubeSat Bus Structure 12U Standard        | SmallSat Structures    | 12U Form Factor, Al 6061-T6, Deployable Panel Mounts           | `SSS-CSB12U-F023`            |
-| `ADAP`   | `PLA3K` | Payload Adapter Ring 3000 Series          | Launch Interface Corp. | For 3000kg Payload, Standard Launch Vehicle Interface            | `LIC-PLA3K-R008`             |
-| `DBOM`   | `CFDB5M`| CFRP Deployable Boom 5 Meter              | DeployableTech AG      | 5m Length, Stowed <0.5m, High Stiffness CFRP, Motorized        | `DTA-CFDB5M-0041`            |
-| `QMATS`  | `QSHLD1`| Quantum Material Shielding Panel Type 1   | GAIA-Q-Materials       | Metamaterial for Enhanced Radiation/MMOD Shielding, Lightweight| `GQM-QSHLD1-PNL7C`           |
+| `STRB`   | `ESPABUS`| ESPA-Class Satellite Bus Structure        | V05 (SmallSatFrame)    | ESPA Grande compatible, Al-Honeycomb, Multi-Payload Mounts     | `SSFESPAG-F0115`             |
+| `ADAP`   | `LVA37S`| Launch Vehicle Adapter 37in Standard      | QAO                    | For 3712mm Standard LV Interface, Separation System Integrated | `QAOLVA37S-0012`             |
+| `DPMA`   | `SARMD2`| Solar Array Rotary & Deployment Mechanism | V06 (MechSpace)        | Dual-Axis Drive (SADA), HDRM Release, For 10m Arrays           | `MSPSARMD2-A099`             |
+| `QMATS`  | `QSHD2X`| Quantum Metamaterial Shielding Panel Mod2X| QAO                    | Tunable EM Shielding, Lightweight, Ballistic/MMOD Layer        | `GQM-QSHD2X-P007C`           |
 
-#### 5.4.4 Payload Subsystems (Space Examples - generic types, specific instruments would be more detailed)
+#### 5.4.4 Payload & Instrument Subsystems (Space Examples)
 
-| SSS Code | MDLs    | Subsystem Model Name                      | Manufacturer (Example) | Key Specs (Illustrative for Model)                               | Example SERs for an Instance |
+| SSS Code | MDLs    | Subsystem Model Name                      | Manufacturer (`CCC`) | Key Specs (Illustrative for Model)                               | Example SERs for an Instance |
 | :------- | :------ | :---------------------------------------- | :--------------------- | :--------------------------------------------------------------- | :--------------------------- |
-| `IMGEO`  | `HRVIS1`| High-Res Visible Imager Mod 1             | OptiSpace Imaging      | GSD 0.5m @500km, Pan+4 MS Bands, 12-bit Radiometry             | `OSI-HRVIS1-SN019`           |
-| `SPECTR` | `HYP256`| Hyperspectral Sensor 256-Band             | PhotonSens AG          | 400-2500nm, 256 Bands, 10nm Resolution, SNR >500               | `PSA-HYP256-MOD04`           |
-| `SARPL`  | `XSARPL`| X-Band SAR Payload Module                 | RadarSys Space         | X-Band, 1m Resolution Stripmap, Quad-Pol Capable               | `RSS-XSARPL-ANT02`           |
-| `QKDPL`  | `ENTGXP`| Entanglement Source Payload X-Series      | GAIA-Q-Comms Lab       | Polarization Entangled Photons, >1 Mcps, Space-Qualified         | `GQC-ENTGXP-FLT03`           |
+| `PLIM`   | `HRSI3Q`| High-Res Space Imager - Quantum Enhanced  | QAO                    | GSD 0.3m @500km, Pan+8 MS+Q-Ghost, 14-bit, Q-Enhanced SNR      | `QAOHRSI3Q-SN004`            |
+| `PLSP`   | `QSPEC1`| Quantum Dot Spectrometer Array Mod1       | V07 (QuantumOptics)    | 0.3-2.5μm, 512 Bands, <1nm Res, High Quantum Efficiency        | `QOSPEC1-MOD008`             |
+| `SARPL`  | `QSARXL`| Quantum-Enhanced X/L-Band SAR Payload     | QAO                    | X/L-Band, <0.5m Res, GMTI, Quantum Compressed Sensing          | `QAOQSARXL-ANT01`            |
+| `QKDP`   | `ENTSRCHP`| Entanglement Source Payload - High Purity | QAO                    | >10 Mcps Bell State Pairs, Fidelity >0.99, Space-Hardened      | `GQC-ENTSRCHP-FLT05`         |
+| `QSEN`   | `QGRAV4`| Cold Atom Quantum Gravimeter Mod 4        | QAO                    | Sensitivity <1 E/√Hz, Atomic Species: Rb-87, Compact Laser Sys | `QAOQGRAV4-LAB02`            |
 
 #### 5.4.5 GNC Subsystems (Space Examples - specific components)
 
-| SSS Code | MDLs    | Subsystem Model Name                      | Manufacturer (Example) | Key Specs (Illustrative for Model)                               | Example SERs for an Instance |
+| SSS Code | MDLs    | Subsystem Model Name                      | Manufacturer (`CCC`) | Key Specs (Illustrative for Model)                               | Example SERs for an Instance |
 | :------- | :------ | :---------------------------------------- | :--------------------- | :--------------------------------------------------------------- | :--------------------------- |
-| `STRK`   | `ASTRA3`| Autonomous Star Tracker Model 3           | Celestial Nav Ltd.     | Accuracy <1 arcsec (3σ), Update Rate 10Hz, Rad-Hard Optics      | `CNL-ASTRA3-1005`            |
-| `RWAS`   | `MRW15A`| Micro Reaction Wheel Assembly 15A         | MomentumWorks Inc.     | Torque 0.02 Nm, Momentum 0.15 Nms, <5W Power                     | `MWI-MRW15A-SN255`           |
-| `IMUS`   | `QIMU2B`| Quantum Inertial Measurement Unit 2B      | GAIA-Q-Sensors         | Cold Atom Interferometer Gyro/Accel, Bias Stability <0.001°/hr | `GQS-QIMU2B-FLT02`           |
-| `GPSR`   | `SPGPS7`| Spaceborne GPS Receiver Model 7           | PNT Solutions GmbH     | Dual Frequency, Precise Orbit Determination, Weak Signal Tracking| `PSG-SPGPS7-RCV99`           |
-| `MGTR`   | `MTQR5` | Magnetic Torquer Rod Model 5              | MagnetoSpace Corp.     | 5 Am^2 Dipole Moment, Low Remanence, Core Material XYZ         | `MSC-MTQR5-R0123`            |
+| `STRK`   | `QSTAR5`| Quantum-Enhanced Star Tracker Mod 5       | QAO                    | Accuracy <0.5 arcsec (3σ), Update 20Hz, Quantum Image Processing| `QAQSTAR5-1003`              |
+| `RWAS`   | `QRWA20`| Quantum-Damped Reaction Wheel Assy 20Nms  | V08 (MomentumSys)      | Torque 0.2 Nm, Momentum 20 Nms, <10W, Quantum Damping Algo     | `MSIQRWA20-SN301`            |
+| `IMUS`   | `QIMU4X`| Quantum Inertial Measurement Unit Mod 4X  | QAO                    | Cold Atom Interferometer, Bias <0.0001°/hr, g-insensitive      | `QAQIMU4X-FLT01`             |
+| `GPSR`   | `QGPS9S`| Quantum-Enhanced GNSS Receiver Spaceborne | V09 (PNT-Sys)          | All Constellations, Q-Enhanced Weak Signal, Anti-Jam, Atomic Clk | `PSQGPS9S-RCV088`            |
 
 ### 5.5 Database Considerations for Subsystems
 
-The GAIA-QAO database schema (Part 7) is designed to robustly support this Tier 2 subsystem identification:
+The GAIA-QAO database schema (detailed in Part 7, specifically sections 7.2 and the `object_subsystem_installations` table in 7.3) is designed to robustly support this Tier 2 subsystem identification and its relationship with Tier 1 Top-Level Objects:
 
 1.  **`subsystem_types` Table (for SSS):**
-    *   Stores `sss_code` (PK), `name`, `description`, `applicable_domain_code` (e.g., `SP`, `AS`, or `CS` for Common System if it applies across domains like a standard processor module).
-    *   This table is the master list for subsystem categories, crucial for standardization.
+    *   Stores `sss_code` (PK), `name`, `description`, `applicable_domain_code`, and optional mappings like `ss_xx_mapping` to link to the technical library structure (Part 9.3.4). This table provides the controlled vocabulary for subsystem categorization.
 
 2.  **`subsystem_models` Table (for MDLs of subsystems):**
-    *   Stores `subsystem_model_id` (PK), `subsystem_model_code` (the `MDLs`), `sss_code` (FK to `subsystem_types`), `manufacturer` (text field, or could be FK to an `organizations` table if OEMs are also registered entities), `name` (descriptive model name), `description`, and `technical_specifications` (JSONB for detailed parameters like mass, power, interface types, performance metrics, quantum characteristics if applicable).
-    *   This acts as the detailed catalog for specific subsystem makes and models.
+    *   Stores `subsystem_model_id` (PK), `subsystem_model_code` (the `MDLs`), `sss_code` (FK to `subsystem_types`), `manufacturer_org_code` (FK to `organizations`), `name` (descriptive model name), `part_number_oem` (the OEM's own part number for cross-referencing), and `technical_specifications` (JSONB for detailed parameters including mass, power, interface definitions, performance metrics, and specific quantum characteristics if applicable). This table is the comprehensive catalog for specific subsystem makes and models.
 
 3.  **`subsystem_instances` Table (for SERs of subsystems):**
-    *   Stores `subsystem_instance_id` (PK, UUID), `subsystem_model_id` (FK), `serial_number` (the `SERs`), `manufacture_date`, current `status` (e.g., 'Design', 'In Stock', 'Installed', 'Under Repair', 'Decommissioned'), and other lifecycle data.
+    *   Stores `subsystem_instance_id` (PK, UUID), `subsystem_model_id` (FK), `serial_number` (the `SERs`), `manufacture_date`, current `status` (e.g., 'Design', 'In Stock', 'Installed', 'Under Repair', 'Decommissioned'), and other relevant lifecycle data for each physical unit.
 
 4.  **`subsystem_configurations` Table (for CCs of subsystems):**
-    *   Linked to `subsystem_instance_id`, this table stores specific configuration details for an individual subsystem unit (e.g., firmware version loaded, minor hardware modifications, calibration settings). Structure is analogous to `object_configurations` for Tier 1.
+    *   Linked to `subsystem_instance_id`, this table stores specific configuration details for an individual subsystem unit (e.g., firmware version loaded, minor hardware revisions, calibration dataset ID, specific software parameters). The structure is analogous to `object_configurations` for Tier 1 objects.
 
-5.  **`object_subsystem_installations` Table (Crucial Link Table):**
-    *   This junction table manages the relationship between Tier 1 `object_instances` and Tier 2 `subsystem_instances`.
-    *   Fields: `installation_id` (PK), `parent_object_instance_id` (FK to `object_instances.instance_id`), `child_subsystem_instance_id` (FK to `subsystem_instances.subsystem_instance_id`), `installation_date`, `removal_date` (NULL if currently installed), `position_reference` (e.g., "Engine Bay 1", "Payload Slot A", "Starboard Solar Array Panel 3").
-    *   This table is vital for accurately representing the "as-built" and "as-maintained" configuration of any Top-Level Object by listing all its current (and historical) serialized subsystems. It enables full traceability of where each subsystem unit has been installed throughout its life.
+5.  **`object_subsystem_installations` Table (Critical Link Table):**
+    *   This junction table is fundamental for managing the "as-installed" and historical configuration of any Top-Level Object.
+    *   It links `parent_object_instance_id` (FK to `object_instances.instance_id`) with `child_subsystem_instance_id` (FK to `subsystem_instances.subsystem_instance_id`).
+    *   Additional fields include `installation_date`, `removal_date` (NULL if currently installed), and `position_reference` (a human-readable string like "Starboard Reaction Wheel Assembly Slot 2" or "Payload Bay Location Z5-AFT") to specify where the subsystem is/was located on the parent platform.
+    *   This table enables full traceability of where each serialized subsystem unit has been installed throughout its operational life and allows reconstruction of a platform's Bill of Materials (BOM) at any given point in time.
 
-This comprehensive database structure allows for detailed tracking, configuration management, and lifecycle analysis of both top-level space assets and their critical constituent subsystems, which is essential for the complex missions envisioned by GAIA-Q-SPACE.
+This comprehensive database structure is designed to allow for detailed tracking, configuration management, and lifecycle analysis of both top-level Q-SPACE assets and their critical constituent subsystems, which is essential for the complex and often long-duration missions envisioned by GAIA-QAO.
 
 ---
-
 ---
 ## Part 6: Configuration Management
 
 This part of the GAIA-QAO Aerospace General Index (AGI) details the system for Configuration Management, focusing on the structure and application of Configuration Codes. These codes are essential for tracking the specific build, modification state, or operational setup of both Tier 1 Top-Level Objects (using `CC`) and Tier 2 Subsystems (using `CCs`). Effective configuration management is paramount in the aerospace domain, especially for Q-SPACE assets which often have long operational lives, undergo in-orbit upgrades or software patches, and may have multiple mission phases or payload setups.
 
-The Configuration Code is an optional suffix to the base ID of a Top-Level Object or a Subsystem Instance, allowing for precise identification of its state at a given time or for a particular purpose.
+The Configuration Code is an optional suffix to the base ID of a Top-Level Object or a Subsystem Instance, allowing for precise identification of its state at a given time or for a particular purpose. It forms the final segment of a fully specified GQOIS identifier.
 
 **Recall ID Structures:**
 *   Tier 1 (Top-Level Object): `DO-A-CCC-ST-MDL-SSSSS[-CC]`
@@ -1803,100 +1467,113 @@ Both Top-Level Configuration Codes (`CC`) and Subsystem Configuration Codes (`CC
 
 Where:
 
-*   **`T` (Type - 1 char, Letter):** A letter indicating the general *type* or *category* of the configuration. This helps to quickly understand the nature of the configuration (e.g., an initial build, a major upgrade, a software patch, a special mission setup).
-*   **`N` (Number/Letter - 1 char, Alphanumeric):** A number (0-9) or a letter (A-Z, excluding I, O to avoid confusion with 1, 0) indicating the specific version, revision, or sequence within that configuration type. This allows for tracking iterations of a similar type of configuration.
+*   **`T` (Type - 1 char, Letter A-Z):** A letter indicating the general *type* or *category* of the configuration. This helps to quickly understand the nature of the change or the state represented by the configuration (e.g., an initial build, a major upgrade, a software patch, a special mission setup).
+*   **`N` (Number/Letter - 1 char, Alphanumeric 0-9, A-Z, excluding I, O):** A number (0-9) or a letter (A-Z, excluding I and O to avoid confusion with 1 and 0) indicating the specific version, revision, or sequence within that configuration type. This allows for tracking iterations or distinct variants of a similar type of configuration. For example, `A1`, `A2` for sequential initial builds, or `FA`, `FB` for sequential firmware loads.
 
 **Examples:**
 *   `A1`: Initial Production Baseline, Revision 1.
-*   `B3`: Block Upgrade 3.
-*   `FS`: Firmware/Software Load S.
+*   `B3`: Block Upgrade, Version 3.
+*   `FS`: Firmware/Software Load, Version S (or 5 if using hex-like A-F for 10-15).
 *   `Q2`: Quantum Systems Enhancement, Iteration 2.
 
-Configuration codes are managed in the `object_configurations` table (for Tier 1 `CC`) and the `subsystem_configurations` table (for Tier 2 `CCs`) in the GAIA-QAO database (see Part 7.3). Each entry links a configuration to a specific instance, includes the code, a descriptive name, effective dates, and detailed notes on the changes.
+Configuration codes are managed in the `object_configurations` table (for Tier 1 `CC`) and the `subsystem_configurations` table (for Tier 2 `CCs`) in the GAIA-QAO database (see Part 7.3). Each entry links a configuration to a specific instance (Tier 1 `object_instances.instance_id` or Tier 2 `subsystem_instances.subsystem_instance_id`), includes the `configuration_code`, a descriptive `name`, `description` of changes, `effective_from` and `effective_to` dates, and detailed `configuration_details` (JSONB).
 
 ### 6.2 Standard Configuration Types (T Codes)
 
-The following standard Configuration Type codes (`T`) are proposed as a baseline, applicable to most aerospace objects and subsystems across both Air Systems (AS) and Space Systems (SP) domains. Specific projects or organizations within GAIA-QAO may extend this list with approval.
+The following standard Configuration Type codes (`T`) are proposed as a baseline, applicable to most aerospace objects and subsystems across all GAIA-QAO domains, including Q-SPACE. Specific projects or organizations within GAIA-QAO may propose extensions to this list via the governance process (Part 0.5).
 
-| **Type Code (T)** | **Configuration Type Name** | **Description**                                                                                                  | **Typical `N` Usage** | **Q-SPACE Example Application**                                     |
-| :---------------- | :-------------------------- | :--------------------------------------------------------------------------------------------------------------- | :------------------ | :------------------------------------------------------------------ |
-| `A`               | As-Built / Initial Baseline | The initial production, manufactured, or deployed configuration as delivered or commissioned.                    | `1, 2, ...`         | `A1`: Initial satellite launch configuration.                     |
-| `B`               | Block Upgrade / Major Mod   | A significant, planned upgrade or modification block affecting multiple systems or core functionality.         | `1, 2, ...`         | `B2`: Second major upgrade to a space station module (e.g., new solar arrays & comms). |
-| `M`               | Minor Modification/Update   | Minor hardware modifications, component replacements (not warranting a Block change), or minor system updates.     | `1, 2, ..., A, B`   | `M3`: Third minor update to a probe's sensor calibration.         |
-| `S`               | Special Mission / Service   | Configuration specifically tailored for a distinct mission phase, operational service, or specialized task.        | `1, 2, ..., A, B`   | `S1`: Satellite reconfigured for a specific Earth observation campaign. |
-| `E`               | Experimental / Test         | Configuration used for experimental purposes, technology demonstration, or flight/orbital testing.             | `1, 2, ..., A, B`   | `E2`: Probe with experimental quantum drive in test configuration.  |
-| `R`               | Retrofit / Refurbishment    | Significant overhaul, refurbishment, or retrofit of existing systems onto an object or subsystem.                | `1, 2, ...`         | `R1`: Refurbished satellite after on-orbit servicing.               |
-| `F`               | Firmware / Software Load    | Identifies a specific major baseline of firmware or core operational flight software loaded onto the hardware.     | `A, B, ..., 1, 2`   | `FA`: Flight Software Version Alpha. `F3`: Flight Software v3.0.    |
-| `P`               | Propulsion System Mod       | Specific configuration of the propulsion system (e.g., different thruster set, propellant loading).            | `1, 2, ...`         | `P1`: Satellite configured with extended mission propellant load.   |
-| `C`               | Communication System Mod    | Specific configuration of the communication payload or bus communication systems.                                | `1, 2, ...`         | `C2`: Satellite with upgraded Ka-band transponder software.       |
-| `N`               | Navigation System Mod       | Specific configuration or calibration of the GNC/navigation system.                                              | `1, 2, ...`         | `N1`: Probe GNC updated for a specific planetary flyby.           |
-| `Q`               | Quantum System Mod/Enhance  | Configuration involving the installation, upgrade, or specific operational mode of quantum-based systems/payloads. | `1, 2, ..., A, B`   | `Q2`: Satellite with upgraded Quantum Encryption Module (QEM) v2.   |
-| `L`               | Life Extension Program      | Modifications specifically implemented as part of a life extension program (LEP).                                | `1, 2, ...`         | `L1`: Space station module after LEP modifications.               |
-| `O`               | Operator/Owner Specific     | Configuration unique to a particular operator, owner, or user agency.                                          | `1, 2, ..., A, B`   | `O1`: Scientific satellite with payload configured for NASA science team A. |
-| `D`               | Decommissioning / Disposal  | Configuration specifically for end-of-life decommissioning or safe disposal maneuvers.                           | `1`                 | `D1`: Satellite configured for controlled re-entry.               |
+| **Type Code (T)** | **Configuration Type Name**        | **Description**                                                                                                                                | **Typical `N` Usage** | **Q-SPACE Example Application**                                                                      |
+| :---------------- | :--------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- | :------------------ | :------------------------------------------------------------------------------------------------- |
+| `A`               | As-Built / Initial Baseline        | The initial production, manufactured, or deployed configuration as delivered from factory or commissioned into service.                        | `1, 2, ...`         | `A1`: Satellite's initial configuration at launch.                                                 |
+| `B`               | Block Upgrade / Major Modification | A significant, planned upgrade or modification block affecting multiple systems, core functionality, or performance envelope.                   | `1, 2, ...`         | `B2`: Space station module after second major upgrade (e.g., new solar arrays, advanced life support, expanded lab facilities). |
+| `M`               | Minor Modification/Update          | Minor hardware modifications, component replacements (not warranting a Block change), minor system updates, or application of a Service Bulletin. | `1, 2, ..., A, B`   | `M3`: Probe sensor recalibration due to updated ground truth data, or minor component swap-out.   |
+| `S`               | Special Mission / Service Config   | Configuration specifically tailored for a distinct mission phase, operational service, specialized task, or unique payload deployment.           | `1, 2, ..., A, B`   | `S1`: Satellite reconfigured with specific sensor settings for a targeted Earth observation campaign. `SA`: Lunar lander configured for a specific landing site's instrument suite. |
+| `E`               | Experimental / Test Configuration  | Configuration used for experimental purposes, technology demonstration, validation testing, or non-standard flight/orbital testing.            | `1, 2, ..., A, B`   | `E2`: Probe with an experimental quantum drive operating in a specific test mode during its cruise phase. |
+| `R`               | Retrofit / Refurbishment / Repair  | Significant overhaul, refurbishment, or repair of existing systems, or retrofit of new capabilities onto an existing object or subsystem.     | `1, 2, ...`         | `R1`: Satellite after on-orbit servicing mission involving component replacement and software upgrade. |
+| `F`               | Firmware / Flight Software Load    | Identifies a specific major baseline or version of firmware or core operational flight software (FSW) loaded onto the hardware.                 | `A, B, ..., 1, 2`   | `FA`: Satellite Flight Software Version "Alpha". `F3`: FSW v3.0.x loaded on the On-Board Computer.     |
+| `P`               | Propulsion System Configuration    | Specific configuration of the propulsion system (e.g., different thruster set enabled, specific propellant loading, unique burn profile set).| `1, 2, ...`         | `P1`: Satellite configured with maximum propellant load for extended mission beyond primary.        |
+| `C`               | Communication System Config      | Specific configuration of the communication payload or bus communication systems (e.g., antenna pointing tables, frequency plans, data rates). | `1, 2, ...`         | `C2`: Satellite with Ka-band transponder software reconfigured for higher data throughput to a new ground station. |
+| `N`               | Navigation System Configuration    | Specific configuration or calibration of the GNC/navigation system (e.g., updated star catalog, sensor alignment parameters, control gains). | `1, 2, ...`         | `N1`: Probe GNC updated with refined ephemeris data for a critical planetary flyby.                |
+| `Q`               | Quantum System Mod/Enhancement   | Configuration involving the installation, upgrade, specific calibration, or operational mode of quantum-based systems/payloads.              | `1, 2, ..., A, B`   | `Q2`: Satellite with its Quantum Encryption Module (QEM) upgraded to firmware v2.0 and a new key management protocol. `QA`: Quantum sensor calibrated for deep space background noise. |
+| `L`               | Life Extension Program Config    | Modifications specifically implemented as part of a formal life extension program (LEP) to extend operational viability.               | `1, 2, ...`         | `L1`: Deep space probe after successful execution of LEP software patches and operational adjustments. |
+| `O`               | Operator/Owner Specific Config   | Configuration unique to a particular operator, owner, or user agency (e.g., a science team's specific instrument settings).             | `1, 2, ..., A, B`   | `O1`: Scientific satellite with its primary telescope payload configured for observation campaign "Alpha" by NASA science team. |
+| `D`               | Decommissioning / Disposal Config| Configuration specifically prepared for end-of-life decommissioning, passivation, or safe atmospheric re-entry/orbital disposal maneuvers. | `1`                 | `D1`: Satellite configured for controlled re-entry, including propellant venting and final thruster firings. |
+| `I`               | Interface Configuration            | Denotes a specific set of interface definitions or mappings, especially if a system has multiple, selectable interface modes.        | `A, B, ...`         | `IA`: Payload module configured to use SpaceWire Interface Profile A with the satellite bus.      |
+| `V`               | Verification / Validation Config   | A specific configuration established solely for the purpose of formal V&V activities or certification testing.                         | `1, 2, ...`         | `V1`: Satellite in ground test configuration for thermal vacuum (TVAC) chamber V&V.           |
 
 ### 6.3 Domain-Specific Configuration Types
 
-While the standard types above offer broad coverage, specific domains might benefit from additional predefined Type codes for common domain-specific configuration changes. These would supplement, not replace, the standard types.
+While the standard types above offer broad coverage, specific GAIA-QAO domains (AS or SP) might identify the need for additional predefined Type codes (`T`) for frequently encountered, domain-specific configuration changes. These would supplement, not replace, the standard types, and would require approval through the GAIA-QAO governance process.
 
 #### 6.3.1 Air Systems (AS) Specific Configuration Types (Examples - for context)
 *(This section is for context; Q-SPACE focus is on 6.3.2)*
 | **Type Code (T)** | **Configuration Type**   | **Description**                                    |
 | :---------------- | :----------------------- | :------------------------------------------------- |
-| `I`               | Interior Configuration   | Cabin layout, cargo hold setup.                    |
-| `W`               | Wing Modification        | Winglets, flap settings, aerodynamic mods.         |
-| `G`               | Landing Gear Setup       | Tire type, brake system variant.                   |
-| `V`               | Avionics Suite Version   | Specific integrated avionics software/hardware set.|
+| `W`               | Wing/Aerodynamic Config  | Wing modification (winglets, flaps), aerodynamic kit. |
+| `G`               | Landing Gear Setup       | Tire type, brake system variant, ski/float config. |
+| `V`               | Avionics Suite Version   | Specific integrated avionics software/hardware set for a role. |
+| `J`               | Cabin Interior Layout    | Passenger seating arrangement, cargo conversion.     |
 
 #### 6.3.2 Space Systems (SP) Specific Configuration Types (Q-SPACE Focus)
 
-These types are particularly relevant for tracking configurations of spacecraft, launch vehicles, and orbital platforms:
+These types are particularly relevant for tracking unique configurations of spacecraft, launch vehicles, and orbital platforms within the Q-SPACE sector:
 
 | **Type Code (T)** | **Configuration Type Name** | **Description**                                                                                                  | **Typical `N` Usage** | **Q-SPACE Example Application**                                                                |
 | :---------------- | :-------------------------- | :--------------------------------------------------------------------------------------------------------------- | :------------------ | :--------------------------------------------------------------------------------------------- |
-| `H`               | Habitat Module Config       | Specific internal layout, life support settings, or scientific equipment fit-out for a crewed habitat module.    | `A, B, ...`         | `HA`: Space station module configured for long-duration microgravity research.                 |
-| `K`               | Kick Stage / Upper Stage    | Configuration of a specific kick stage or upper stage used with a launch vehicle for a particular mission profile. | `1, 2, ...`         | `K1`: Launch vehicle upper stage configured for GTO insertion.                                 |
-| `Y`               | Payload Suite / Manifest    | Configuration detailing a specific suite of instruments or payloads installed on a satellite bus or probe.         | `A, B, ...`         | `YA`: Earth Observation satellite with "Tropical Monitoring Payload Suite A".                  |
-| `T`               | Thermal System State        | Specific operational state or modification of the thermal control system (e.g., radiator deployment, cryo-cooler settings). | `1, 2, ...`         | `T1`: Probe TCS configured for deep space cruise (low power, passive thermal).               |
-| `J`               | Jettisonable Components     | Configuration relating to the status or type of jettisonable components (e.g., launch shrouds, protective covers). | `1, 2, ...`         | `J1`: Launch vehicle with specific payload fairing for a dual-manifest launch.               |
-| `X`               | Extended Mission Phase      | Configuration specifically adapted for an extended mission phase beyond the primary design life or objectives.   | `1, 2, ...`         | `X1`: Interplanetary probe in its KBO extended mission phase with modified power profiles.     |
-| `Z`               | Zero-G / Microgravity Setup | Configuration of experiments or systems specifically for operation in a zero-gravity or microgravity environment.  | `A, B, ...`         | `ZA`: Orbital lab module with "Fluid Physics Experiment Package Alpha" in micro-g config.      |
+| `H`               | Habitat Module Config       | Specific internal layout, life support settings, or scientific experiment rack fit-out for a crewed habitat module on an orbital platform. | `A, B, ...`         | `HA`: Space station module ORB-Q3A configured for long-duration microgravity materials research. |
+| `K`               | Kick Stage / Upper Stage Cfg| Configuration of a specific kick stage or orbital transfer vehicle (OTV) used with a launch vehicle (LCH) for a particular mission profile or payload. | `1, 2, ...`         | `K1`: Launch vehicle LCH-Q2A upper stage configured with extended propellant tanks for GTO+.     |
+| `Y`               | Payload Manifest / Suite    | Configuration detailing a specific suite of instruments, secondary payloads, or deployable assets manifested on a satellite bus, probe, or launch vehicle. | `A, B, ...`         | `YA`: Earth Observation satellite SAT-Q2H with "Tropical Deforestation Monitoring Payload Suite Alpha". |
+| `T`               | Thermal System Operational State | Specific operational settings or modifications of the thermal control system (e.g., radiator articulation, cryocooler power level, heat pipe routing for specific phase). | `1, 2, ...`         | `T1`: Probe PRB-Q2H TCS configured for deep space cruise (minimal power, passive thermal dominance). |
+| `U`               | Launch Shroud/Fairing Cfg   | Configuration relating to the specific type or adaptation of a launch vehicle's payload fairing or shroud for a given mission/payload. | `A, B, ...`         | `UA`: Launch vehicle LCH-Q3H with extended 5m fairing for dual-manifest of large satellites.   |
+| `X`               | Extended Mission Phase Cfg  | Configuration specifically adapted for an extended mission phase beyond the primary design life or original objectives (e.g., power saving, different comms). | `1, 2, ...`         | `X1`: Interplanetary probe PRB-Q3L in its Kuiper Belt Object (KBO) extended mission phase with modified science observation sequences and power profiles. |
+| `Z`               | Zero-G / Microgravity Exp. Setup | Configuration of experiments or systems specifically for operation in a zero-gravity or microgravity environment aboard an ORB or SAT.  | `A, B, ...`         | `ZA`: Orbital lab ORB-Q2S with "Quantum Fluid Dynamics Experiment Package Alpha" configured for microgravity operation. |
 
 ### 6.4 Configuration Management in Registry
 
-The GAIA-QAO Registry (via `object_configurations` and `subsystem_configurations` tables in Part 7.3) is the authoritative source for all assigned Configuration Codes and their detailed descriptions.
+The GAIA-QAO Registry, through the `object_configurations` table (for Tier 1 `CC`) and the `subsystem_configurations` table (for Tier 2 `CCs`) as detailed in Part 7.3, is the authoritative source for all assigned Configuration Codes and their associated metadata.
 
-**Key Management Principles:**
+**Key Management Principles for Q-SPACE Configurations:**
 
-1.  **Baseline Definition:** Every new object instance (`SSSSS`) or subsystem instance (`SERs`) should be assigned an initial baseline configuration code (e.g., `A1` - As-Built/Initial).
-2.  **Change Control:** Any modification that significantly alters the form, fit, function, or interoperability of an object/subsystem, or that impacts its certification or operational envelope, should result in the assignment of a new Configuration Code. This process must be governed by a formal Change Control Board (CCB) or equivalent engineering change management process.
-3.  **Documentation:** Each Configuration Code entry in the registry must be accompanied by:
-    *   A clear `name` (e.g., "Block 2 Avionics Upgrade with Q-Nav").
-    *   A detailed `description` of the changes incorporated in this configuration compared to the previous one.
-    *   The `effective_from` date (and `effective_to` date if superseded).
-    *   The `configuration_details` (JSONB field) should store structured information about the specific hardware parts, software versions, parameter settings, or modifications that define this configuration. This field is crucial for precise technical tracking.
-    *   References to supporting documentation (e.g., Engineering Change Orders, Service Bulletins, Software Version Description Documents) using INFOCODEs.
-4.  **Traceability:** The registry must allow for easy traceability of an object's or subsystem's configuration history. An `is_active` flag in the configuration tables indicates the current operational configuration for a given instance.
-5.  **Hierarchy:**
-    *   A change in a Tier 2 subsystem's configuration (new `CCs`) may or may not trigger a new `CC` for the parent Tier 1 object, depending on the significance of the subsystem change to the overall platform's capabilities or certification.
-    *   Conversely, a Tier 1 `CC` change (e.g., a major block upgrade) will likely encompass changes to multiple Tier 2 subsystems, each of which might also receive new `CCs` codes.
-6.  **Uniqueness:** A Configuration Code (`[T][N]`) is unique within the context of a specific `instance_id` (for Tier 1) or `subsystem_instance_id` (for Tier 2) combined with its `effective_from` date. An instance cannot have two identical configuration codes active at the same time.
-7.  **Code Allocation:** The `N` part of the `[T][N]` code should generally be assigned sequentially (1, 2, ..., 9, A, B, ...) for new configurations of the same Type `T`.
+1.  **Baseline Definition ("As-Launched", "As-Commissioned"):**
+    *   Every new Top-Level Object instance (`SSSSS`) must be assigned an initial baseline configuration code (e.g., `A1` - As-Launched) upon completion of ground integration and readiness for launch.
+    *   A subsequent baseline (e.g., `A2` - As-Commissioned) may be established after successful in-orbit commissioning and deployment.
+    *   Similarly, Tier 2 subsystem instances (`SERs`) should have an `A1` (As-Manufactured/Installed) configuration.
+2.  **Change Control for In-Orbit Modifications:**
+    *   Any modification that significantly alters the form, fit, function, performance, or interoperability of a space asset or its subsystems, or that impacts its mission objectives, safety, or operational envelope, **must** result in the assignment of a new Configuration Code for the affected entity (Tier 1 or Tier 2).
+    *   This process is governed by a formal Change Control Board (CCB) which, for Q-SPACE assets, would include mission operations, systems engineering, and potentially science team representatives.
+3.  **Detailed Configuration Documentation:**
+    *   Each Configuration Code entry in the registry (`object_configurations` or `subsystem_configurations`) must be accompanied by:
+        *   A clear `name` (e.g., "FSW Patch 3.2 for QKD Pointing Algorithm").
+        *   A detailed `description` of the changes incorporated (e.g., "Updated LUTs for PAT system, modified QKD protocol parameters for higher resilience against solar interference").
+        *   The `effective_from` date (and `effective_to` date if superseded by a newer configuration of the same type).
+        *   The `configuration_details` (JSONB field) must store structured information about specific hardware part changes (if on-orbit servicing allows), software versions (FSW, payload SW, FPGAs loads with their INFOCODEs), parameter settings (e.g., GNC control gains, thermal setpoints, quantum sensor calibration constants), or modifications.
+        *   Crucially, references to supporting documentation (e.g., In-Orbit Anomaly Reports, Software Update Notes, Mission Operations Directives, Test Reports for the new config) using INFOCODEs.
+4.  **Traceability and History:**
+    *   The registry must allow for complete traceability of an object's or subsystem's configuration history over its entire mission lifetime.
+    *   The `is_current_baseline` flag in the configuration tables helps identify the single, current operational configuration for an instance.
+    *   All previous configurations and their effective periods must be maintained for historical analysis, anomaly investigation, and lessons learned.
+5.  **Hierarchy and Impact Assessment:**
+    *   A change in a Tier 2 subsystem's configuration (new `CCs` due to a FSW patch on an instrument) may or may not trigger a new `CC` for the parent Tier 1 space platform. This depends on whether the subsystem change impacts the overall platform's performance, capabilities, or mission objectives as defined by the CCB.
+    *   A Tier 1 `CC` change (e.g., a major mission re-tasking `S2`, or a block upgrade `B1` if serviceable) will likely encompass changes to multiple Tier 2 subsystems, each of which would also receive new `CCs` codes reflecting their new state within that parent configuration.
+6.  **Code Allocation and Uniqueness:**
+    *   The `N` part of the `[T][N]` code is generally assigned sequentially (1, 2, ..., 9, A, B, ...) for new configurations of the same Type `T` for a specific instance.
+    *   A configuration (`configuration_code` + `effective_from` date) must be unique for a given `instance_id` (Tier 1) or `subsystem_instance_id` (Tier 2).
 
-**Example Configuration Evolution for a Q-SPACE Satellite (`SP-P-QAO-SAT-Q2H-00005`):**
+**Example Configuration Evolution for a Q-SPACE Quantum Communications Satellite (`SP-P-QAO-SAT-Q2A-00001`):**
 
-| Instance ID + CC          | Config Name & Key Changes                                       | Effective From |
-| :------------------------ | :-------------------------------------------------------------- | :------------- |
-| ...-Q2H-00005-**A1**      | Initial Launch Config - Baseline QuantumEarthObserver Payload   | 2028-03-15     |
-| ...-Q2H-00005-**F1**      | Flight Software Update v2.1 (Enhanced ground track pointing)    | 2028-09-01     |
-| ...-Q2H-00005-**Q1**      | Quantum Ghost Imaging Module Sensitivity Calibration Update     | 2029-01-20     |
-| ...-Q2H-00005-**Y1**      | Payload Suite Reconfiguration for Polar Ice Cap Study           | 2029-06-01     |
-| ...-Q2H-00005-**B1**      | Block 1 Upgrade: New Q-Radar Antenna, Upgraded Onboard Processor| 2030-05-15     |
-| ...-Q2H-00005-**X1**      | Extended Mission Phase 1: Reduced Ops, Power Save Mode          | 2032-03-15     |
+| Instance ID + CC          | Config Name & Key Changes                                          | Effective From (UTC) |
+| :------------------------ | :----------------------------------------------------------------- | :------------------- |
+| ...SAT-Q2A-00001-**A1**   | As-Launched Configuration - Initial QKD & Comms Suite v1.0         | 2028-03-15T12:00:00Z |
+| ...SAT-Q2A-00001-**F1**   | Flight Software Update v1.1 (Improved QKD protocol efficiency)     | 2028-09-01T08:00:00Z |
+| ...SAT-Q2A-00001-**Q1**   | Quantum Payload Calibration Update 1 (Post-commissioning refinement)| 2028-10-15T16:30:00Z |
+| ...SAT-Q2A-00001-**S1**   | Special Mission Config: Pacific Rim QKD Demonstration Campaign     | 2029-02-01T00:00:00Z |
+| ...SAT-Q2A-00001-**M1**   | Minor Mod: Star Tracker #2 firmware patch for SEU robustness       | 2029-07-20T10:00:00Z |
+| ...SAT-Q2A-00001-**F2**   | Flight Software Update v1.2 (Enhanced autonomous station-keeping)  | 2030-01-10T14:00:00Z |
+| ...SAT-Q2A-00001-**X1**   | Extended Mission Config: Reduced ops, focus on long-term Q-component degradation study | 2033-03-15T12:00:00Z |
 
-Each of these top-level configurations would be detailed in the `object_configurations` table. The `B1` block upgrade might, for instance, also trigger new configuration codes for several of its constituent subsystems (e.g., the GNC getting a new `CCs`, the new Q-Radar payload being a new subsystem instance with its own `CCs`).
+Each of these Tier 1 configurations would be detailed in the `object_configurations` table. The `F1` software update, for example, would also correspond to a new `CCs` (e.g., `F1`) for the `OBCP` subsystem instance's record in the `subsystem_configurations` table.
 
-Effective configuration management using these codes is fundamental for maintaining safety, interoperability, and traceability throughout the long and complex lifecycles of GAIA-QAO Q-SPACE assets.
+Robust configuration management, enforced by the GQOIS and its supporting database and processes, is fundamental for ensuring the safety, reliability, and successful operation of complex, long-duration, and evolving Q-SPACE assets.
 
 ---
 ---
@@ -1976,21 +1653,21 @@ COMMENT ON TABLE object_types IS 'Primary functional type of a Top-Level Object 
 
 -- Autonomy Levels - Attribute of a Model
 CREATE TABLE autonomy_levels (
-  autonomy_code CHAR(1) PRIMARY KEY, -- M (Manned/Semi), U (Unmanned/Full)
+  autonomy_code CHAR(1) PRIMARY KEY, -- M (Manned/Semi), U (Unmanned/Full), O (Optionally Piloted)
   name VARCHAR(100) NOT NULL UNIQUE,
   description TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   is_active BOOLEAN DEFAULT TRUE
 );
-COMMENT ON TABLE autonomy_levels IS 'Defines the autonomy level (Manned, Unmanned), an attribute of an object_model.';
+COMMENT ON TABLE autonomy_levels IS 'Defines the autonomy level (Manned, Unmanned, Optionally Piloted), an attribute of an object_model.';
 
 -- Top-Level Object Models/Variants (MDL)
 CREATE TABLE object_models (
   model_id SERIAL PRIMARY KEY,
   model_code CHAR(3) NOT NULL, -- MDL code, e.g., Q1A, A2B ([G][N][V])
   object_type_id INT NOT NULL REFERENCES object_types(object_type_id),
-  organization_code CHAR(3) NOT NULL REFERENCES organizations(organization_code), -- The org responsible for this model definition
+  organization_code CHAR(3) NOT NULL REFERENCES organizations(organization_code), -- The org responsible for THIS MODEL definition
   autonomy_code CHAR(1) NOT NULL REFERENCES autonomy_levels(autonomy_code), -- Inherent autonomy of this model
   name VARCHAR(150) NOT NULL, -- e.g., "QuantumComSecure QCS-200A", "AMPEL360 BWB-Q100"
   description TEXT,
@@ -2010,10 +1687,10 @@ COMMENT ON TABLE object_models IS 'Registry of specific designs/models for Top-L
 
 -- Subsystem Types (SSS) - Broad categories like ATA chapters or Space System groups
 CREATE TABLE subsystem_types (
-  sss_code CHAR(3) PRIMARY KEY, -- e.g., PROP, AOCS, EPS, PLDI
+  sss_code CHAR(3) PRIMARY KEY, -- e.g., PROP, AOCS, EPSU, PLDI
   name VARCHAR(100) NOT NULL UNIQUE,
   description TEXT,
-  applicable_domain_code CHAR(2) REFERENCES domains(domain_code), -- Optional: if SSS is domain-specific
+  applicable_domain_code CHAR(2) REFERENCES domains(domain_code), -- Optional: if SSS is domain-specific (e.g. SP, AS, or CS for Common)
   ss_xx_mapping VARCHAR(10), -- Optional: Link to SS 00-99 Chapter (e.g., "SS 01", "SS 17.1")
   ata_chapter_mapping VARCHAR(10), -- Optional: Link to ATA Chapter
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
@@ -2025,17 +1702,17 @@ COMMENT ON TABLE subsystem_types IS 'Defines broad functional categories for sub
 -- Subsystem Models (MDLs - for subsystems)
 CREATE TABLE subsystem_models (
   subsystem_model_id SERIAL PRIMARY KEY,
-  subsystem_model_code VARCHAR(5) NOT NULL, -- MDLs (3-5 chars), e.g., QIPM1, STRK7
+  subsystem_model_code VARCHAR(5) NOT NULL, -- MDLs (3-5 chars for subsystem model), e.g., QIPM1, STRK7
   sss_code CHAR(3) NOT NULL REFERENCES subsystem_types(sss_code),
   manufacturer_org_code CHAR(3) REFERENCES organizations(organization_code), -- Org that makes this subsystem model
   name VARCHAR(150) NOT NULL,
   description TEXT,
-  part_number_oem VARCHAR(50), -- Optional: OEM's own part number
+  part_number_oem VARCHAR(50), -- Optional: OEM's own part number for this model
   technical_specifications JSONB,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   is_active BOOLEAN DEFAULT TRUE,
-  UNIQUE(sss_code, manufacturer_org_code, subsystem_model_code)
+  UNIQUE(sss_code, manufacturer_org_code, subsystem_model_code) -- Subsystem model code unique for a type from a manufacturer
 );
 COMMENT ON TABLE subsystem_models IS 'Registry of specific designs/models for subsystems. Component MDLs of Tier 2 ID.';
 
@@ -2048,17 +1725,17 @@ CREATE TABLE object_instances (
   instance_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   model_id INT NOT NULL REFERENCES object_models(model_id),
   serial_number CHAR(5) NOT NULL, -- SSSSS
-  full_object_id VARCHAR(35) NOT NULL UNIQUE, -- Max length: DO(2)+A(1)+CCC(3)+ST(3)+MDL(3)+SSSSS(5) + 5 hyphens = 22. With CC(2)+hyphen = 25. Allow more for future.
+  full_object_id VARCHAR(35) NOT NULL UNIQUE, -- Auto-generated: DO-A-CCC-ST-MDL-SSSSS
   manufacture_date DATE,
   status VARCHAR(50) NOT NULL DEFAULT 'IN_DESIGN', -- e.g., IN_DESIGN, IN_PRODUCTION, OPERATIONAL, DECOMMISSIONED, DESTROYED
-  operator_org_code CHAR(3) REFERENCES organizations(organization_code), -- Current operator
-  location_current TEXT, -- Could be airport code, launch site, orbital elements (JSONB), planetary body
+  operator_org_code CHAR(3) REFERENCES organizations(organization_code), -- Current operator/owner
+  location_current TEXT, -- Can be structured (e.g., airport code, launch site, orbital elements as JSONB, planetary body + coords)
   commissioning_date DATE,
   decommissioning_date DATE,
   notes TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  UNIQUE(model_id, serial_number) -- Serial number is unique per top-level model
+  UNIQUE(model_id, serial_number) -- Serial number SSSSS is unique per top-level model
 );
 COMMENT ON TABLE object_instances IS 'Tracks individual instances (serialized units) of Top-Level Objects.';
 
@@ -2070,26 +1747,26 @@ CREATE TABLE object_configurations (
   name VARCHAR(100) NOT NULL, -- e.g., "Initial Production Baseline", "Quantum Nav Upgrade Mk2"
   description TEXT,
   effective_from DATE NOT NULL,
-  effective_to DATE, -- Null if currently active configuration for this type
-  configuration_details JSONB, -- Specifics of the configuration
+  effective_to DATE, -- Null if currently active configuration
+  configuration_details JSONB, -- Specifics of the configuration (e.g., list of SBs applied, key parameter changes)
+  is_current_baseline BOOLEAN DEFAULT FALSE, -- Should be TRUE for only one configuration per instance at any time
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  is_current_baseline BOOLEAN DEFAULT FALSE, -- True for the single, overall current configuration of the instance
-  UNIQUE(instance_id, configuration_code, effective_from)
+  UNIQUE(instance_id, configuration_code, effective_from) -- A config code for an instance becomes active at a certain date
 );
-COMMENT ON TABLE object_configurations IS 'Tracks specific configurations of Top-Level Object instances. Component CC of Tier 1 ID.';
+COMMENT ON TABLE object_configurations IS 'Tracks specific configurations of Top-Level Object instances. Forms optional -CC part of full ID.';
 
 -- Subsystem Instances (Serial Numbers - SERs)
 CREATE TABLE subsystem_instances (
   subsystem_instance_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   subsystem_model_id INT NOT NULL REFERENCES subsystem_models(subsystem_model_id),
-  serial_number VARCHAR(7) NOT NULL, -- SERs (4-7 chars)
+  serial_number VARCHAR(7) NOT NULL, -- SERs (4-7 chars), OEM assigned serial
   manufacture_date DATE,
   status VARCHAR(50) NOT NULL DEFAULT 'NEW_STOCK', -- e.g., NEW_STOCK, INSTALLED, UNDER_REPAIR, DECOMMISSIONED
   notes TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  UNIQUE(subsystem_model_id, serial_number) -- Serial number unique per subsystem model
+  UNIQUE(subsystem_model_id, serial_number) -- Serial number SERs is unique per subsystem model
 );
 COMMENT ON TABLE subsystem_instances IS 'Tracks individual instances (serialized units) of subsystems.';
 
@@ -2101,32 +1778,30 @@ CREATE TABLE subsystem_configurations (
   name VARCHAR(100) NOT NULL, -- e.g., "Firmware v3.1.2", "Sensor Calibration Set B"
   description TEXT,
   effective_from DATE NOT NULL,
-  effective_to DATE,
-  configuration_details JSONB,
+  effective_to DATE, -- Null if currently active
+  configuration_details JSONB, -- Specifics: firmware version, part changes within the subsystem
+  is_current_baseline BOOLEAN DEFAULT FALSE, -- True for the single, overall current configuration of this subsystem instance
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  is_current_baseline BOOLEAN DEFAULT FALSE, -- True for the single, overall current configuration of the subsystem instance
   UNIQUE(subsystem_instance_id, configuration_code, effective_from)
 );
-COMMENT ON TABLE subsystem_configurations IS 'Tracks specific configurations of subsystem instances. Component CCs of Tier 2 ID.';
+COMMENT ON TABLE subsystem_configurations IS 'Tracks specific configurations of subsystem instances. Forms optional -CCs part of full Tier 2 ID context.';
 
 -- Link table for historical and current installations of subsystems on top-level objects
 CREATE TABLE object_subsystem_installations (
   installation_id SERIAL PRIMARY KEY,
   parent_object_instance_id UUID NOT NULL REFERENCES object_instances(instance_id) ON DELETE CASCADE,
-  child_subsystem_instance_id UUID NOT NULL REFERENCES subsystem_instances(subsystem_instance_id) ON DELETE RESTRICT, -- Prevent deletion of subsystem if installed
+  child_subsystem_instance_id UUID NOT NULL REFERENCES subsystem_instances(subsystem_instance_id) ON DELETE RESTRICT,
   installation_date DATE NOT NULL,
   removal_date DATE, -- Null if currently installed
   position_reference VARCHAR(100), -- e.g., "Engine_Port_1", "Avionics_Bay_A_Slot_3", "Payload_Interface_B"
   notes TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  -- A subsystem instance can only be installed in one position on one parent at any given time.
-  -- This is complex to enforce directly with a simple UNIQUE constraint if removal_date is part of it.
-  -- Application logic or more complex constraints/triggers might be needed for full historical tracking vs. current state.
-  -- For current state: Ensure (parent_object_instance_id, position_reference, removal_date IS NULL) is unique.
-  -- For history: Ensure (child_subsystem_instance_id, installation_date) is unique.
-  UNIQUE(child_subsystem_instance_id, installation_date) -- A subsystem cannot be installed twice on the same day
+  -- A subsystem instance can only be in one place at one time.
+  -- If removal_date IS NULL, then child_subsystem_instance_id must be unique.
+  -- This is better handled by application logic or a more complex constraint.
+  UNIQUE(child_subsystem_instance_id, installation_date) -- A subsystem cannot be recorded as installed twice on the same day
 );
 COMMENT ON TABLE object_subsystem_installations IS 'Tracks the installation history of subsystem instances onto top-level object instances (as-installed configuration).';
 
@@ -2138,9 +1813,9 @@ CREATE TABLE registry_users (
   user_id SERIAL PRIMARY KEY,
   username VARCHAR(50) NOT NULL UNIQUE,
   email VARCHAR(100) NOT NULL UNIQUE,
-  password_hash VARCHAR(255) NOT NULL,
+  password_hash VARCHAR(255) NOT NULL, -- Store hashed passwords
   full_name VARCHAR(100) NOT NULL,
-  organization_code CHAR(3) REFERENCES organizations(organization_code),
+  organization_code CHAR(3) REFERENCES organizations(organization_code), -- User's affiliation
   role VARCHAR(50) NOT NULL, -- e.g., ADMIN, REGISTRAR, EDITOR, VIEWER
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
@@ -2151,17 +1826,17 @@ COMMENT ON TABLE registry_users IS 'Users authorized to interact with the GAIA-Q
 
 CREATE TABLE registry_audit_log (
   log_id BIGSERIAL PRIMARY KEY,
-  user_id INT REFERENCES registry_users(user_id),
-  action_type VARCHAR(50) NOT NULL, -- e.g., CREATE_MODEL, UPDATE_INSTANCE_STATUS, ASSIGN_SERIAL
-  table_affected VARCHAR(64),
-  record_pk_text TEXT, -- Primary key of the affected record, as text (can store UUID or integer)
-  change_description TEXT, -- Human-readable summary of the change
-  old_values JSONB, -- Stores previous state of relevant fields
-  new_values JSONB, -- Stores new state of relevant fields
+  user_id INT REFERENCES registry_users(user_id), -- Can be null for system actions
+  action_type VARCHAR(100) NOT NULL, -- e.g., CREATE_OBJECT_MODEL, UPDATE_INSTANCE_STATUS, ASSIGN_SERIAL_BLOCK
+  table_affected VARCHAR(64), -- Name of the primary table affected
+  record_pk_text TEXT, -- Primary key of the affected record (UUID or stringified int)
+  change_description TEXT, -- Human-readable summary of what changed
+  old_values JSONB, -- Stores previous state of relevant fields as JSON
+  new_values JSONB, -- Stores new state of relevant fields as JSON
   action_timestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   ip_address VARCHAR(45),
   user_agent TEXT,
-  notes TEXT
+  notes TEXT -- Additional context or error messages
 );
 COMMENT ON TABLE registry_audit_log IS 'Audit trail for all significant changes made to the registry data.';
 
@@ -2174,29 +1849,32 @@ CREATE TABLE id_allocation_requests (
   -- Fields for new Top-Level Object Model proposal
   proposed_domain_code CHAR(2) REFERENCES domains(domain_code),
   proposed_asset_class_code CHAR(1) REFERENCES asset_classes(asset_class_code),
-  proposed_org_code CHAR(3) REFERENCES organizations(organization_code),
-  proposed_object_type_code CHAR(3), -- If existing ST, or new ST_name/desc below
-  proposed_object_type_name VARCHAR(100),
-  proposed_object_type_description TEXT,
-  proposed_model_code CHAR(3),
+  proposed_controlling_org_code CHAR(3) REFERENCES organizations(organization_code), -- CCC for model ownership
+  proposed_object_type_code CHAR(3), -- ST code
+  -- If new Object Type (ST)
+  is_new_object_type BOOLEAN DEFAULT FALSE,
+  new_object_type_name VARCHAR(100),
+  new_object_type_description TEXT,
+
+  proposed_model_code CHAR(3), -- MDL
   proposed_model_name VARCHAR(150),
   proposed_model_description TEXT,
-  proposed_autonomy_code CHAR(1) REFERENCES autonomy_levels(autonomy_code),
+  proposed_model_autonomy_code CHAR(1) REFERENCES autonomy_levels(autonomy_code),
   proposed_object_tech_specs JSONB,
 
   -- Fields for new Subsystem Model proposal
   proposed_sss_code CHAR(3) REFERENCES subsystem_types(sss_code),
-  proposed_subsystem_model_code VARCHAR(5),
+  proposed_subsystem_model_code VARCHAR(5), -- MDLs
   proposed_subsystem_model_name VARCHAR(150),
   proposed_subsystem_manufacturer_org_code CHAR(3) REFERENCES organizations(organization_code),
   proposed_subsystem_model_description TEXT,
   proposed_subsystem_tech_specs JSONB,
 
   -- Fields for Serial Block Allocation
-  target_model_id INT REFERENCES object_models(model_id),
+  target_object_model_id INT REFERENCES object_models(model_id),
   target_subsystem_model_id INT REFERENCES subsystem_models(subsystem_model_id),
   quantity_serials_requested INT,
-  start_serial_requested VARCHAR(7),
+  start_serial_requested VARCHAR(7), -- Can accommodate SSSSS or SERs
 
   purpose_of_request TEXT NOT NULL,
   status VARCHAR(50) NOT NULL DEFAULT 'PENDING_REVIEW', -- e.g., PENDING_REVIEW, APPROVED, REJECTED, INFO_REQUESTED
@@ -2206,7 +1884,7 @@ CREATE TABLE id_allocation_requests (
   requested_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   reviewed_at TIMESTAMP WITH TIME ZONE
 );
-COMMENT ON TABLE id_allocation_requests IS 'Tracks requests for new model codes or blocks of serial numbers.';
+COMMENT ON TABLE id_allocation_requests IS 'Tracks requests for new model codes or blocks of serial numbers for both Tiers.';
 
 -- =============================================
 -- 7.5 Integration and Reference Tables
@@ -2214,19 +1892,23 @@ COMMENT ON TABLE id_allocation_requests IS 'Tracks requests for new model codes 
 
 CREATE TABLE external_standard_mappings (
   mapping_id SERIAL PRIMARY KEY,
-  target_table VARCHAR(64) NOT NULL, -- e.g., 'object_types', 'subsystem_types'
-  target_fk_id INT, -- e.g., object_type_id or PK of subsystem_types (sss_code needs to be stored differently or use a serial PK for sss_types)
-  target_code_value VARCHAR(10), -- e.g., "SAT", "PROP" (if target_fk_id is null)
-  standard_name VARCHAR(50) NOT NULL, -- e.g., 'ATA100', 'CCSDS_SOIS', 'SS_00_99'
+  -- Target can be an object_type or a subsystem_type
+  object_type_id INT REFERENCES object_types(object_type_id),
+  sss_code CHAR(3) REFERENCES subsystem_types(sss_code),
+  standard_name VARCHAR(50) NOT NULL, -- e.g., 'ATA100', 'CCSDS_SOIS', 'GAIA_SS_XX'
   standard_reference_code VARCHAR(50) NOT NULL, -- e.g., 'ATA 24', 'CCSDS.876.0-R-1', 'SS 01'
   standard_reference_name VARCHAR(150),
   mapping_notes TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  UNIQUE(target_table, target_fk_id, standard_name, standard_reference_code),
-  UNIQUE(target_table, target_code_value, standard_name, standard_reference_code)
+  CONSTRAINT chk_mapping_target_is_exclusive CHECK (
+    (object_type_id IS NOT NULL AND sss_code IS NULL) OR
+    (object_type_id IS NULL AND sss_code IS NOT NULL)
+  ),
+  UNIQUE(object_type_id, standard_name, standard_reference_code),
+  UNIQUE(sss_code, standard_name, standard_reference_code)
 );
-COMMENT ON TABLE external_standard_mappings IS 'Maps GAIA-QAO codes (Object Types, Subsystem Types) to external standards like ATA, CCSDS, or the internal SS 00-99 chapters.';
+COMMENT ON TABLE external_standard_mappings IS 'Maps GAIA-QAO Object Types (ST) or Subsystem Types (SSS) to external standards like ATA, CCSDS, or the internal GAIA SS 00-99 chapters.';
 
 CREATE TABLE federation_nodes (
   node_id SERIAL PRIMARY KEY,
@@ -2238,8 +1920,8 @@ CREATE TABLE federation_nodes (
   sync_interval_seconds INT DEFAULT 3600,
   last_sync_attempt_at TIMESTAMP WITH TIME ZONE,
   last_successful_sync_at TIMESTAMP WITH TIME ZONE,
-  sync_status VARCHAR(50) DEFAULT 'INACTIVE',
-  public_key_crypto TEXT,
+  sync_status VARCHAR(50) DEFAULT 'INACTIVE', -- e.g., ACTIVE, INACTIVE, ERROR, SYNCING
+  public_key_crypto TEXT, -- For secure communication between nodes
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   is_active BOOLEAN DEFAULT TRUE
@@ -2262,8 +1944,8 @@ SELECT
   ot.object_type_id,
   ot.object_type_code AS st_code, -- ST (Object Type)
   ot.name AS object_type_name,
-  org.organization_code AS ccc_code, -- CCC (Controlling Org)
-  org.name AS organization_name,
+  org_model.organization_code AS model_defining_org_code, -- CCC of the model definition
+  org_model.name AS model_defining_org_name,
   ac.asset_class_code AS asset_class_code, -- A (Asset Class)
   ac.name AS asset_class_name,
   d.domain_code AS domain_code, -- DO (Domain)
@@ -2272,10 +1954,11 @@ SELECT
   om.end_of_production_date,
   om.technical_specifications,
   om.is_active AS model_is_active,
-  CONCAT_WS('-', d.domain_code, ac.asset_class_code, org.organization_code, ot.object_type_code, om.model_code) AS model_base_id_prefix
+  -- Construct the prefix based on how full_object_id is constructed, but without serial
+  CONCAT_WS('-', d.domain_code, ac.asset_class_code, org_model.organization_code, ot.object_type_code, om.model_code) AS model_id_prefix_for_instance_ccc_variant
 FROM object_models om
 JOIN object_types ot ON om.object_type_id = ot.object_type_id
-JOIN organizations org ON om.organization_code = org.organization_code
+JOIN organizations org_model ON om.organization_code = org_model.organization_code
 JOIN domains d ON ot.domain_code = d.domain_code
 JOIN asset_classes ac ON ot.asset_class_code = ac.asset_class_code
 JOIN autonomy_levels al ON om.autonomy_code = al.autonomy_code;
@@ -2284,7 +1967,7 @@ JOIN autonomy_levels al ON om.autonomy_code = al.autonomy_code;
 CREATE OR REPLACE VIEW view_object_instance_details AS
 SELECT
   oi.instance_id,
-  oi.full_object_id,
+  oi.full_object_id, -- This ID contains the instance-specific CCC
   oi.serial_number,
   vmfd.model_id,
   vmfd.model_code,
@@ -2293,8 +1976,9 @@ SELECT
   vmfd.autonomy_name,
   vmfd.st_code,
   vmfd.object_type_name,
-  vmfd.ccc_code,
-  vmfd.organization_name,
+  -- Extract CCC from full_object_id as it's instance-specific
+  split_part(oi.full_object_id, '-', 3) AS instance_controlling_org_code,
+  org_instance.name AS instance_controlling_org_name,
   vmfd.asset_class_code,
   vmfd.asset_class_name,
   vmfd.domain_code,
@@ -2316,6 +2000,7 @@ SELECT
   oi.updated_at AS instance_updated_at
 FROM object_instances oi
 JOIN view_object_model_full_details vmfd ON oi.model_id = vmfd.model_id
+LEFT JOIN organizations org_instance ON split_part(oi.full_object_id, '-', 3) = org_instance.organization_code
 LEFT JOIN organizations op_org ON oi.operator_org_code = op_org.organization_code
 LEFT JOIN object_configurations oc ON oi.instance_id = oc.instance_id AND oc.is_current_baseline = TRUE;
 
@@ -2351,7 +2036,7 @@ SELECT
   si.serial_number AS subsystem_serial_number,
   si.manufacture_date AS subsystem_manufacture_date,
   si.status AS subsystem_status,
-  sc.configuration_id AS current_subsystem_config_id,
+  sc.subsystem_configuration_id AS current_subsystem_config_id,
   sc.configuration_code AS current_subsystem_config_code,
   sc.name AS current_subsystem_config_name,
   sc.effective_from AS current_subsystem_config_effective_from,
@@ -2370,18 +2055,35 @@ LEFT JOIN subsystem_configurations sc ON si.subsystem_instance_id = sc.subsystem
 LEFT JOIN object_subsystem_installations csi ON si.subsystem_instance_id = csi.child_subsystem_instance_id AND csi.removal_date IS NULL
 LEFT JOIN object_instances parent_oi ON csi.parent_object_instance_id = parent_oi.instance_id;
 
-
--- Function to generate the next serial number (SSSSS) for a given Top-Level Object Model
-CREATE OR REPLACE FUNCTION generate_next_object_serial(p_model_id INT)
+-- Function to generate the next serial number (SSSSS) for a given Top-Level Object Model and specific CCC for the instance
+CREATE OR REPLACE FUNCTION generate_next_object_serial(
+    p_model_id INT,
+    p_instance_controlling_org_code CHAR(3) -- The CCC that will be part of the instance's full_object_id
+)
 RETURNS CHAR(5) AS $$
 DECLARE
     v_last_serial CHAR(5);
     v_next_serial_num INT;
     v_next_serial_char CHAR(5);
+    v_model_prefix_for_query VARCHAR;
 BEGIN
+    -- Construct the prefix used in full_object_id up to the SSSSS part for querying existing serials
+    -- This requires fetching DO, A, ST, MDL for the given p_model_id and combining with p_instance_controlling_org_code
+    SELECT CONCAT_WS('-', d.domain_code, ac.asset_class_code, p_instance_controlling_org_code, ot.object_type_code, om.model_code)
+    INTO v_model_prefix_for_query
+    FROM object_models om
+    JOIN object_types ot ON om.object_type_id = ot.object_type_id
+    JOIN domains d ON ot.domain_code = d.domain_code
+    JOIN asset_classes ac ON ot.asset_class_code = ac.asset_class_code
+    WHERE om.model_id = p_model_id;
+
+    IF v_model_prefix_for_query IS NULL THEN
+        RAISE EXCEPTION 'Could not determine model prefix for model_id %.', p_model_id;
+    END IF;
+
     SELECT oi.serial_number INTO v_last_serial
     FROM object_instances oi
-    WHERE oi.model_id = p_model_id
+    WHERE oi.model_id = p_model_id AND oi.full_object_id LIKE v_model_prefix_for_query || '-%' -- Ensure we only count serials for this specific CCC context
     ORDER BY oi.serial_number DESC
     LIMIT 1;
 
@@ -2392,77 +2094,50 @@ BEGIN
     END IF;
 
     IF v_next_serial_num > 99999 THEN
-        RAISE EXCEPTION 'Serial number SSSSS limit reached for object_model_id %', p_model_id;
+        RAISE EXCEPTION 'Serial number SSSSS limit reached for object_model_id % with CCC %', p_model_id, p_instance_controlling_org_code;
     END IF;
 
     v_next_serial_char := LPAD(CAST(v_next_serial_num AS VARCHAR), 5, '0');
     RETURN v_next_serial_char;
 END;
 $$ LANGUAGE plpgsql;
-COMMENT ON FUNCTION generate_next_object_serial IS 'Generates the next 5-digit serial number (SSSSS) for a given Top-Level Object Model ID.';
+COMMENT ON FUNCTION generate_next_object_serial IS 'Generates the next 5-digit serial number (SSSSS) for a given Top-Level Object Model ID and instance-specific Controlling Org Code (CCC).';
 
--- Function to construct full_object_id (Tier 1 ID)
-CREATE OR REPLACE FUNCTION construct_full_object_id(
-    p_domain_code CHAR(2),
-    p_asset_class_code CHAR(1),
-    p_organization_code CHAR(3),
-    p_object_type_code CHAR(3),
-    p_model_code CHAR(3),
+-- Function to construct full_object_id (Tier 1 ID) using model_id and instance-specific CCC
+CREATE OR REPLACE FUNCTION construct_full_object_id_from_model(
+    p_model_id INT,
+    p_instance_controlling_org_code CHAR(3), -- The CCC for this specific instance
     p_serial_number CHAR(5)
 )
 RETURNS VARCHAR(35) AS $$
+DECLARE
+    v_domain_code CHAR(2);
+    v_asset_class_code CHAR(1);
+    v_object_type_code CHAR(3);
+    v_model_code CHAR(3);
 BEGIN
+    SELECT ot.domain_code, ot.asset_class_code, ot.object_type_code, om.model_code
+    INTO v_domain_code, v_asset_class_code, v_object_type_code, v_model_code
+    FROM object_models om
+    JOIN object_types ot ON om.object_type_id = ot.object_type_id
+    WHERE om.model_id = p_model_id;
+
+    IF NOT FOUND THEN
+        RAISE EXCEPTION 'Model with ID % not found.', p_model_id;
+    END IF;
+
     RETURN CONCAT_WS('-',
-        p_domain_code,
-        p_asset_class_code,
-        p_organization_code,
-        p_object_type_code,
-        p_model_code,
+        v_domain_code,
+        v_asset_class_code,
+        p_instance_controlling_org_code, -- Use the instance-specific CCC
+        v_object_type_code,
+        v_model_code,
         p_serial_number
     );
 END;
 $$ LANGUAGE plpgsql;
-COMMENT ON FUNCTION construct_full_object_id IS 'Constructs the full Tier 1 Object ID string from its components.';
+COMMENT ON FUNCTION construct_full_object_id_from_model IS 'Constructs the full Tier 1 Object ID string using model_id and instance-specific CCC.';
 
--- Function to generate the next serial number (SERs) for a given Subsystem Model
--- Note: Subsystem serials are often OEM assigned. This function might be for GAIA-QAO assigned SERs.
-CREATE OR REPLACE FUNCTION generate_next_subsystem_serial(p_subsystem_model_id INT)
-RETURNS VARCHAR(7) AS $$
-DECLARE
-    v_last_serial VARCHAR(7);
-    v_next_serial_num INT;
-    v_prefix VARCHAR(3) := 'SER'; -- Example prefix, can be adapted
-    v_next_serial_char VARCHAR(7);
-BEGIN
-    SELECT si.serial_number INTO v_last_serial
-    FROM subsystem_instances si
-    WHERE si.subsystem_model_id = p_subsystem_model_id
-      AND si.serial_number LIKE v_prefix || '%' -- If using a prefix for GAIA-assigned serials
-    ORDER BY si.serial_number DESC -- This ordering might be tricky with alphanumeric serials
-    LIMIT 1;
-
-    IF v_last_serial IS NULL THEN
-        v_next_serial_num := 1;
-    ELSE
-        -- Attempt to parse numeric part if a prefix is used, otherwise more complex
-        BEGIN
-            v_next_serial_num := CAST(SUBSTRING(v_last_serial FROM LENGTH(v_prefix) + 1) AS INT) + 1;
-        EXCEPTION WHEN others THEN
-            -- Fallback or error if parsing fails (e.g. purely alphanumeric OEM serials)
-            RAISE NOTICE 'Cannot auto-increment non-standard serial % for subsystem_model_id %.', v_last_serial, p_subsystem_model_id;
-            RETURN NULL; -- Or handle error appropriately
-        END;
-    END IF;
-
-    IF v_next_serial_num > 9999 THEN -- Assuming 4 digits after prefix
-        RAISE EXCEPTION 'Serial number SERs limit reached for subsystem_model_id % with prefix %', p_subsystem_model_id, v_prefix;
-    END IF;
-
-    v_next_serial_char := v_prefix || LPAD(CAST(v_next_serial_num AS VARCHAR), 4, '0');
-    RETURN v_next_serial_char;
-END;
-$$ LANGUAGE plpgsql;
-COMMENT ON FUNCTION generate_next_subsystem_serial IS 'Generates a GAIA-QAO prefixed 7-char serial (SERs) for a Subsystem Model. OEM serials would be entered directly.';
 
 -- Trigger function to auto-update 'updated_at' timestamp
 CREATE OR REPLACE FUNCTION trigger_set_timestamp()
@@ -2490,47 +2165,20 @@ END;
 $$;
 
 -- Trigger function to auto-populate full_object_id before insert on object_instances
-CREATE OR REPLACE FUNCTION trigger_populate_full_object_id()
-RETURNS TRIGGER AS $$
-DECLARE
-    v_domain_code CHAR(2);
-    v_asset_class_code CHAR(1);
-    v_organization_code CHAR(3);
-    v_object_type_code CHAR(3);
-    v_model_code CHAR(3);
-BEGIN
-    SELECT ot.domain_code, ot.asset_class_code, om.organization_code, ot.object_type_code, om.model_code
-    INTO v_domain_code, v_asset_class_code, v_organization_code, v_object_type_code, v_model_code
-    FROM object_models om
-    JOIN object_types ot ON om.object_type_id = ot.object_type_id
-    WHERE om.model_id = NEW.model_id;
+-- This trigger now needs the instance-specific CCC, which must be provided by the INSERT statement
+-- or fetched if there's a rule (e.g. instance CCC defaults to model's defining CCC).
+-- For now, assume full_object_id is populated by application logic using construct_full_object_id_from_model,
+-- or the trigger needs a way to get the instance_controlling_org_code.
+-- Simpler: The INSERT to object_instances will call construct_full_object_id_from_model to populate its own field.
+-- Let's remove the automatic trigger for full_object_id population as it's more complex with the instance-specific CCC.
+-- The application layer inserting into object_instances will be responsible for correctly forming the full_object_id.
 
-    IF NOT FOUND THEN
-        RAISE EXCEPTION 'Failed to find model components for model_id % to construct full_object_id.', NEW.model_id;
-    END IF;
+DROP TRIGGER IF EXISTS populate_full_object_id_on_insert ON object_instances;
+DROP FUNCTION IF EXISTS trigger_populate_full_object_id();
+COMMENT ON TABLE object_instances IS 'Tracks individual instances (serialized units) of Top-Level Objects. full_object_id must be populated by application logic using construct_full_object_id_from_model or similar, passing the instance-specific CCC.';
 
-    NEW.full_object_id := construct_full_object_id(
-        v_domain_code,
-        v_asset_class_code,
-        v_organization_code,
-        v_object_type_code,
-        v_model_code,
-        NEW.serial_number
-    );
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-COMMENT ON FUNCTION trigger_populate_full_object_id IS 'Automatically populates full_object_id on insert into object_instances.';
 
-CREATE TRIGGER populate_full_object_id_on_insert
-BEFORE INSERT ON object_instances
-FOR EACH ROW
-EXECUTE FUNCTION trigger_populate_full_object_id();
-
--- Add initial data for lookup tables (Domains, Asset Classes, Autonomy Levels)
--- This data is essential for the system to function.
--- Further SSS types, Object Types, Organizations, Models would be added via UI/API through id_allocation_requests flow.
-
+-- Add initial data for lookup tables
 INSERT INTO domains (domain_code, name, description) VALUES
 ('AS', 'Air System', 'Systems operating primarily in Earth''s atmosphere'),
 ('SP', 'Space System', 'Systems operating primarily in space or trans-atmospherically'),
@@ -2554,31 +2202,27 @@ ON CONFLICT (autonomy_code) DO NOTHING;
 INSERT INTO organizations (organization_code, name, type, country_code, description) VALUES
 ('QAO', 'GAIA-Quantum Aerospace Organization', 'GAIA-Internal', NULL, 'Internal GAIA-QAO designed/managed assets'),
 ('ESA', 'European Space Agency', 'Agency', 'EUR', 'European Space Agency'),
-('NAS', 'NASA (US National Aeronautics and Space Administration)', 'Agency', 'USA', 'United States National Aeronautics and Space Administration'),
-('JAX', 'Japan Aerospace Exploration Agency', 'Agency', 'JPN', 'Japan Aerospace Exploration Agency'),
-('COM', 'Commercial Entity (Generic)', 'Manufacturer/Operator', NULL, 'Generic placeholder for commercial manufacturers/operators'),
+('NAS', 'NASA', 'Agency', 'USA', 'US National Aeronautics and Space Administration'), -- Shortened for consistency
+('JAX', 'JAXA', 'Agency', 'JPN', 'Japan Aerospace Exploration Agency'), -- Shortened
+('COM', 'Commercial Entity (Generic)', 'Manufacturer/Operator', NULL, 'Generic placeholder for commercial entity'),
 ('UNK', 'Unknown/Not Specified', 'Other', NULL, 'Originating organization is unknown or not specified')
 ON CONFLICT (organization_code) DO NOTHING;
 
--- Note: object_types, subsystem_types, object_models, subsystem_models will be populated
--- via the GAIA-QAO Registry management processes, likely using the id_allocation_requests table.
--- Initial core types (like 'SAT' for satellite) might be pre-populated.
-
--- Example Pre-population for some SP Object Types
+-- Example Pre-population for some SP Object Types (ST codes)
 INSERT INTO object_types (object_type_code, domain_code, asset_class_code, name, description) VALUES
-('SAT', 'SP', 'P', 'Satellite', 'Artificial body placed in orbit around the Earth or another planet in order to collect information or for communication.'),
+('SAT', 'SP', 'P', 'Satellite', 'Artificial body placed in orbit around the Earth or another celestial body to collect information or for communication.'),
 ('LCH', 'SP', 'P', 'Launch System', 'Vehicle designed to launch payloads into space.'),
 ('ORB', 'SP', 'P', 'Orbital Platform/Vehicle', 'Crewed or large uncrewed orbital systems, including stations and transport vehicles.'),
 ('PRB', 'SP', 'P', 'Probe', 'Uncrewed spacecraft designed for exploration beyond Earth orbit, typically not returning.'),
 ('XPS', 'SP', 'P', 'Experimental Space Platform', 'Platforms primarily for in-space technology demonstration or experimentation.'),
-('XSS', 'SP', 'S', 'Experimental Space System', 'Complex experimental systems in space not fitting platform definition.'),
+('XSS', 'SP', 'S', 'Experimental Space System', 'Complex experimental systems in space not fitting platform definition (e.g., an orbital test facility).'),
 ('DEF', 'SP', 'P', 'Space Defense Platform', 'Platforms primarily for space defense and security applications.')
 ON CONFLICT (domain_code, asset_class_code, object_type_code) DO NOTHING;
 
 -- Example Pre-population for some core Subsystem Types (SSS) relevant to Space
 INSERT INTO subsystem_types (sss_code, name, description, applicable_domain_code, ss_xx_mapping) VALUES
 ('PROP', 'Propulsion Subsystem', 'Main propulsion system components including engines, thrusters, propellant tanks, and feed systems.', 'SP', 'SS 01'),
-('AOCS', 'Attitude & Orbit Control Subsystem', 'Sensors, actuators, and control algorithms for spacecraft orientation and orbital adjustments.', 'SP', 'SS 17'),
+('AOCS', 'Attitude & Orbit Control System', 'Sensors, actuators, and control algorithms for spacecraft orientation and orbital adjustments.', 'SP', 'SS 17'),
 ('EPSU', 'Electrical Power Subsystem', 'Generation, storage, conditioning, and distribution of electrical power.', 'SP', 'SS 03'),
 ('TCSM', 'Thermal Control Subsystem', 'Passive and active thermal management components.', 'SP', 'SS 14'),
 ('CDHS', 'Command & Data Handling Subsystem', 'Onboard computer(s), data recorders, bus interfaces, and flight software execution environment.', 'SP', 'SS 02, SS 11'),
@@ -2586,22 +2230,18 @@ INSERT INTO subsystem_types (sss_code, name, description, applicable_domain_code
 ('OPTC', 'Optical Communication Subsystem', 'Laser communication terminals, PAT systems.', 'SP', 'SS 05.1'),
 ('STRC', 'Structural Subsystem', 'Primary spacecraft bus structure, deployable booms, mechanisms not part of other SSS.', 'SP', 'SS 12'),
 ('PLDI', 'Payload Instrument', 'Specific scientific or mission instrument, not part of bus subsystems.', 'SP', 'SS 08'),
-('QKDS', 'Quantum Key Distribution Subsystem', 'Hardware for quantum key distribution links.', 'SP', 'SS 05.5.2, SS 19'),
+('QKDP', 'Quantum Key Distribution Subsystem', 'Hardware for quantum key distribution links.', 'SP', 'SS 05.5.2, SS 19'),
 ('QSEN', 'Quantum Sensor Unit', 'Specific quantum sensor assembly (e.g., gravimeter, magnetometer, clock).', 'SP', 'SS 08, SS 19')
 ON CONFLICT (sss_code) DO NOTHING;
 ```
-To visualize the presented relational database schema for the GAIA-QAO Object Identification System, I will create an Entity Relationship Diagram (ERD) using Mermaid. This ERD will illustrate the key tables, along with their primary and foreign keys, to provide an overview of the structure and relationships within the database.
+To visualize and understand the relational database schema detail you've provided for Part 7: Database Schema, we can build an Entity Relationship Diagram (ERD) using Mermaid. This will represent the tables, their primary keys, and the relationships between them.
 
-Before creating the diagram, I'll retrieve the latest syntax documentation for Entity Relationship Diagrams.The current Entity Relationship Diagram (ERD) for the GAIA-QAO Object Identification System's relational database schema will include the primary tables such as domains, asset_classes, organizations, object_types, object_models, autonomy_levels, and more, focusing on the primary and foreign keys.
+I'll illustrate the schema based on your detailed SQL description, focusing on key tables and their relationships, such as domains, asset_classes, organizations, object_types, object_models, autonomy_levels, subsystem_types, and more.
 
-Here's a summary of what the ERD will include:
+To create this ER diagram, I'll first fetch the syntax documentation for entity relationship diagrams to ensure accuracy.Here is a high-level Entity Relationship Diagram (ERD) representing the core structure of your GAIA-QAO relational database schema using Mermaid syntax. This ERD captures key tables such as domains, asset_classes, organizations, object_types, object_models, autonomy_levels, subsystem_types, and their relationships:
 
-Visualization of core tables for top-level objects and subsystems.
-Relationships between tables, such as those linking object_types to domains and asset_classes.
-Identification of primary and foreign keys for essential tables.
-Here is the ERD representation using Mermaid:
+This visual diagram offers a high-level overview of the relational database's structure, showing the relationships between different table entities, their keys, and how they connect within the database schema. This ERD provides insight into key links like those between domains and object_types, and subsystem_types and subsystem_models, illustrating the overarching structure and interdependencies within your database schema.
 
-This diagram provides a foundational view of the schema, focusing on the connections between major tables and their identifiers. You may wish to expand this by adding other relationships or attributes according to your needs.
 
 ```mermaid
 erDiagram
@@ -2610,27 +2250,32 @@ erDiagram
         varchar(100) name
         text description
     }
+
     asset_classes {
         char(1) asset_class_code PK
         varchar(100) name
         text description
     }
+
     organizations {
         char(3) organization_code PK
         varchar(150) name
         varchar(50) type
     }
+
     object_types {
         int object_type_id PK
         char(3) object_type_code
         char(2) domain_code FK
         char(1) asset_class_code FK
     }
+
     autonomy_levels {
         char(1) autonomy_code PK
         varchar(100) name
         text description
     }
+
     object_models {
         int model_id PK
         char(3) model_code
@@ -2638,23 +2283,29 @@ erDiagram
         char(3) organization_code FK
         char(1) autonomy_code FK
     }
+
     subsystem_types {
         char(3) sss_code PK
         varchar(100) name
     }
+
     subsystem_models {
         int subsystem_model_id PK
         char(3) sss_code FK
         char(3) manufacturer_org_code FK
     }
+
     domains ||--|{ object_types : includes
     asset_classes ||--|{ object_types : includes
+    organizations ||--|{ object_models : defines
     object_types ||--o{ object_models : classified_as
-    organizations ||--o{ object_models : develops
     autonomy_levels ||--o{ object_models : defines
     subsystem_types ||--o{ subsystem_models : categorizes
-    organizations ||--o{ subsystem_models : manufactures**
+    organizations ||--o{ subsystem_models : manufactures
+
 ```
+
+---
 ## Part 8: GAIA-Q-UI System Specification
 
 This part outlines the specification for GAIA-Q-UI, an intelligent user interface and AI orchestration layer for the GAIA-Q & AMPEL framework. For the GAIA-Q-SPACE sector, GAIA-Q-UI is envisioned as the primary human-machine interface for designing, simulating, monitoring, and potentially controlling advanced space systems, interacting with quantum payloads, and managing complex mission data.
@@ -3388,134 +3039,139 @@ To ensure consistency and comprehensive coverage in the technical libraries for 
 | **Part X**  | **Reference Data & Appendices**                 | **RDA**      | Glossaries, acronym lists, referenced standards, supporting data.                                               |
 
 **Detailed AToC for Part II: Space Systems (SP) Documentation (SS-based) - Q-SPACE Focus**
-This section outlines the standard chaptering for the technical library of a GAIA-QAO Space System. Each `SS XX` corresponds to a major system or discipline. Detailed documentation for specific subsystems (identified by `SSS` codes, see Part 5) would be organized under the relevant `SS XX` chapter.
+This section outlines the standard chaptering for the technical library of a GAIA-QAO Space System. Each `SS XX` corresponds to a major system or discipline. Detailed documentation for specific subsystems (identified by `SSS` codes, see Part 5) would be organized under the relevant `SS XX` chapter. The hyperlinks point to the conceptual location of the master index for each SS category within the GAIA-QAO documentation framework.
 
-*   **SS 00: General Space System Information & Introduction**
-    *   00.00: System Overview, Mission Objectives, GQOIS ID Breakdown
-    *   00.10: Applicable Documents, Standards, and INFOCODE Index for this System
-    *   00.20: Terminology and Acronyms Specific to this Space System
-    *   00.30: Safety Summary & Planetary Protection Plan (if applicable)
-*   **SS 01: Propulsion Systems** (Maps to SSS codes like `PROP`, `EPTH`, `CPTR`, `PTNK`, `QDRV`)
-    *   01.00: General Description and Architecture
-    *   01.10: Chemical Propulsion (Main Engines, RCS Thrusters, Propellant Storage & Feed)
-    *   01.20: Electric Propulsion (Ion, Hall, Electrothermal; PPUs)
-    *   01.30: Advanced/Quantum Propulsion Concepts (if applicable)
-    *   01.40: Performance Data, Plume Analysis, Testing
-*   **SS 02: Flight Computing and Avionics** (Maps to SSS codes like `OBCP`, `SSDR`, `RTU`, `QPROC`, `CDHS` in general)
-    *   02.00: General Avionics Architecture
-    *   02.10: On-Board Computers (OBCs), Processors, Memory Units
-    *   02.20: Data Busses and Networks (SpaceWire, MIL-STD-1553, CAN, Ethernet)
-    *   02.30: Data Acquisition and Storage (Solid State Recorders, Telemetry Interfaces)
-    *   02.40: Quantum Computing Modules (if applicable, see also SS 19)
-*   **SS 03: Aerospace Power and Energy Storage** (Maps to SSS codes like `EPSU`, `SOLA`, `BATT`, `PCDU`)
-    *   03.00: General Power System Architecture
-    *   03.10: Power Generation (Solar Arrays, RTGs, Nuclear Fission Power Sources)
-    *   03.20: Energy Storage (Batteries, Fuel Cells, Supercapacitors)
-    *   03.30: Power Management and Distribution (PMAD, Power Conditioning Units)
-*   **SS 04: Robotic Systems (for Spacecraft Operations)** (Maps to SSS codes like `ROBA`, `ENDFX`)
-    *   04.00: General Robotic System Overview
-    *   04.10: Manipulator Arms, End-Effectors
-    *   04.20: Robotic Control Systems, Vision Systems for Robotics
-    *   04.30: Autonomous Rendezvous & Docking/Capture (AR&D) Robotic Elements
-*   **SS 05: Communications, Navigation, and Information Systems** (Maps to SSS codes like `COMS`, `OPTC`, `NAV` suite components, `GPSR`, `QKDS`)
-    *   05.00: General System Overview
-    *   05.10: RF Communications (S-Band, X-Band, Ka-Band Transponders, Antennas)
-    *   05.20: Optical Communications (Laser Terminals, PAT Systems)
-    *   05.30: Space Networking (DTN, Inter-Satellite Links)
-    *   05.40: Position, Navigation, and Timing (PNT) Systems (GNSS Receivers, Onboard Clocks)
-    *   05.50: Quantum Communications (QKD Payloads, Entanglement Distribution - see also SS 19)
-*   **SS 06: Human Health, Life Support, and Habitation Systems** (Applicable to crewed ORB models) (Maps to SSS codes like `LSS`, `ECLS`)
-    *   06.00: General Overview
-    *   06.10: Environmental Control and Life Support Systems (ECLSS)
-    *   06.20: Extravehicular Activity (EVA) Systems
-    *   06.30: Habitation Modules, Crew Quarters, Galley, Hygiene
-*   **SS 07: Mission Infrastructure (Spacecraft-based elements)** (Maps to SSS codes supporting ISAM, etc.)
-    *   07.00: General Overview
-    *   07.10: In-Space Manufacturing, Maintenance, and Repair Systems
-    *   07.20: In-Space Assembly Systems
-    *   07.30: Logistics and Resupply Interfaces
-*   **SS 08: Sensors and Instruments (Bus & Payload Interface)** (Maps to SSS codes like `PLDI`, `QSNA` and bus sensor SSS codes)
-    *   08.00: General Overview, Payload Accommodation
-    *   08.10: Spacecraft Bus Sensors (Temperature, Pressure, Sun Sensors not part of GNC main suite)
-    *   08.20: Scientific Instruments / Mission Payloads (Detailed specs for each `PLDI` instance)
-    *   08.30: Payload Interface Systems (Power, Data, Thermal Interfaces provided by bus)
-    *   08.40: Quantum Sensor Payloads (see also SS 19)
-*   **SS 09: Entry, Descent, and Landing (EDL) Systems** (Applicable to probes, crew return vehicles)
-    *   09.00: General EDL System Overview
-    *   09.10: Thermal Protection Systems (TPS)
-    *   09.20: Parachutes, Aerodynamic Decelerators
-    *   09.30: Landing Systems (Legs, Airbags, Retro-propulsion for landing)
-*   **SS 10: Autonomous Systems (Onboard Capabilities)** (Relates to software in SS 11 and AI in SS 19)
-    *   10.00: General Autonomy Architecture
-    *   10.10: Onboard Mission Planning and Scheduling
-    *   10.20: Fault Detection, Isolation, and Recovery (FDIR)
-    *   10.30: Autonomous Navigation and Maneuvering
-    *   10.40: AI/ML Models for Autonomous Functions
-*   **SS 11: Software, Modeling, and Simulation (Flight SW & Onboard Models)** (Maps to SSS code like `FSW` for flight software modules)
-    *   11.00: Flight Software Architecture and Development (as per Part 1 of AGI)
-    *   11.10: Onboard Operating Systems (RTOS)
-    *   11.20: Ground Software (Mission Control, Simulators, Data Processing)
-    *   11.30: Onboard Models (Digital Twins, Diagnostic Models)
-    *   11.40: Simulation Environments and Models used for V&V
-*   **SS 12: Materials, Structures, and Mechanical Systems** (Maps to SSS codes like `STRC`, `MECH`, `DPLYM` for deployable mechanisms)
-    *   12.00: General Overview
-    *   12.10: Primary and Secondary Structures (Bus, Trusses, Panels)
-    *   12.20: Materials (Metals, Composites, Quantum Materials, Coatings)
-    *   12.30: Mechanical Systems (Deployment Mechanisms, Gimbals, Docking Systems, Actuators not in FCS/AOCS)
-*   **SS 13: Ground Support Equipment & Systems (Space Specific)**
-    *   13.00: Overview of GSE for this Space System
-    *   13.10: Electrical GSE (Power Carts, Umbilicals)
-    *   13.20: Mechanical GSE (Handling Fixtures, Transport Containers)
-    *   13.30: Fluid GSE (Propellant Loading, Pressurization Carts)
-    *   13.40: Test and Checkout GSE (Specialized test consoles, EGSE)
-*   **SS 14: Thermal Management Systems** (Maps to SSS codes like `TCSM`, `RADI`, `HPPE` for heat pipes)
-    *   14.00: General Thermal Architecture
-    *   14.10: Passive Thermal Control (MLI, Radiators, Coatings, OSRs)
-    *   14.20: Active Thermal Control (Fluid Loops, Heat Pipes, Cryocoolers, Heaters)
-    *   14.30: Thermal Analysis and Testing
-*   **SS 15: System Safety (Space Specific Hazards & Mitigations)**
-    *   15.00: Overall System Safety Program Plan
-    *   15.10: Hazard Analysis (PHA, SHA, OSHA for space)
-    *   15.20: Fault Tree Analysis (FTA), Failure Modes and Effects Analysis (FMEA/FMECA)
-    *   15.30: Launch Safety, Range Safety, Re-entry Safety
-    *   15.40: Space Debris Mitigation Plan, End-of-Life Disposal
-*   **SS 16: Integration, Assembly, Test & Verification (Space Specific)**
-    *   16.00: System Integration Plan
-    *   16.10: Assembly Procedures
-    *   16.20: Test Philosophy and Levels (Component, Subsystem, System)
-    *   16.30: Verification Matrix and Compliance Tracking
-    *   16.40: Environmental Testing (TVAC, Vibration, Acoustic, EMI/EMC)
-*   **SS 17: Guidance, Navigation, and Control (GN&C)** (Maps to SSS codes like `AOCS`, `STRK`, `RWAS`, `IMUS`, `GPSR`, `MGTR`)
-    *   17.00: General GNC System Architecture
-    *   17.10: Attitude Determination (Sensors: Star Trackers, Sun Sensors, IMUs, Magnetometers; Algorithms)
-    *   17.20: Attitude Control (Actuators: Reaction Wheels, Thrusters, Magnetic Torquers; Control Laws)
-    *   17.30: Orbit Determination & Prediction (GPS, Ground Tracking, Onboard Algorithms)
-    *   17.40: Maneuver Planning and Execution (Trajectory Control)
-*   **SS 18: Mission Operations (Space Segment & Ground Interface)**
-    *   18.00: Mission Operations Concept (CONOPS)
-    *   18.10: Telemetry, Tracking, and Command (TT&C) Operations
-    *   18.20: Nominal Mission Timelines and Sequences
-    *   18.30: Contingency Operations and Anomaly Response Procedures
-    *   18.40: Payload Operations Planning and Execution
-*   **SS 19: Quantum Systems & Payloads (Specific to GAIA-QAO Q-SPACE)** (Maps to SSS codes like `QCSM`, `QKDS`, `QSNA`)
-    *   19.00: Overview of Integrated Quantum Systems
-    *   19.10: Quantum Communication Payloads (QKD, Entanglement Sources, Repeaters)
-        *   19.10.1: Design & Theory of Operation
-        *   19.10.2: Performance Specifications
-        *   19.10.3: Interfaces and Control
-    *   19.20: Quantum Sensing Payloads (Gravimeters, Magnetometers, Clocks, Radar)
-        *   19.20.1: Design & Theory of Operation
-        *   19.20.2: Performance Specifications
-        *   19.20.3: Interfaces and Control
-    *   19.30: Onboard Quantum Computing/Processing Units
-        *   19.30.1: Architecture and Qubit Technology
-        *   19.30.2: Computational Capabilities and Benchmarks
-        *   19.30.3: Software Interface and Programming Model
-    *   19.40: Quantum System Environmental Considerations (Shielding, Thermal for Qubits)
-    *   19.50: Specific V&V for Quantum Systems in Space
-*   **SS 20 - SS 99:** Reserved for future expansion or specialized systems. *(Standard placeholders like ATA chapters, e.g., Electrical Wiring Interconnect System EWIS for space, specific payload categories if numerous, etc.)*
+*   **[SS 00: General Space System Information & Introduction](docs/space/ss/00/index.md)**
+    *   [SS 00.00: System Overview, Mission Objectives, GQOIS ID Breakdown](docs/space/ss/00/00/index.md)
+    *   [SS 00.10: Applicable Documents, Standards, and INFOCODE Index for this System](docs/space/ss/00/10/index.md)
+    *   [SS 00.20: Terminology and Acronyms Specific to this Space System](docs/space/ss/00/20/index.md)
+    *   [SS 00.30: Safety Summary & Planetary Protection Plan (if applicable)](docs/space/ss/00/30/index.md)
+*   **[SS 01: Propulsion Systems](docs/space/ss/01/index.md)** (Maps to SSS codes like `PROP`, `EPTH`, `CPTR`, `PTNK`, `QDRV`)
+    *   [SS 01.00: General Description and Architecture](docs/space/ss/01/00/index.md)
+    *   [SS 01.1: Chemical Space Propulsion](docs/space/ss/01/1/index.md)
+        *   [SS 01.1.1: Integrated Systems and Ancillary Technologies](docs/space/ss/01/1/1/index.md)
+        *   [SS 01.1.2: Storable Liquid Propulsion](docs/space/ss/01/1/2/index.md)
+        *   [SS 01.1.3: Cryogenic Liquid Propulsion](docs/space/ss/01/1/3/index.md)
+        *   [SS 01.1.4: Solid Propulsion](docs/space/ss/01/1/4/index.md)
+        *   [SS 01.1.5: Hybrid Propulsion](docs/space/ss/01/1/5/index.md)
+        *   [SS 01.1.7: Cold Gas Propulsion](docs/space/ss/01/1/7/index.md)
+    *   [SS 01.2: Electric Propulsion (EP)](docs/space/ss/01/2/index.md)
+        *   [SS 01.2.1: Integrated Systems and Ancillary Technologies (EP)](docs/space/ss/01/2/1/index.md)
+        *   [SS 01.2.2: Electrostatic Propulsion (Ion, Hall)](docs/space/ss/01/2/2/index.md)
+        *   [SS 01.2.3: Electromagnetic Propulsion (MPD, VASIMR)](docs/space/ss/01/2/3/index.md)
+        *   [SS 01.2.4: Electrothermal Propulsion (Resistojet, Arcjet)](docs/space/ss/01/2/4/index.md)
+    *   [SS 01.4: Advanced and Novel Propulsion Concepts](docs/space/ss/01/4/index.md)
+        *   [SS 01.4.1: Solar Sail Propulsion](docs/space/ss/01/4/1/index.md)
+        *   [SS 01.4.3: Nuclear Thermal Propulsion (NTP)](docs/space/ss/01/4/3/index.md)
+        *   [SS 01.4.5: Nuclear Electric Propulsion (NEP)](docs/space/ss/01/4/5/index.md)
+*   **[SS 02: Flight Computing and Avionics](docs/space/ss/02/index.md)** (Maps to SSS codes like `OBCP`, `SSDR`, `RIFS`, `QPROC`, `CDHS` in general)
+    *   [SS 02.00: General Avionics Architecture](docs/space/ss/02/00/index.md)
+    *   [SS 02.1: Space Electronics](docs/space/ss/02/1/index.md) (Rad-Hard Components, HPSC, FPGAs, ASICs)
+    *   [SS 02.2: Avionics Systems and Subsystems](docs/space/ss/02/2/index.md) (C&DH, Data Busses, Data Acquisition)
+*   **[SS 03: Aerospace Power and Energy Storage](docs/space/ss/03/index.md)** (Maps to SSS codes like `EPSU`, `SOLA`, `BATT`, `PCDU`)
+    *   [SS 03.00: General Power System Architecture](docs/space/ss/03/00/index.md)
+    *   [SS 03.1: Power Generation](docs/space/ss/03/1/index.md) (Solar Arrays, RTGs, Nuclear)
+    *   [SS 03.2: Energy Storage](docs/space/ss/03/2/index.md) (Batteries, Fuel Cells)
+    *   [SS 03.3: Power Management and Distribution (PMAD)](docs/space/ss/03/3/index.md)
+*   **[SS 04: Robotic Systems (for Spacecraft Operations)](docs/space/ss/04/index.md)** (Maps to SSS codes like `ROBA`, `ROBC`)
+    *   [SS 04.00: General Robotic System Overview](docs/space/ss/04/00/index.md)
+    *   [SS 04.3: Manipulation](docs/space/ss/04/3/index.md) (Robotic Arms, End-Effectors)
+    *   [SS 04.5: Autonomous Rendezvous & Docking/Capture (AR&D)](docs/space/ss/04/5/index.md)
+*   **[SS 05: Communications, Navigation, and Information Systems](docs/space/ss/05/index.md)** (Maps to SSS codes like `COMS`, `OPTC`, `ANTC`, `GPSR`, `QKDP`)
+    *   [SS 05.00: General System Overview](docs/space/ss/05/00/index.md)
+    *   [SS 05.1: Optical Communications](docs/space/ss/05/1/index.md)
+    *   [SS 05.2: Radio Frequency (RF) Communications](docs/space/ss/05/2/index.md)
+    *   [SS 05.3: Space Networking](docs/space/ss/05/3/index.md)
+    *   [SS 05.4: Position, Navigation, and Timing (PNT)](docs/space/ss/05/4/index.md)
+    *   [SS 05.5: Emerging Communications Technologies (incl. Quantum Comms)](docs/space/ss/05/5/index.md)
+*   **[SS 06: Human Health, Life Support, and Habitation Systems](docs/space/ss/06/index.md)** (Maps to SSS codes like `LSS`, `ECLS`)
+    *   [SS 06.00: General Overview](docs/space/ss/06/00/index.md)
+    *   [SS 06.1: Environmental Control and Life Support Systems (ECLSS)](docs/space/ss/06/1/index.md)
+    *   [SS 06.2: Extravehicular Activity (EVA) Systems](docs/space/ss/06/2/index.md)
+*   **[SS 07: Mission Infrastructure (Spacecraft-based elements)](docs/space/ss/07/index.md)**
+    *   [SS 07.00: General Overview](docs/space/ss/07/00/index.md)
+    *   [SS 07.2: Long-Duration Mission Support Systems](docs/space/ss/07/2/index.md) (In-Space Manufacturing, Assembly, Servicing)
+*   **[SS 08: Sensors and Instruments (Bus & Payload Interface)](docs/space/ss/08/index.md)** (Maps to SSS codes like `PLDI`, `QSNA`, `PLIF`, bus sensor SSS)
+    *   [SS 08.00: General Overview, Payload Accommodation Philosophy](docs/space/ss/08/00/index.md)
+    *   [SS 08.1: Sensor Components and Focal Plane Technologies (Bus Sensors)](docs/space/ss/08/1/index.md)
+    *   [SS 08.3: Spacecraft Environment Sensors (Bus Health & GNC Related)](docs/space/ss/08/3/index.md)
+    *   [SS 08.X: Payload Support Systems (Bus-Provided Resources)](docs/space/ss/08/X/index.md)
+*   **[SS 09: Entry, Descent, and Landing (EDL) Systems](docs/space/ss/09/index.md)** (Maps to SSS code `EDLS`)
+    *   [SS 09.00: General EDL System Overview](docs/space/ss/09/00/index.md)
+    *   [SS 09.1: Entry Phase Systems](docs/space/ss/09/1/index.md) (TPS)
+    *   [SS 09.2: Descent Phase Systems](docs/space/ss/09/2/index.md) (Parachutes, Retropropulsion)
+    *   [SS 09.3: Landing Phase Systems](docs/space/ss/09/3/index.md) (Landing Legs, Airbags)
+    *   [SS 09.5: Advanced EDL GNC](docs/space/ss/09/5/index.md)
+*   **[SS 10: Autonomous Systems (Onboard Capabilities)](docs/space/ss/10/index.md)**
+    *   [SS 10.00: General Autonomy Architecture](docs/space/ss/10/00/index.md)
+    *   [SS 10.1: Awareness (Sensing and Perception)](docs/space/ss/10/1/index.md)
+    *   [SS 10.2: Reasoning and Acting (Planning, Decision Making, Execution)](docs/space/ss/10/2/index.md)
+*   **[SS 11: Software, Modeling, and Simulation (Flight SW & Onboard Models)](docs/space/ss/11/index.md)** (Maps to SSS code `FSWM`)
+    *   [SS 11.00: Overview and Software Development Standards (Ref Part 1)](docs/space/ss/11/00/index.md)
+    *   [SS 11.1: Flight Software](docs/space/ss/11/1/index.md) (Architecture, RTOS, V&V)
+    *   [SS 11.2: Onboard Models](docs/space/ss/11/2/index.md) (Digital Twins, Diagnostic Models)
+    *   [SS 11.3: Onboard Simulation Capabilities](docs/space/ss/11/3/index.md)
+*   **[SS 12: Materials, Structures, and Mechanical Systems](docs/space/ss/12/index.md)** (Maps to SSS codes like `STRC`, `STRB`, `DPMA`, `QMATS`)
+    *   [SS 12.00: General Overview](docs/space/ss/12/00/index.md)
+    *   [SS 12.1: Materials](docs/space/ss/12/1/index.md) (Lightweight, Extreme Environment, Quantum Materials)
+    *   [SS 12.2: Structures](docs/space/ss/12/2/index.md) (Primary, Secondary, Deployable)
+    *   [SS 12.3: Mechanical Systems](docs/space/ss/12/3/index.md) (Mechanisms, Actuators, Seals, Fasteners)
+*   **[SS 13: Ground Support Equipment & Systems (Space Specific)](docs/space/ss/13/index.md)**
+    *   [SS 13.00: Overview of GSE for this Space System](docs/space/ss/13/00/index.md)
+    *   [SS 13.10: Electrical GSE](docs/space/ss/13/10/index.md)
+    *   [SS 13.20: Mechanical GSE](docs/space/ss/13/20/index.md)
+    *   [SS 13.30: Fluid GSE](docs/space/ss/13/30/index.md)
+*   **[SS 14: Thermal Management Systems](docs/space/ss/14/index.md)** (Maps to SSS codes like `TCSM`, `RADP`, `MLIB`, `HPPE`)
+    *   [SS 14.00: General Thermal Architecture](docs/space/ss/14/00/index.md)
+    *   [SS 14.1: Thermal Analysis, Modeling, and Testing](docs/space/ss/14/1/index.md)
+    *   [SS 14.2: Heat Acquisition and Transport](docs/space/ss/14/2/index.md) (Conduction, Heat Pipes, Pumped Loops)
+    *   [SS 14.3: Heat Rejection Systems](docs/space/ss/14/3/index.md) (Radiators)
+    *   [SS 14.4: Thermal Control Coatings and Surfaces](docs/space/ss/14/4/index.md)
+    *   [SS 14.5: Cryogenic Systems and Coolers](docs/space/ss/14/5/index.md)
+    *   [SS 14.6: Multi-Layer Insulation (MLI)](docs/space/ss/14/6/index.md)
+*   **[SS 15: System Safety (Space Specific Hazards & Mitigations)](docs/space/ss/15/index.md)** (Maps to SSS code `SAFU`)
+    *   [SS 15.00: Overall System Safety Program Plan](docs/space/ss/15/00/index.md)
+    *   [SS 15.10: Hazard Analysis (PHA, SHA, FHA for space systems)](docs/space/ss/15/10/index.md)
+    *   [SS 15.20: FMEA/FMECA, Fault Tree Analysis](docs/space/ss/15/20/index.md)
+    *   [SS 15.30: Launch, Range, and Re-entry Safety Considerations](docs/space/ss/15/30/index.md)
+    *   [SS 15.40: Space Debris Mitigation & End-of-Life Disposal Plan](docs/space/ss/15/40/index.md)
+*   **[SS 16: Integration, Assembly, Test & Verification (Space Specific)](docs/space/ss/16/index.md)**
+    *   [SS 16.00: System Integration, Assembly, and Test (IAT) Plan](docs/space/ss/16/00/index.md)
+    *   [SS 16.10: Assembly and Integration Procedures (AIP)](docs/space/ss/16/10/index.md)
+    *   [SS 16.20: Verification and Validation (V&V) Philosophy and Approach](docs/space/ss/16/20/index.md)
+    *   [SS 16.30: Test Levels (Component, Subsystem, System, Mission-Level)](docs/space/ss/16/30/index.md)
+    *   [SS 16.40: Environmental Test Campaigns (TVAC, Vibration, Acoustic, EMI/EMC)](docs/space/ss/16/40/index.md)
+*   **[SS 17: Guidance, Navigation, and Control (GN&C)](docs/space/ss/17/index.md)** (Maps to SSS codes like `AOCS`, `STRK`, `RWAS`, `IMUS`, `GPSR`, `MGTR`, `GNCC`)
+    *   [SS 17.00: General GNC System Architecture](docs/space/ss/17/00/index.md)
+    *   [SS 17.1: Attitude Determination and Control Systems (ADCS/ACS)](docs/space/ss/17/1/index.md)
+    *   [SS 17.2: Orbit Determination and Trajectory Control Systems](docs/space/ss/17/2/index.md)
+    *   [SS 17.3: Integrated GNC Systems (Software, Testing)](docs/space/ss/17/3/index.md)
+    *   [SS 17.4: Advanced GNC Technologies (Autonomous Nav, Precision Pointing)](docs/space/ss/17/4/index.md)
+*   **[SS 18: Mission Operations (Space Segment & Ground Interface)](docs/space/ss/18/index.md)**
+    *   [SS 18.00: Mission Operations Concept (CONOPS)](docs/space/ss/18/00/index.md)
+    *   [SS 18.10: Telemetry, Tracking, and Command (TT&C) Operations](docs/space/ss/18/10/index.md)
+    *   [SS 18.20: Nominal Mission Timelines and Operational Sequences](docs/space/ss/18/20/index.md)
+    *   [SS 18.30: Contingency Operations and Anomaly Response Procedures (On-Orbit)](docs/space/ss/18/30/index.md)
+    *   [SS 18.40: Payload Operations Planning and Execution](docs/space/ss/18/40/index.md)
+*   **[SS 19: Quantum Systems & Payloads (Specific to GAIA-QAO Q-SPACE)](docs/space/ss/19/index.md)** (Maps to SSS codes like `QCSM`, `QKDP`, `QSIP`, specific quantum sensor SSS)
+    *   [SS 19.00: Overview of Integrated Quantum Systems in Spacecraft](docs/space/ss/19/00/index.md)
+    *   [SS 19.10: Quantum Communication Payloads](docs/space/ss/19/10/index.md) (QKD, Entanglement Sources)
+        *   [SS 19.10.1: Design & Theory of Operation](docs/space/ss/19/10/1/index.md)
+        *   [SS 19.10.2: Performance Specifications & KQPMs](docs/space/ss/19/10/2/index.md)
+        *   [SS 19.10.3: Interfaces and Control Software](docs/space/ss/19/10/3/index.md)
+    *   [SS 19.20: Quantum Sensing Payloads](docs/space/ss/19/20/index.md) (Gravimeters, Magnetometers, Clocks, Quantum Radar)
+        *   [SS 19.20.1: Design & Theory of Operation](docs/space/ss/19/20/1/index.md)
+        *   [SS 19.20.2: Performance Specifications & KQPMs](docs/space/ss/19/20/2/index.md)
+        *   [SS 19.20.3: Interfaces and Control Software](docs/space/ss/19/20/3/index.md)
+    *   [SS 19.30: Onboard Quantum Computing/Processing Units](docs/space/ss/19/30/index.md)
+        *   [SS 19.30.1: Architecture and Qubit Technology for Space](docs/space/ss/19/30/1/index.md)
+        *   [SS 19.30.2: Computational Capabilities and Benchmarks in Space Environment](docs/space/ss/19/30/2/index.md)
+        *   [SS 19.30.3: Software Interface, Programming Model, and Algorithms](docs/space/ss/19/30/3/index.md)
+    *   [SS 19.40: Quantum System Environmental Considerations for Space](docs/space/ss/19/40/index.md) (Shielding, Thermal for Qubits, Vacuum, Radiation Hardening for Control Electronics)
+    *   [SS 19.50: Specific V&V and Calibration for Quantum Systems in Space](docs/space/ss/19/50/index.md)
+*   **SS 20 - SS 99:** Reserved for future expansion or specialized systems. *(Examples: SS 20 - Contamination Control, SS 21 - Electromagnetic Compatibility (EMC/EMI) for Spacecraft, SS 25 - Ground Data Systems Interface, SS 30 - Mission Specific Payloads not covered elsewhere, SS 40 - In-Orbit Servicing Provisions, SS 50 - Planetary Protection Provisions)*
 
-This AToC structure ensures that technical information for any GAIA-QAO space system is organized consistently, facilitating ease of use, maintenance, and interoperability.
+This AToC structure ensures that technical information for any GAIA-QAO space system is organized consistently, facilitating ease of use, maintenance, and interoperability. The hyperlinks are conceptual and point to where such documents would reside within a structured GAIA-QAO documentation repository.
 
 ### 9.4 Meta-Documentation (Management of this GAIA-QAO Framework Documentation)
 This AGI Master Document itself, and all overarching GAIA-QAO framework documentation, will be managed according to the principles outlined in Section 9.3:
@@ -3536,7 +3192,7 @@ This AGI Master Document itself, and all overarching GAIA-QAO framework document
 7.  **Pilot Project Identification:** Select one or two initial Q-SPACE conceptual projects (e.g., a Quantum CubeSat demonstrator, a specific scientific probe model) to apply the full GAIA-QAO framework (GQOIS, documentation standards, HIL Thinking V&V).
 8.  **Community Engagement:** Actively engage with academic institutions, space agencies, and commercial space entities interested in adopting or contributing to the GAIA-Q-SPACE open standards.
 
-
+---
 ---
 ## Appendices
 
@@ -4018,6 +3674,7 @@ This appendix provides standardized templates for key GAIA-QAO documents. These 
 **INFOCODE Structure Example:** `SPC-[DOMAIN]-[CATEGORY]-[ITEM_ID]-V#R#P#-[STATUS]`
 (e.g., `SPC-SP-SAT-SPPQAOSATQ2A-V1R0P0-APPROVED`)
 
+
 ---
 title: "System Specification for [Full System Name]"
 infocode: "SPC-[DO]-[ST/SSS]-[MODEL_ID_OR_ITEM]-V#R#P#-[STATUS]" # Adjusted category for new ST
@@ -4150,12 +3807,12 @@ This document specifies the requirements for the [Full System Name], hereafter r
 | QTM-SYS-QKD-002       | Achieve QKD rate > 1kbps                    | RPT-SP-QKDPAYLOAD-PERF-V1R0                           | Analysis Complete |
 | ...                   | ...                                         | ...                                                   | ...      |
 
----
 
 
 ---
 #### G.2 Interface Control Document (ICD) Template
 **INFOCODE Structure Example:** `SPC-SYS-ICD-[SYSTEM_A_ID]-[SYSTEM_B_ID]-V#R#P#-[STATUS]`
+
 
 ---
 title: "Interface Control Document between [System A Name] and [System B Name]"
@@ -4459,13 +4116,10 @@ graph TD
 *   [e.g., Follow all lab safety procedures for [Specific Hazard, e.g., cryogenic handling, laser operation].]
 
 
-
-
 ---
 #### G.4 Air System (ATA-based) Technical Document Template
 **INFOCODE Structure Example:** `MNL-AS-MAINTSKD-[GQOIS_ID_OF_AIRCRAFT_MODEL]-ATA[XX-YY-ZZ]-V#R#P#-[STATUS]`
 (Where ATA[XX-YY-ZZ] refers to ATA Chapter-Section-Subject)
-
 
 ---
 title: "[Aircraft Model Name/GQOIS ID] - ATA [XX-YY-ZZ] - [ATA Subject Name] - [Document Type, e.g., Maintenance Procedure, Description & Operation]"
@@ -4559,9 +4213,8 @@ change_log_ref: "[INFOCODE_OF_CHANGELOG_DOCUMENT_OR_LINK_TO_GIT_HISTORY]"
 ##### G.4.4 Appendix A (within G.4): Illustrations
 [Include or reference diagrams, schematics, and component location figures relevant to this ATA subject. Use INFOCODEs for drawing references.]
 
+
 ---
-
-
 #### G.5 Space System (SS-based) Technical Document Template
 **INFOCODE Structure Example:** `MNL-SP-OPS-[GQOIS_ID_OF_SPACECRAFT_MODEL]-SS[XX.Y.Z]-V#R#P#-[STATUS]`
 (Where SS[XX.Y.Z] refers to GAIA-QAO Space System Chapter-Section-Subject from Part 9.3.4)
@@ -4680,7 +4333,6 @@ change_log_ref: "[INFOCODE_OF_CHANGELOG_DOCUMENT_OR_LINK_TO_GIT_HISTORY]"
 
 ##### G.5.6 Appendix B (within G.5): Interface Summary
 [Summarize key interfaces to other SS XX systems or external entities, with INFOCODEs to relevant ICDs (G.2).]
-
 
 
 ---
@@ -4918,8 +4570,6 @@ In GAIA-QAO, component and module distinctions are “collapsed” from conceptu
 This “foundational disambiguation” section is placed immediately before the main Project Management Plan content to ensure universal clarity and to align all project actors, agents, and systems (human and AI) with GAIA-QAO’s quantum-informed documentation standard.
 
 ---
-*(The PMP template continues with its own Document Control, Revision History, Table of Contents, and then Sections 1 through 13, where each main PMP section number (1, 2, 3...) becomes G.7.1, G.7.2, G.7.3... and their subsections G.7.1.1, G.7.1.2 etc. The content of those PMP sections remains as provided in Turn 137, ready to be filled in for a specific project like "GAIA-Q-SPACE-TEAM-PROJECT".)*
-
 ##### G.7.1 Document Control (for this PMP)
 
 *   **Document Title:** Project Management Plan for [Project Name]
