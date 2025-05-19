@@ -1,4 +1,5 @@
 
+
 **Author:** Amedeo Pelliccia
 © GAIA-QAO / Quantum Aerospace Organization
 
@@ -9,6 +10,8 @@
     <img src="https://github.com/Robbbo-T/assets/raw/main/QAO-LOGO.png" alt="GAIA-QAO Logo" width="150"/>
   </a>
 </p>
+
+![image](https://github.com/user-attachments/assets/c1c21b83-8301-47a8-afbc-d99b52922b71)
 
 ---
 
@@ -46,13 +49,9 @@ The **Quantum Aerospace Organization (GAIA‑QAO)** comprises six federated modu
 
 ---
 
-<p align="center">
-  <a href="https://github.com/Gaia-Q-Space">
-    <img src="https://github.com/Robbbo-T/assets/raw/main/QAO-LOGO-SPACE.png" alt="GAIA-Q-SPACE Logo" width="150"/>
-  </a>
-</p>
+**\[Status: ACTIVE] \[Filename: DIKE-STD-0001.yaml] \[Version: 1.0] \[InfoCode: DIKE-STD-0001]**
+*Optional extensions: Add further fields for cognitive augmentation, multilingual support, or live operational feedback loops as needed.*
 
----
 ---
 _The following is the GAIA-QAO Aerospace Documentation (Conceptual Master Version 0.8.0), with a focus on aspects relevant to the GAIA-Q-SPACE sector._
 ---
