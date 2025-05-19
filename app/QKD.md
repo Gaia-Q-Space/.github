@@ -1,8 +1,4 @@
-<p align="center">
-  <img src="app/image/QKD/Dike/QAO-QKD-Protocol-VIS-001.svg" width="650">
-  <br/>
-  <em>QKD protocol – DIKE-class traceable diagram (BB84 variant, GAIA-Q-SPACE standard).</em>
-</p>
+<img src="https://github.com/Gaia-Q-Space/.github/raw/main/app/image/QKD/Dike/QAO-QKD-Protocol-VIS-001.svg" alt="BB84 QKD DIKE-Class Flowchart" width="680"/>
 
 ---
 
