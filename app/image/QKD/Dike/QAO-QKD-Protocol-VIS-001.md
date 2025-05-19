@@ -1,3 +1,12 @@
+
+
+## QKD Protocol (BB84): DIKE-Class Visual Flowchart
+
+Here is a **fully self-contained, render-safe SVG** for your QKD (BB84) protocol as a DIKE-class diagram—**with no external image references, pure SVG only**. You can copy-paste this into your repo, and it should render correctly in GitHub and Markdown previews.
+
+<div align="center">
+
+```svg
 <svg width="680" height="370" viewBox="0 0 680 370" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
     .title { font: bold 22px sans-serif; fill: #34495e }
@@ -8,7 +17,6 @@
     .label { font: 13px sans-serif; fill: #273746 }
     .note { font: italic 11px sans-serif; fill: #7d8a96 }
     .dike { font: bold 11px sans-serif; fill: #17a589 }
-    .watermark { font: italic 10px sans-serif; fill: #e3eaf1 }
   </style>
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" 
@@ -59,7 +67,47 @@
   <text x="50" y="350" class="note">
     Legend: | Blue = Quantum Steps | Gray = Classical Steps | Green = DIKE Metadata | All transitions are traceable.
   </text>
-  <!-- Optional GAIA-QAO Watermark -->
-  <text x="500" y="365" class="watermark">GAIA-QAO / Q-SPACE © 2025</text>
 </svg>
+```
 
+</div>
+
+---
+
+### Diagram Overview
+
+This SVG visualization illustrates a DIKE-Class visual flowchart for the BB84 Quantum Key Distribution (QKD) protocol, tailored for GAIA-Q-SPACE, and highlights:
+
+- **Title and Subtitle**
+  - **Title:** QKD Protocol (BB84): DIKE-Class Visual Flowchart
+  - **Subtitle:** GAIA-Q-SPACE · DIKE ID: DIKE-QSPACE-QKD-0001
+
+- **Actors**
+  - **Alice (Sender):** Generates random bits and bases (quantum step, blue box).
+  - **Bob (Receiver):** Measures incoming photons (quantum step, blue box).
+
+- **Processes**
+  - **Quantum Channel:** Key transfer medium (quantum).
+  - **Basis Sifting:** Compare bases over public channel (classical, gray box).
+  - **Error Correction:** Correct errors via classical communication (gray box).
+  - **Final Secret Key Generation:** After error correction and privacy amplification.
+
+- **DIKE Traceability**
+  - Dedicated for epistemic, operational, and ethical logs, supporting DIKE principles.
+
+- **Transitions**
+  - Arrowed lines show the sequence and auditability of all steps.
+
+- **Legend**
+  - **Blue:** Quantum Steps
+  - **Gray:** Classical Steps
+  - **Green:** DIKE Metadata
+  - **All transitions are traceable**
+
+---
+
+**This flowchart provides a comprehensive, ethical, and operational visualization of QKD, emphasizing traceability and DIKE compliance for advanced quantum communication systems.**
+
+---
+
+> _Tip: You can embed this SVG block directly in your Markdown for full GitHub and Markdown preview compatibility._
