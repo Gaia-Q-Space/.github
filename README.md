@@ -1,4 +1,4 @@
-# Project Management Plan: [Project Name]
+# Project Management Plan: [GAIA-Q-SPACE-TEAM-PROJECT]
 
 ---
 ## 0. Foundational Disambiguation: Components vs. Modules
