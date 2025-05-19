@@ -1,5 +1,6 @@
-<img src="https://github.com/Gaia-Q-Space/.github/raw/main/app/image/QKD/Dike/QAO-QKD-Protocol-VIS-001.svg" alt="BB84 QKD DIKE-Class Flowchart" width="680"/>
+## QKD Protocol (BB84): DIKE-Class Visual Flowchart
 
+<img src="https://raw.githubusercontent.com/Gaia-Q-Space/.github/main/app/image/QKD/Dike/QAO-QKD-Protocol-VIS-001.svg" width="680">
 ---
 
 #### Diagram Description
