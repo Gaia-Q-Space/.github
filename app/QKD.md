@@ -14,5 +14,3 @@
 - **DIKE Traceability:** Every protocol phase is semantically logged and mapped per DIKE-class audit requirements.
 
 ---
-
-**If you need the SVG as a downloadable file, with additional GAIA-QAO/GAIA-Q-SPACE branding, or exported in PNG/PDF for presentations, let me know!**
