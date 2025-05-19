@@ -3536,87 +3536,172 @@ This AGI Master Document itself, and all overarching GAIA-QAO framework document
 7.  **Pilot Project Identification:** Select one or two initial Q-SPACE conceptual projects (e.g., a Quantum CubeSat demonstrator, a specific scientific probe model) to apply the full GAIA-QAO framework (GQOIS, documentation standards, HIL Thinking V&V).
 8.  **Community Engagement:** Actively engage with academic institutions, space agencies, and commercial space entities interested in adopting or contributing to the GAIA-Q-SPACE open standards.
 
+
 ---
 ## Appendices
 
 This section contains supplementary information, detailed code lists, examples, diagrams, and templates that support the main parts of the GAIA-QAO Aerospace General Index (AGI).
 
 ---
----
-title: "Project Management Plan for [Project Name]"
-infocode: "PJT-[DO/CS]-[PMG]-[PROJECT_ID]-V#R#P#-[STATUS]"
-gaia_qao_project_id: "[If project has a GQOIS System ID for its output, list here, e.g., SP-S-QAO-GRNDCTRL-SYS1]"
-version: "X.Y" # PMPs often use simpler versioning
-status: "Draft | Baseline | Approved | Under Revision | Closed"
-date_created: "YYYY-MM-DD"
-date_modified: "YYYY-MM-DD"
-project_manager: "[Name of Project Manager]"
-project_sponsor: "[Name of Project Sponsor]"
-issuing_authority: "[e.g., GAIA-QAO Project Management Office, GAIA-Q-SPACE Program Lead]"
-security_classification: "GAIA-QAO Internal Use | Project Confidential"
-keywords: "Project Management Plan, PMP, [Project Name], [Key Technologies involved]"
-related_infocodes:
-  - "[INFOCODE_OF_PROJECT_CHARTER_OR_TPSL]"
-  - "[INFOCODE_OF_SYSTEM_REQUIREMENTS_DOCUMENT]"
-abstract: |
-  This Project Management Plan (PMP) outlines the execution, monitoring, control,
-  and closure strategies for the [Project Name]. It serves as the central guiding
-  document for all project stakeholders, defining scope, schedule, budget, resources,
-  risks, and communication protocols.
-change_log_ref: "[INFOCODE_OF_PROJECT_CHANGELOG_OR_LINK_TO_GIT_HISTORY]"
----
+### Appendix A: Top-Level Object Type (ST) Codes
 
-##### G.7.0 Foundational Disambiguation: Components vs. Modules
-(Quantum Collapsing Principle for Systems Integration)
+This appendix lists the defined Object Type (ST) codes used in the Tier 1 GAIA-QAO Object Identification System (`DO-A-CCC-ST-MDL-SSSSS-CC`). The ST code is a 3-character alphanumeric identifier that specifies the primary functional type or category of a Top-Level Object within a given Domain (`DO`) and Asset Class (`A`).
 
-###### G.7.0.1 Purpose
-To prevent ambiguity (“superposition” of meaning) in technical, organizational, and certification documentation, the following explicit definitions and classification boundaries are established for components and modules within the GAIA-QAO project management and systems engineering context.
+#### A.1 Air Systems (AS) Object Types (ST Codes)
 
-###### G.7.0.2 Definitions
+*(This section is part of the complete AGI for comprehensiveness. For the Q-SPACE focused view of this document, the detailed list of Air System Object Types (ST codes for DO=AS) is omitted but would be present in the master AGI. It would typically categorize aircraft by their primary role or configuration, similar to how Space Systems are categorized below. Example ST codes for AS (from previous discussions, assuming Asset Class 'P' for Platform) might include: `PAX` (Passenger Airliner), `CGO` (Cargo Aircraft), `ISR` (ISR Platform), `FTR` (Fighter Aircraft), `BOM` (Bomber Aircraft), `TRN` (Trainer Aircraft), `UTH` (Utility Helicopter), `EVT` (eVTOL Passenger Craft), `LTA` (Lighter-Than-Air Vehicle), `XAP` (Experimental Air Platform).)*
 
-| Term      | Definition                                                                                                                                                                                             | Example in GAIA-QAO                                                                                                |
-| :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
-| Component | A fundamental, physically or logically distinct part of a system that provides a specific function or capability. Components may be hardware, software, data, or organizational artifacts, and are typically “atomic” in the sense that they are not subdivided further for design, manufacturing, or traceability purposes within the current system boundary. | “Antenna”, “Quantum Sensor”, “Flight Control Board”, “Telemetry Processor”, “Encryption Algorithm”                 |
-| Module    | A composite, higher-order construct formed by a collection of components (and possibly sub-modules), representing a complete functional block or deployable unit within the system. Modules define clear interfaces, support reuse, and serve as the main units of integration, certification, and configuration management. | “Communications Module” (includes: Antenna + Transceiver + Encryption Component), “Power Module”, “Propulsion Module”, “User Interface Module” |
+Refer to the complete GAIA-QAO Aerospace General Index Master Document for the detailed list of Air System (AS) Object Types (ST codes).
 
-**Quantum Collapsing Metaphor:**
+#### A.2 Space Systems (SP) Object Types (ST Codes)
 
-In GAIA-QAO, component and module distinctions are “collapsed” from conceptual superposition (where a part could be ambiguously both) into a single, explicit identity at each level of the WBS, documentation, and digital twin.
+This section details the standardized Object Type (ST) codes for Top-Level Objects within the Space Systems Domain (`DO=SP`). These codes are primarily used when the Asset Class (`A`) is `P` (Platform), but some might also apply to `S` (System) or `E` (Equipment) where a top-level space-related entity is being identified.
 
-###### G.7.0.3 Boundary Rules & Principles
-* **Traceability:** Every deliverable, requirement, and change must clearly reference either a component or a module (never both at once at a given level of breakdown).
-* **Certification:** Certification, quality, and compliance processes are performed at the module level (with components forming auditable build/config records).
-* **Reusability:** Components may be reused across modules; modules are the main units of system reconfiguration or up-versioning.
-* **Unique Identification:**
-    * Components: `GAIA-QAO-COMP-[Domain]-[Type]-[ID]` (Conceptual, to be fully defined if needed, likely linked to SSS-MDLs-SERs or specific part numbers)
-    * Modules:    `GAIA-QAO-MOD-[Domain]-[Type]-[ID]` (Conceptual, often a Tier 2 GQOIS ID: `Parent_ID :: SSS-MDLs-SERs`)
-    * All traceable in MetaNube and project configuration baselines using their GQOIS IDs or INFOCODEs.
-* **Quantum Collapsing in Documentation:** At each integration or breakdown point (TPSL, TPWD, WBS), ambiguity is resolved:
-    * Is this an indivisible “building block” (component) or an integrable, certifiable “block” (module)?
-    * No “Schrödinger parts”—every part is resolved to one state by explicit declaration in the design documentation.
+The `ST` code provides the primary functional or categorical classification for the space asset.
 
-###### G.7.0.4 Example Table
+| ST Code | Name                              | Description                                                                                                                               | Common Autonomy (for `MDL`s within) | Example Missions / Roles (Q-SPACE Context)                                                                                                 |
+| :------ | :-------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `SAT`   | Satellite                         | An artificial body placed in orbit around the Earth or another celestial body, primarily uncrewed, for various functional purposes.          | U                                   | Communications (COMSAT), Navigation (NAVSAT), Earth Observation (EOSAT), Scientific Research (SCISAT), Quantum Key Distribution (QKDSAT), Weather (METSAT).                 |
+| `LCH`   | Launch System / Launch Vehicle    | A system designed to transport and deploy payloads (e.g., satellites, probes) from Earth's surface or atmosphere into space.                | U                                   | Expendable Launch Vehicles (ELV - small, medium, heavy, super-heavy), Reusable Launch Vehicles (RLV), Air-Launched Systems, Experimental Quantum Launchers.                 |
+| `ORB`   | Orbital Platform / Vehicle        | Larger, often crewed or crew-supportable, structures or vehicles designed for extended operation in orbit.                                | M, U (for cargo/servicing)          | Space Stations, Orbital Laboratories, Crew Transport Vehicles (to/from orbit), Cargo Resupply Vehicles (to stations), On-Orbit Servicing Vehicles, Orbital Tugs.           |
+| `PRB`   | Probe (Interplanetary/Deep Space) | An uncrewed spacecraft designed to explore celestial bodies beyond Earth orbit (e.g., Moon, planets, asteroids, comets, solar, interstellar). | U                                   | Lunar Orbiters/Landers/Rovers, Mars Orbiters/Landers/Rovers, Venus Probes, Jupiter/Saturn System Explorers, Asteroid Rendezvous, Solar Probes, Interstellar Precursors.      |
+| `XPS`   | Experimental Space Platform/System| A spacecraft or orbital system primarily designed for in-space technology demonstration, experimentation, or validation of new concepts.    | U, M (for some testbeds)            | Technology Demonstration Satellites, Orbital Testbeds for new propulsion (e.g., Quantum Drives), materials, robotics, quantum technologies, or re-entry vehicles.           |
+| `DEF`   | Space Defense System/Platform     | A space-based asset primarily intended for defense, national security, or space domain awareness applications.                            | U                                   | Space Surveillance Satellites, Missile Early Warning Satellites, Defensive Counterspace Systems, Secure Military Communication Satellites with QKD.                         |
+| `SUB`   | Suborbital Vehicle (Space Focus)  | A vehicle designed to reach space (typically >100km altitude) but not achieve a stable orbit, returning to Earth.                         | M, U                                | Reusable tourism vehicles, microgravity research platforms, high-altitude scientific experiment carriers reaching edge of space.                                           |
+| `ISS`   | In-Space Servicer/Assembler       | A robotic spacecraft designed for in-space servicing (repair, refuel), assembly of larger structures, or manufacturing (ISAM).              | U                                   | Satellite life extension vehicles, orbital debris removal spacecraft, large telescope assembly robots, in-space 3D printing platforms.                                      |
+| `GND`   | Ground Segment System (Major)     | A major, identifiable ground system directly supporting space operations, if managed as a top-level GAIA-QAO asset (Asset Class `S` or `E`). | N/A (M/U relates to ops team)       | Deep Space Network Antenna Complex, Launch Control Center Facility, Satellite Operations Center.                                                                       |
+| `QCS`   | Quantum Computing Service (Orbital)| An orbital platform primarily dedicated to providing quantum computing resources or services from space.                                  | U                                   | Space-based QPU for research or commercial quantum computation, potentially part of a larger Quantum Nexus Hub (see Part 4.3.1, MDL QNH-3H for SAT).                   |
 
-| Item                 | Type      | ID Example (Illustrative/Conceptual) | Notes                                  |
-| :------------------- | :-------- | :----------------------------------- | :------------------------------------- |
-| High-Gain Antenna    | Component | P/N: HGA-X001-REV2                   | Used in `COMM-HGA_MOD-001` module        |
-| Telemetry Subsystem  | Module    | `{SAT_ID} :: CDHS-TMU1A-SN007`       | Contains sensor & data processing components |
-| Quantum Key Chip     | Component | P/N: QKC-ESP005                      | Embedded in Secure Comms Module        |
-| Power Control Module | Module    | `{SAT_ID} :: EPSU-PCM2B-SN002`       | Includes PCBs & FSW component `FSW-SP-EPS-PCMCTRL-V1R2` |
+**Notes on ST Code Usage for Q-SPACE:**
 
-###### G.7.0.5 Practical Implementation
-* Every WBS element and requirement must resolve (“collapse”) to a declared component or module with a traceable identifier (OEM P/N, internal P/N, or a GQOIS Tier 2 ID if it's a significant module).
-* All documentation, versioning, and approval workflows must reference the explicit ID and type.
-* Digital twin and compliance traces in MetaNube must enforce this disambiguation at ingestion and change.
+*   The `ST` code is combined with the `DO` (SP), `A` (Asset Class, e.g., P), and `CCC` (Controlling Org) to define the context for the `MDL` (Model). For example, `SP-P-QAO-SAT-...` clearly indicates a GAIA-QAO designed satellite platform.
+*   **Quantum Enhancements:** The presence of quantum technology within a platform of a given `ST` is primarily indicated by the `MDL` code's `G` (Generation/Series) component (e.g., `Q` for Quantum-enhanced) and detailed in the `technical_specifications` of the `object_models` entry. Specific quantum payloads or subsystems would be identified using Tier 2 GQOIS IDs (see Part 5) with SSS codes like `QKDS`, `QSNA`, `QCSM`.
+*   **Flexibility:** This list is extensible. New `ST` codes for emerging space asset types can be proposed and added to the `object_types` table via the GAIA-QAO governance process.
+*   **Distinction from SSS:** `ST` codes classify the *entire top-level object*. `SSS` codes (Appendix F) classify its *constituent major subsystems*. For instance, a satellite (`ST=SAT`) will *contain* subsystems like propulsion (`SSS=PROP`), power (`SSS=EPSU`), etc.
 
-This “foundational disambiguation” section is to be placed immediately before the main Project Management Plan content to ensure universal clarity and to align all project actors, agents, and systems (human and AI) with GAIA-QAO’s quantum-informed documentation standard.
+This structured list of Space System Object Types (`ST` codes) forms the primary categorization for all Q-SPACE platforms and major systems within the GAIA-QAO Model Registry (Part 4.3).
 
 ---
-*(The rest of the PMP template, from Document Control, Revision History, through Section 13, would follow here, with each main PMP section number (1, 2, 3...) becoming G.7.1, G.7.2, G.7.3... and their subsections G.7.1.1, G.7.1.2 etc. The content of those PMP sections remains as provided in Turn 137.)*
+### Appendix B: ID Examples (Q-SPACE Focus)
+
+This appendix provides illustrative examples of complete GAIA-QAO Object Identifiers (GQOIS IDs), focusing on Space Systems (`DO=SP`). These examples demonstrate the application of the two-tiered identification structure defined in Part 3, using the refined Tier 1 component definitions (where `A` is Asset Class and `CCC` is Controlling Organization Code) and the Tier 2 subsystem identification format.
+
+For detailed model names and specifications corresponding to the `MDL` codes used here, refer to Part 4.3: Space Systems (SP) Top-Level Object Models. For Subsystem Type (`SSS`) and Subsystem Model (`MDLs`) details, refer to Part 5 and Appendix F.
+
+#### B.1 Tier 1: Top-Level Space Object ID Examples
+
+The Tier 1 ID format is: `DO-A-CCC-ST-MDL-SSSSS[-CC]`
+
+1.  **Quantum Communications Satellite Instance:**
+    *   **ID:** `SP-P-QAO-SAT-Q2A-00001-A1`
+    *   **Breakdown:**
+        *   `SP`: Space System (Domain)
+        *   `P`: Platform (Asset Class)
+        *   `QAO`: GAIA-QAO (Controlling Organization)
+        *   `SAT`: Satellite (Object Type)
+        *   `Q2A`: Model Code (e.g., "QuantumComSecure QCS-200A" - Autonomy `U` defined with model)
+        *   `00001`: First instance (Serial Number)
+        *   `A1`: Initial As-Built Configuration (Configuration Code)
+    *   **Interpretation:** The first physical instance of GAIA-QAO's QuantumComSecure QCS-200A satellite model, in its initial as-built configuration.
+
+2.  **ESA Scientific Probe Instance:**
+    *   **ID:** `SP-P-ESA-PRB-Q3L-00007-B2`
+    *   **Breakdown:**
+        *   `SP`: Space System
+        *   `P`: Platform
+        *   `ESA`: European Space Agency (Controlling Organization)
+        *   `PRB`: Probe (Object Type)
+        *   `Q3L`: Model Code (e.g., "QuantumIceGiantOrbiter QIO-3L" - Autonomy `U`)
+        *   `00007`: Seventh instance
+        *   `B2`: Block 2 Configuration (e.g., after a major instrument software update)
+    *   **Interpretation:** The seventh instance of ESA's QuantumIceGiantOrbiter QIO-3L probe model, currently in its Block 2 configuration.
+
+3.  **Reusable Launch Vehicle Instance (First Stage):**
+    *   **ID:** `SP-P-COM-LCH-Q2R-00015-M3`
+    *   **Breakdown:**
+        *   `SP`: Space System
+        *   `P`: Platform
+        *   `COM`: Commercial Entity "COM" (Controlling Organization, e.g., a commercial launch provider)
+        *   `LCH`: Launch System (Object Type)
+        *   `Q2R`: Model Code (e.g., "QuantumPhoenix QPh-2R" - Autonomy `U` for flight)
+        *   `00015`: Fifteenth instance of this reusable first stage
+        *   `M3`: Minor Modification Configuration 3 (e.g., after refurbishment with upgraded components)
+    *   **Interpretation:** The fifteenth reusable first stage of the QuantumPhoenix QPh-2R model, operated by commercial entity "COM", in its third minor modification configuration.
+
+4.  **Module of a GAIA-QAO Manned Space Station:**
+    *   **ID:** `SP-P-QAO-ORB-Q3A-00002-L1`
+    *   **Breakdown:**
+        *   `SP`: Space System
+        *   `P`: Platform (The module itself is a major platform component of the station)
+        *   `QAO`: GAIA-QAO
+        *   `ORB`: Orbital Platform/Vehicle (Object Type, representing the station module)
+        *   `Q3A`: Model Code (e.g., "GAIA-StationCore QSC-3A" - Autonomy `M`)
+        *   `00002`: Second core module instance for a station
+        *   `L1`: Life Extension Program Configuration 1
+    *   **Interpretation:** The second GAIA-StationCore QSC-3A module, designed for manned operation, after undergoing its first Life Extension Program modifications.
+
+5.  **Experimental Quantum Propulsion Testbed (as a System):**
+    *   **ID:** `SP-S-QAO-XPS-P2S-00001-E2`
+    *   **Breakdown:**
+        *   `SP`: Space System
+        *   `S`: System (Asset Class, as it's a complex integrated testbed, not a free-flying platform)
+        *   `QAO`: GAIA-QAO
+        *   `XPS`: Experimental Space System (Object Type)
+        *   `P2S`: Model Code (e.g., "QuantumPropulsionTestbed QPT-2S" - Autonomy `U` for automated tests)
+        *   `00001`: First instance of this testbed system
+        *   `E2`: Experimental Configuration 2
+    *   **Interpretation:** The first GAIA-QAO QuantumPropulsionTestbed QPT-2S, configured for its second set of experiments.
+
+#### B.2 Tier 2: Subsystem ID Examples (Q-SPACE Context)
+
+The Tier 2 Subsystem ID format is: `{Parent_Tier_1_ID} :: SSS-MDLs-SERs[-CCs]`
+
+1.  **Primary On-Board Computer of a Satellite:**
+    *   **Parent ID:** `SP-P-QAO-SAT-Q2A-00001-A1` (from B.1 example 1)
+    *   **Subsystem Part:** `CDHS-GQBC1A-OBC007-F3`
+        *   `CDHS`: Command & Data Handling Subsystem (SSS Code)
+        *   `GQBC1A`: GAIA-Q On-Board Computer Mk1A (MDLs Code for the computer model)
+        *   `OBC007`: Serial number of this specific computer unit
+        *   `F3`: Firmware Load 3 (Subsystem Configuration Code)
+    *   **Full Reference:** `SP-P-QAO-SAT-Q2A-00001-A1 :: CDHS-GQBC1A-OBC007-F3`
+    *   **Interpretation:** The GAIA-Q On-Board Computer Mk1A, serial OBC007, running firmware load F3, currently installed on the QuantumComSecure QCS-200A satellite S/N 00001 (which is in its A1 top-level config).
+
+2.  **Quantum Gravimeter Payload on a Lunar Probe:**
+    *   **Parent ID:** `SP-P-ESA-PRB-Q2A-00004-A2` (ESA Lunar Probe "QuantumLunaOrbiter", 4th instance, Config A2)
+    *   **Subsystem Part:** `QSEN-QGRV3-SN002B-C1`
+        *   `QSEN`: Quantum Sensor Unit (SSS Code)
+        *   `QGRV3`: Quantum Gravimeter Model 3 (MDLs Code)
+        *   `SN002B`: Serial number of this gravimeter
+        *   `C1`: Calibration Set 1 (Subsystem Configuration Code)
+    *   **Full Reference:** `SP-P-ESA-PRB-Q2A-00004-A2 :: QSEN-QGRV3-SN002B-C1`
+    *   **Interpretation:** The Quantum Gravimeter Model 3, S/N SN002B, with calibration set C1, installed on ESA's 4th QuantumLunaOrbiter probe.
+
+3.  **Reaction Wheel Assembly on an Experimental Space Platform:**
+    *   **Parent ID:** `SP-P-QAO-XPS-P2A-00001-A1` (GAIA-QAO Experimental Platform "SpaceTechOrbiter")
+    *   **Subsystem Part:** `RWAS-MRW15A-SN255-A1`
+        *   `RWAS`: Reaction Wheel Assembly (SSS Code)
+        *   `MRW15A`: Micro Reaction Wheel Assembly 15A (MDLs Code)
+        *   `SN255`: Serial number of this RWA
+        *   `A1`: Initial build configuration (Subsystem Configuration Code)
+    *   **Full Reference:** `SP-P-QAO-XPS-P2A-00001-A1 :: RWAS-MRW15A-SN255-A1`
+    *   **Interpretation:** Micro Reaction Wheel Assembly 15A, S/N SN255, in its initial configuration, installed on the GAIA-QAO SpaceTechOrbiter S/N 00001.
+
+4.  **Solar Array Wing of a GEO Communications Satellite:**
+    *   **Parent ID:** `SP-P-COM-SAT-A3H-00002-B1` (Commercial GEO Comms Sat "AeroLink GEO-Com")
+    *   **Subsystem Part:** `SOLA-SAW7P-WING01P-A1`
+        *   `SOLA`: Solar Array Assembly (SSS Code)
+        *   `SAW7P`: Solar Array Wing 7-Panel Model (MDLs Code)
+        *   `WING01P`: Serial/Identifier for the Port Wing
+        *   `A1`: As-manufactured configuration
+    *   **Full Reference:** `SP-P-COM-SAT-A3H-00002-B1 :: SOLA-SAW7P-WING01P-A1`
+    *   **Interpretation:** The port-side Solar Array Wing, 7-Panel Model, S/N WING01P, installed on the AeroLink GEO-Com satellite S/N 00002.
+
+These examples illustrate the descriptive power and traceability afforded by the GAIA-QAO GQOIS for Q-SPACE assets and their critical subsystems.
 
 ---
-**End of Project Management Plan Template (G.7)**
----and other registry functions. The full SQL DDL (Data Definition Language) for the schema is provided in Part 7.
+### Appendix C: Database Schema Diagrams (Illustrative)
+
+This appendix contains Entity-Relationship Diagrams (ERDs) illustrating the structure and relationships of the GAIA-QAO database schema, which underpins the Object Identification System (GQOIS) and other registry functions. The full SQL DDL (Data Definition Language) for the schema is provided in Part 7.
 
 The following diagrams provide a high-level overview of key table groupings and their primary relationships.
 
@@ -3737,7 +3822,27 @@ The following use cases, while some may have generic aerospace elements, are hig
 **Scenario:** An aerospace vehicle (e.g., aircraft `AS-P-QAO-PAX-Q1H-00001-A1` or satellite `SP-P-QAO-SAT-Q2H-00005-A1`) reports an unexpected system warning via live telemetry (e.g., engine vibration for AS, power fluctuation or sensor anomaly for SP).
 
 **Interaction Flow with GAIA-Q-UI:**
-*(Content as detailed in Turn 137, Section Appendix D.1, e.g., Input, Processing, AI Model Routing, Results, Further Interaction, adapted with Q-SPACE specifics for the satellite power anomaly example.)*
+
+##### D.1.1 Input
+*   Operator: "Investigate [Parameter e.g., EGT spike, power bus undervoltage] and [Warning e.g., vibration, comms loss] on `[GQOIS_ID]`, [Subsystem e.g., Engine #2, Solar Array String 3]."
+*   GAIA-Q-UI ingests live telemetry (e.g., ARINC 429/AFDX for AS, CCSDS for SP). Operator uploads screenshot of cockpit/console warning.
+
+##### D.1.2 Processing by GAIA-Q-UI
+*   Session `QAO-UIF-SESSION-DATE-UUID1` initiated.
+*   NLP parses query. Telemetry/Visual processors handle data.
+
+##### D.1.3 AI Model Routing & Data Retrieval
+*   Telemetry to `AnomalyDetectionAI` (trained for AS or SP specific systems). Screenshot to `VisionGPT` or equivalent.
+*   GAIA-QAO Registry queried for vehicle configuration (`CC`), relevant subsystem (`MDLs`, `SERs`) details, maintenance history, applicable Service Bulletins/Mission Directives.
+*   Optional MCP Agent query for similar past incidents across the fleet or analogous missions.
+
+##### D.1.4 Results Aggregation & Output (Example for SP Satellite Power Anomaly)
+*   Synthesized summary: "Live telemetry for `SP-P-QAO-SAT-Q2H-00005-A1` (Solar Array String #3, Config `A1`) shows 15% current drop inconsistent with predicted illumination. Console: 'SA_STR3_CUR_LOW'. AI: Potential MMOD impact or bypass diode failure (Conf: 80%). Registry: String #3 last inspected [Date]. No critical mission directives."
+*   Displayed with telemetry plots (current, voltage, sun angle) and interpreted warning.
+
+##### D.1.5 Further Interaction
+*   Operator: "Show Spacecraft Operations Handbook procedure for SA String #3 diagnostics." or "Simulate impact of String #3 at 85% capacity on next orbit's power budget considering scheduled payload activity."
+*   GAIA-Q-UI routes to LLM with access to technical manuals (SS-XX based for SP) or to a power system simulation model via MCP.
 
 #### D.2 Use Case: Preliminary Design Review Support for a Quantum Sensor Integration (Q-SPACE Focus)
 
@@ -3745,7 +3850,33 @@ The following use cases, while some may have generic aerospace elements, are hig
 **Scenario:** Evaluating the integration feasibility of a GAIA-QAO conceptual quantum gravimeter (`MDLs: QGRV3` from SSS=`QSEN`) onto a lunar probe platform (`MDL: QLO-2A` from ST=`PRB` for `SP-P-QAO-PRB-QLO-2A`).
 
 **Interaction Flow with GAIA-Q-UI:**
-*(Content as detailed in Turn 137, Section Appendix D.2, e.g., Input, Processing, AI Model Routing, Results, Further Interaction.)*
+
+##### D.2.1 Input
+*   Engineer: "Analyze integration feasibility of subsystem `QSEN-QGRV3` onto platform model `SP-P-QAO-PRB-QLO-2A`. Check power budget, mass margin, data interface compatibility, thermal dissipation, and potential EMI with existing `COMM-SATK1H` subsystem."
+*   Uploads: `QSEN-QGRV3_ICD.pdf` (Interface Control Document for the quantum gravimeter), `PRB-QLO-2A_Payload_User_Guide.pdf`, `PRB-QLO-2A_Resource_Budgets.xlsx`.
+
+##### D.2.2 Processing by GAIA-Q-UI
+*   Session `QAO-UIF-SESSION-DATE-UUID2` initiated.
+*   Parsers extract data from PDF, XLSX. `EngineeringDataParser` may handle specific technical drawing formats if provided.
+
+##### D.2.3 AI Model Routing & Data Retrieval
+*   Extracted parameters (power reqs, mass, data rate from `QSEN-QGRV3_ICD`) to an LLM or rule-based system for comparison against probe's resource budgets (`PRB-QLO-2A_Resource_Budgets.xlsx`).
+*   Interface details (e.g., SpaceWire from ICD) checked against probe's payload interface specs (`PRB-QLO-2A_Payload_User_Guide.pdf`).
+*   Thermal dissipation of `QSEN-QGRV3` to a basic thermal analysis AI or lookup for compatibility with probe's TCS capabilities.
+*   Query specialized AI/knowledge base or EMC analysis tool (via MCP) for EMI between `QSEN-QGRV3` operating frequencies and `COMM-SATK1H` SSPA frequencies (fetching specs from Registry if models are registered).
+
+##### D.2.4 Results Aggregation & Output
+*   Structured summary:
+    *   "Power for `QSEN-QGRV3` (25W peak) is within `PRB-QLO-2A` unallocated payload power margin (40W)."
+    *   "Mass of `QSEN-QGRV3` (5kg) fits within payload mass budget (15kg remaining)."
+    *   "Data Interface: `QSEN-QGRV3` requires SpaceWire (100 Mbps). `PRB-QLO-2A` provides 2x SpaceWire payload ports. Compatible."
+    *   "Thermal: `QSEN-QGRV3` dissipates 15W. `PRB-QLO-2A` payload deck can handle up to 20W conductive. OK with thermal strap `SSS=TCSM, MDLs=TSGF2`."
+    *   "EMI: Potential conflict. `QSEN-QGRV3` quantum control pulses (X.X GHz range) may require additional shielding or operational constraints if `COMM-SATK1H` uplink (Y.Y GHz) active simultaneously. Recommend detailed EMITEST (Test Plan `TST-SP-EMI-QGRV3LUNAPRB-V1R0`). Confidence: 0.65."
+*   Visualizations: Highlight available space in a conceptual payload bay diagram, power budget pie chart.
+
+##### D.2.5 Further Interaction
+*   Engineer: "What are the standard GAIA-QAO thermal straps (`SSS=TCSM`) compatible with `QSEN-QGRV3` mounting points?"
+*   GAIA-Q-UI queries Registry for `subsystem_models` under `SSS=TCSM` matching interface criteria.
 
 #### D.3 Use Case: AI-Assisted Illustrated Parts Catalog (IPC) Page Generation (Q-SPACE Focus)
 
@@ -3753,9 +3884,46 @@ The following use cases, while some may have generic aerospace elements, are hig
 **Scenario:** Generating a new IPC or Assembly Procedure page for a recently modified reaction wheel assembly (`Subsystem MDLs: RWA04B`, Config `M2` - software update) for satellite `SP-P-QAO-SAT-Q2H-00005-B1`.
 
 **Interaction Flow with GAIA-Q-UI:**
-*(Content as detailed in Turn 137, Section Appendix D.3, e.g., Input, Processing, AI Model Routing, Results, Further Interaction, adapted for spacecraft AIT or maintenance documentation.)*
 
-These use cases demonstrate the potential of GAIA-Q-UI to act as an intelligent assistant across various aerospace engineering, operations, and maintenance workflows, with significant applicability and customization for the demanding requirements and unique data types of the Q-SPACE sector.
+##### D.3.1 Input
+*   Author: "Generate IPC data for `SP-P-QAO-SAT-Q2H-00005-B1 :: RWAS-RWA04B-SN255-M2`. Use assembly drawing `DRAW-RWAS-RWA04B.svg` and 3D model `3D-RWAS-RWA04B.step`. Cross-reference parts with GAIA-QAO registry data for part numbers and nomenclatures."
+*   Uploads: `.svg` assembly drawing, `.step` 3D model file.
+
+##### D.3.2 Processing by GAIA-Q-UI
+*   `SessionManager` starts session `QAO-UIF-SESSION-DATE-IPC-SP1`.
+*   `InputHandler` processes query and files. `EngineeringDataParser` analyzes SVG for callouts/part numbers and STEP for part geometry.
+
+##### D.3.3 AI Model Routing & Data Retrieval
+*   `ModelRoutingEngine`:
+    *   SVG schematic to `VisionGPT` or specialized OCR/diagram understanding model to identify part callouts and BOM tables.
+    *   STEP model to a CAD-aware vision model or geometry analysis tool to segment individual parts and generate an exploded view.
+*   `QueryOrchestrator`:
+    *   For each identified part callout/segmented geometry, queries `GAIA-QAO RegistryInterface` using potential part numbers (extracted by OCR from drawing) or Component IDs (if available in CAD metadata) to find matching `subsystem_instances` (if serialized) or `subsystem_models` (for standard parts) and retrieve: Official Part Name, Part Number (PN), GAIA-QAO Subsystem ID (if applicable), NATO Stock Number (NSN)/ICY code, Vendor information.
+    *   Queries for `RWAS-RWA04B` (Config `M2`) specific assembly instructions or notes from technical manuals linked in the registry.
+
+##### D.3.4 Results Aggregation & Output
+*   `ResultsAggregator` compiles:
+    *   Suggested figure number and title for the IPC page.
+    *   Generated/proposed exploded view image from STEP model with item numbers (callouts).
+    *   Parts list table: Item No., Part Number (OEM), GAIA-QAO Subsystem ID (if it's a registered subsystem itself, e.g., a complex sensor within the RWA), Nomenclature, Units per Assembly (UPA), Usable On Code (UOC - linking to parent `SP-P-QAO-SAT-Q2H-00005-B1`).
+    *   LLM-generated draft for "Notes" or critical "Assembly/Disassembly Steps."
+*   `OutputRenderer` displays this in a structured format suitable for IPC generation (e.g., S1000D data module preview), with an interactive 3D viewer for the exploded view.
+*   **Example Output Snippet (IPC Parts List for RWA04B-M2):**
+    ```
+    | Item | Part Number (OEM) | GAIA-QAO Subsystem ID (if applicable) | Nomenclature           | UPA |
+    |------|-------------------|---------------------------------------|------------------------|-----|
+    | 1    | RWA04B-HSG-001    |                                       | Housing, RWA           | 1   |
+    | 2    | BRG-XYZ-007       |                                       | Bearing, Angular Contact| 2   |
+    | 3    | MOT-ABC-003C      | ELEC-MOTR-STA03C-SNxxxx               | Motor, Stator Assembly | 1   |
+    | 4    | PCB-RWA-CTRL-M2   | AVSE-PCBA-RWC2B-SNxxxx               | PCB, Control Electronics (Config M2) | 1   |
+    ```
+
+##### D.3.5 Further Interaction & Refinement
+*   Author: "Change callout for Item 3 to point to rotor." "Add maintenance note: 'Lubricate bearings (Item 2) per MM-RWAS-RWA04B-TASK-001'."
+*   GAIA-Q-UI processes edits, updates draft IPC page data.
+*   Final IPC page data (e.g., S1000D DMRL compliant XML) can be exported, InfoCode-tagged for inclusion in the satellite's technical library.
+
+These use cases demonstrate the potential of GAIA-Q-UI to act as an intelligent assistant across various aerospace engineering, operations, and maintenance workflows, including those critical for the Q-SPACE sector.
 
 ---
 ### Appendix E: Note on Detailed Survey of Aerospace Software Technologies
@@ -3784,7 +3952,8 @@ The list prioritizes subsystems commonly found in **Space Systems (SP)** and inc
 | SSS Code | Name                                     | Description                                                                                                   | Primary Domain(s) | Typical SS XX Mapping (Conceptual) | Example MDLs (Illustrative Q-SPACE) |
 | :------- | :--------------------------------------- | :------------------------------------------------------------------------------------------------------------ | :---------------- | :------------------------------- | :---------------------------------- |
 | **Propulsion & Power Related** |
-| `PROP`   | Propulsion System (Main & ACS)         | Main chemical or electric propulsion engines/thrusters, ACS thrusters, propellant tanks, and feed systems.      | SP                | SS 01                            | `XIPS25E`, `LH2RL10`, `QDRV1M`      |
+| `PRS`    | Propulsion System (Space Main)           | Main chemical or electric propulsion engines/thrusters, including primary tanks and feed systems.             | SP                | SS 01                            | `LH2LOX1`, `XIPS25E`, `QDRV1M`      |
+| `RCT`    | Reaction Control Thrusters             | Smaller thrusters for attitude control, fine maneuvering, or ullage; part of RCS/ACS.                         | SP                | SS 01.1.1, SS 17.1.3             | `HYD1N`, `CGT01N`                 |
 | `PPU`    | Power Processing Unit (EP)             | Electronics converting bus power for electric propulsion thrusters.                                           | SP                | SS 01.2.1, SS 03.3.3             | `EPP10KW`, `HALLPPU3A`            |
 | `PTNK`   | Propellant Tank Assembly               | Tanks for storing main or ACS propellant (oxidizer, fuel, pressurant).                                        | SP                | SS 01.1.1                        | `XETK70L`, `N2OPRES1`             |
 | `EPSU`   | Electrical Power Subsystem             | Encompasses overall power generation, storage, and primary distribution management.                           | SP, CS            | SS 03                            | `SATPSU2K`, `PROBEPS500W`         |
@@ -3838,6 +4007,847 @@ The list prioritizes subsystems commonly found in **Space Systems (SP)** and inc
 *   The goal is to provide a balanced level of granularity for effective system management and documentation, facilitating targeted technical library searches and digital twin component association.
 
 ---
+### Appendix G: Documentation Templates
+
+This appendix provides standardized templates for key GAIA-QAO documents. These templates are designed to ensure consistency, completeness, and adherence to the GAIA-CO-ASD-LIB standard (Part 9.3). Each template includes a YAML front-matter block for metadata as defined in Part 9.3.2.3.
+
+**For Q-SPACE, templates G.5 (Space System Technical Document), G.6 (Quantum System Specification), and G.7 (Project Management Plan) are particularly relevant.**
+
+---
+#### G.1 System Specification Template
+**INFOCODE Structure Example:** `SPC-[DOMAIN]-[CATEGORY]-[ITEM_ID]-V#R#P#-[STATUS]`
+(e.g., `SPC-SP-SAT-SPPQAOSATQ2A-V1R0P0-APPROVED`)
+
+---
+title: "System Specification for [Full System Name]"
+infocode: "SPC-[DO]-[ST/SSS]-[MODEL_ID_OR_ITEM]-V#R#P#-[STATUS]" # Adjusted category for new ST
+gaia_qao_object_id: "[GQOIS_ID of the System/Model this spec applies to, if applicable]"
+version: "X.Y.Z"
+status: "Draft | In Review | Approved | Superseded"
+date_created: "YYYY-MM-DD"
+date_modified: "YYYY-MM-DD"
+authors:
+  - name: "[Author Name]"
+    role: "[Author Role]"
+    organization: "[Author Organization]"
+  - name: "[Team Name, if applicable]"
+approvers: # Optional, for formal releases
+  - name: "[Approver Name]"
+    role: "[Approver Role]"
+    date: "YYYY-MM-DD"
+security_classification: "GAIA-QAO Public | Internal | Project Confidential | [Other]"
+keywords: "[Keyword1], [Keyword2], [System Name], [Technology Type], Specification"
+related_infocodes:
+  - "[INFOCODE_OF_REQUIREMENTS_DOC]"
+  - "[INFOCODE_OF_ARCH_DESIGN_DOC]"
+abstract: |
+  A brief (1-2 paragraph) summary of the system and the purpose of this specification document.
+  This document defines the functional, performance, interface, and quality requirements
+  for the [Full System Name].
+change_log_ref: "[INFOCODE_OF_CHANGELOG_DOCUMENT_OR_LINK_TO_GIT_HISTORY]"
+---
+
+# System Specification: [Full System Name] ([GQOIS Model ID if applicable])
+
+##### G.1.1 Document Control 
+
+###### G.1.1.1 Revision History
+
+| Version | Date       | Author(s)          | Change Description Summary                      | Approver(s) |
+| :------ | :--------- | :----------------- | :---------------------------------------------- | :---------- |
+| 0.1     | YYYY-MM-DD | [Initial Author]   | Initial Draft                                   |             |
+| 1.0     | YYYY-MM-DD | [Lead Author]      | Approved for Release                            | [Approver]  |
+| ...     | ...        | ...                | ...                                             | ...         |
+
+###### G.1.1.2 Referenced Documents
+
+| INFOCODE / Document ID         | Title                                        | Version |
+| :----------------------------- | :------------------------------------------- | :------ |
+| `[INFOCODE_OR_EXTERNAL_ID_1]`  | [Title of Referenced Document 1]             | [Ver]   |
+| `[INFOCODE_OR_EXTERNAL_ID_2]`  | [Title of Referenced Document 2]             | [Ver]   |
+| ...                            | ...                                          | ...     |
+
+##### G.1.2 Introduction
+
+###### G.1.2.1 Purpose of this Document
+This document specifies the requirements for the [Full System Name], hereafter referred to as "the System." It serves as the primary technical baseline for the design, development, verification, and validation of the System.
+
+###### G.1.2.2 Scope of the System
+[Describe the boundaries of the System, what it includes, and explicitly what it excludes. Identify key external interfaces.]
+
+###### G.1.2.3 System Overview
+[Provide a high-level description of the System, its main functions, its operational context, and its key benefits or objectives. Include a conceptual block diagram if helpful (Mermaid or linked SVG).]
+
+###### G.1.2.4 Definitions, Acronyms, and Abbreviations
+[List all terms, acronyms, and abbreviations used in this document that are not part of a global GAIA-QAO glossary or are specific to this System.]
+
+##### G.1.3 System Requirements
+
+###### G.1.3.1 Functional Requirements
+[Detail what the system must do. Use a hierarchical numbering scheme. Each requirement should be uniquely identifiable, testable, clear, and concise.]
+*   **FR-SYS-[NNN]-001:** The System shall [perform function X] under [conditions Y] with [performance criteria Z].
+    *   *Rationale:* [Justification for this requirement]
+    *   *Verification Method:* [Test, Analysis, Inspection, Demonstration]
+    *   *Link to Parent Requirement (if any):* `[INFOCODE_OF_HIGHER_LEVEL_REQ]`
+
+*G.1.3.1.1 [Sub-function 1] Requirements*
+*   **FR-SUB1-[NNN]-001:** ...
+
+###### G.1.3.2 Performance Requirements
+[Detail how well the system must perform its functions. Quantifiable metrics are essential.]
+*   **PR-SYS-[NNN]-001:** The System shall achieve [performance metric A, e.g., data throughput] of at least [value] [units] during [operational mode B].
+    *   *Rationale:* ...
+    *   *Verification Method:* ...
+
+###### G.1.3.3 Interface Requirements
+[Detail all external and major internal interfaces.]
+
+*G.1.3.3.1 External Interfaces*
+*   **IF-EXT-[NNN]-001: Interface with [External System X]**
+    *   *Description:* Defines the [mechanical/electrical/data/thermal] interface between the System and [External System X].
+    *   *Type:* [e.g., SpaceWire, MIL-STD-1553, Power Connector Type Y, CCSDS Telemetry Packet Format Z]
+    *   *Characteristics:* [e.g., Data rate, voltage levels, connector pinout, protocol version]
+    *   *ICD Reference:* `[INFOCODE_OF_ICD_FOR_THIS_INTERFACE]`
+
+*G.1.3.3.2 Internal Interfaces (between major modules if System is complex)*
+*   **IF-INT-[NNN]-001: Interface between [Module A] and [Module B]**
+    *   ...
+
+###### G.1.3.4 Reliability, Availability, Maintainability, Safety (RAMS) Requirements
+*   **REL-SYS-[NNN]-001:** The System shall have a Mean Time Between Critical Failure (MTBCF) of no less than [X] hours under nominal operational conditions.
+*   **SAF-SYS-[NNN]-001:** The System shall comply with [Safety Standard XYZ, e.g., ECSS-Q-ST-40C for software safety].
+*   *(Q-SPACE: Specific requirements for radiation tolerance, single event upset (SEU) mitigation, long-duration operation without maintenance, fault tolerance for critical functions.)*
+
+###### G.1.3.5 Environmental Requirements
+[Specify the environmental conditions the System must operate and survive in.]
+*   *(Q-SPACE: Temperature ranges (operational, survival), vacuum, radiation (TID, SEE), vibration (launch, operational), shock, MMOD, EMI/EMC, outgassing.)*
+*   **ENV-SYS-[NNN]-001:** The System shall operate nominally within a temperature range of [X]°C to [Y]°C.
+
+###### G.1.3.6 Physical Characteristics Requirements
+*   **PHY-SYS-[NNN]-001:** The System total mass shall not exceed [X] kg.
+*   **PHY-SYS-[NNN]-002:** The System dimensions shall fit within envelope [define envelope].
+
+###### G.1.3.7 Security Requirements (Cybersecurity, Information Assurance)
+*   *(Q-SPACE: Secure command links, encrypted telemetry, protection against unauthorized access, anti-jamming for communication/navigation, supply chain security for critical components.)*
+*   **SEC-SYS-[NNN]-001:** All command and control links to the System shall use [Encryption Standard X] with [Key Length Y].
+
+###### G.1.3.8 Quantum-Specific Requirements (If applicable - Link to SS 19 or G.6)
+*   **QTM-SYS-[NNN]-001:** The quantum sensor payload shall achieve a sensitivity of [X units] for [phenomenon Y].
+*   **QTM-SYS-[NNN]-002:** The QKD subsystem shall establish a secure key with a rate of at least [X] kbps over a distance of [Y] km with [BER Z].
+
+##### G.1.4 Verification and Validation (V&V) Overview
+[Outline the general approach for V&V. Detailed V&V plans and procedures will be separate documents.]
+*   Reference to Master V&V Plan: `[INFOCODE_OF_V&V_PLAN]`
+*   Levels of testing (Unit, Integration, System, Acceptance).
+*   Role of simulation, HIL testing (Part 2), and environmental testing.
+
+##### G.1.5 Appendix A (within G.1): Traceability Matrix (Example Stub)
+[Typically a separate document, but a summary or link can be included here. Maps requirements to design elements, test cases, and verification results.]
+
+| Requirement ID        | Description Summary                         | Verified By (Test Case ID / Analysis Report INFOCODE) | Status   |
+| :-------------------- | :------------------------------------------ | :---------------------------------------------------- | :------- |
+| FR-SYS-NAV-001        | Provide position accuracy < 1m              | TST-SP-NAV-SYSVAL-005                                 | Verified |
+| QTM-SYS-QKD-002       | Achieve QKD rate > 1kbps                    | RPT-SP-QKDPAYLOAD-PERF-V1R0                           | Analysis Complete |
+| ...                   | ...                                         | ...                                                   | ...      |
+
+---
+
+
+---
+#### G.2 Interface Control Document (ICD) Template
+**INFOCODE Structure Example:** `SPC-SYS-ICD-[SYSTEM_A_ID]-[SYSTEM_B_ID]-V#R#P#-[STATUS]`
+
+---
+title: "Interface Control Document between [System A Name] and [System B Name]"
+infocode: "SPC-SYS-ICD-[SYS_A_ITEM_ID]-[SYS_B_ITEM_ID]-V#R#P#-[STATUS]"
+gaia_qao_object_id_a: "[GQOIS_ID_of_System_A_if_applicable]"
+gaia_qao_object_id_b: "[GQOIS_ID_of_System_B_if_applicable]"
+version: "X.Y.Z"
+status: "Draft | In Review | Approved | Superseded"
+date_created: "YYYY-MM-DD"
+date_modified: "YYYY-MM-DD"
+authors:
+  - name: "[Author Name A - System A Team]"
+    role: "[Role]"
+  - name: "[Author Name B - System B Team]"
+    role: "[Role]"
+approvers:
+  - name: "[Approver System A]"
+    role: "[Role]"
+    date: "YYYY-MM-DD"
+  - name: "[Approver System B]"
+    role: "[Role]"
+    date: "YYYY-MM-DD"
+security_classification: "GAIA-QAO Public | Internal | Project Confidential"
+keywords: "ICD, Interface, [System A], [System B], [Interface Type]"
+related_infocodes:
+  - "[INFOCODE_OF_SYSTEM_A_SPEC]"
+  - "[INFOCODE_OF_SYSTEM_B_SPEC]"
+abstract: |
+  This document defines the interface(s) between [System A Name] and [System B Name].
+  It specifies all mechanical, electrical, data, thermal, and operational aspects
+  necessary for successful integration and interoperability.
+change_log_ref: "[INFOCODE_OF_CHANGELOG_DOCUMENT_OR_LINK_TO_GIT_HISTORY]"
+---
+
+# Interface Control Document: [System A] and [System B]
+
+##### G.2.1 Document Control 
+*(Patterned after G.1.1: Revision History, Referenced Documents)*
+
+###### G.2.1.1 Revision History
+*(Table as in G.1.1.1)*
+
+###### G.2.1.2 Referenced Documents
+*(Table as in G.1.1.2)*
+
+##### G.2.2 Introduction
+
+###### G.2.2.1 Purpose
+This Interface Control Document (ICD) formally describes the interface(s) between [System A Full Name] (hereafter "System A") and [System B Full Name] (hereafter "System B").
+
+###### G.2.2.2 Scope
+This ICD covers all aspects of the interface(s) necessary to ensure mechanical compatibility, electrical power exchange, data communication, thermal interaction (if applicable), and operational coordination between System A and System B.
+
+###### G.2.2.3 System Overview (Briefly describe System A and System B)
+
+*G.2.2.3.1 System A Overview*
+[Description of System A, its GQOIS ID if applicable, and its role relative to the interface.]
+
+*G.2.2.3.2 System B Overview*
+[Description of System B, its GQOIS ID if applicable, and its role relative to the interface.]
+
+###### G.2.2.4 Interface Overview Diagram
+[A high-level block diagram showing System A, System B, and the interface(s) between them. Mermaid or linked SVG.]
+```mermaid
+graph LR
+    SystemA["System A ([GQOIS_ID_A])"] -- "Interface X" --> SystemB["System B ([GQOIS_ID_B])"]
+    SystemA -- "Interface Y (Optional)" --> SystemB
+```
+
+##### G.2.3 Interface Definition: [Interface Name/ID, e.g., IF-AB-001 Data Link]
+
+###### G.2.3.1 General Description
+[Purpose and general function of this specific interface.]
+
+###### G.2.3.2 Mechanical Interface
+
+*G.2.3.2.1 Physical Connection*
+*   Connector Type(s) on System A: [e.g., D-Sub 37 Pin Male, Part No. XYZ]
+*   Connector Type(s) on System B: [e.g., D-Sub 37 Pin Female, Part No. ABC]
+*   Mating Requirements: [e.g., Engagement force, keying, alignment features]
+*   Mounting Provisions: [Location, hole patterns, fastener types]
+*   Dimensions and Tolerances: [Reference to control drawings - INFOCODEs]
+*   Mass of interface components (connectors, brackets).
+
+*G.2.3.2.2 Envelope and Keep-Out Zones*
+[Reference to drawings defining physical envelopes and keep-out zones around the interface.]
+
+###### G.2.3.3 Electrical Interface
+
+*G.2.3.3.1 Power Exchange*
+*   Power Provided by (System A or B):
+*   Voltage Levels and Tolerances: [e.g., 28 ± 4 VDC]
+*   Maximum/Nominal Current:
+*   Inrush Current Limits:
+*   Grounding and Bonding Scheme: [Reference to Grounding Plan INFOCODE]
+*   Connector Pinout for Power:
+    | Pin | Signal Name    | Direction (A_to_B / B_to_A) | Notes           |
+    |:----|:---------------|:----------------------------|:----------------|
+    | 1   | +28V_MAIN      | A_to_B                      | Main Power      |
+    | 2   | +28V_RETURN    | A_to_B                      | Main Power RTN  |
+    | ... | ...            | ...                         | ...             |
+
+*G.2.3.3.2 Signal Exchange (Non-Data Bus)*
+*   Signal Type(s): [e.g., Discrete (High/Low), Analog (Voltage/Current range)]
+*   Signal Characteristics: [Impedance, rise/fall times, thresholds]
+*   Connector Pinout for Signals: (Similar table as above)
+
+###### G.2.3.4 Data Interface
+
+*G.2.3.4.1 Data Bus Type*
+*   [e.g., SpaceWire, MIL-STD-1553B, Ethernet (specify standard, e.g., 1000BASE-T), CAN, RS-422]
+
+*G.2.3.4.2 Physical Layer*
+*   Medium: [e.g., Shielded Twisted Pair, Fiber Optic]
+*   Data Rate(s):
+*   Encoding Scheme: [e.g., Manchester II, NRZ]
+
+*G.2.3.4.3 Data Link Layer (if applicable)*
+*   Frame Format: [Reference to standard or define custom format]
+*   Addressing Scheme:
+*   Error Detection/Correction: [e.g., CRC, FEC]
+
+*G.2.3.4.4 Network/Transport/Application Layers (if applicable)*
+*   Protocols Used: [e.g., TCP/IP, UDP/IP, CCSDS Packet Telemetry/Telecommand, custom application protocol]
+*   Message Formats / Data Structures: [Define key messages, data types, endianness. Reference data dictionary if extensive.]
+*   Timing and Synchronization: [e.g., Use of PTP (IEEE 1588), IRIG-B time codes]
+
+*G.2.3.4.5 Connector Pinout for Data: (Similar table as above)
+
+###### G.2.3.5 Thermal Interface (If applicable)
+*   Conductive Interface: [Material, surface finish, contact pressure, thermal conductance target]
+*   Radiative Interface: [View factors, surface emissivities, absorptivities]
+*   Maximum/Nominal Heat Dissipation from System A to B (or vice-versa):
+*   Operating Temperature Range at Interface:
+
+###### G.2.3.6 Operational Interface
+*   Startup/Initialization Sequence:
+*   Nominal Operational Modes involving the interface:
+*   Health and Status Exchange:
+*   Fault Handling across the interface:
+
+##### G.2.4 Interface Verification Matrix
+
+| Interface Aspect        | Requirement Ref (from System Specs) | Verification Method (ANL, TST, INS, DEM) | Verification Procedure Ref (INFOCODE) | Responsibility (Sys A / Sys B / Joint) |
+| :---------------------- | :---------------------------------- | :--------------------------------------- | :------------------------------------ | :------------------------------------- |
+| Mechanical Fit          | PHY-SYS_A-005, PHY-SYS_B-010        | INS, TST (Mating Check)                  | TST-ICD-AB-MECHFIT-001                | Joint                                  |
+| Power Voltage           | ELE-SYS_A-002                       | TST                                      | TST-ICD-AB-PWRVAL-001                 | System A (Provider)                    |
+| Data Protocol Compliance| DAT-SYS_B-007                       | TST (Protocol Analyzer), ANL             | TST-ICD-AB-DATPROT-001                | Joint                                  |
+| ...                     | ...                                 | ...                                      | ...                                   | ...                                    |
+
+##### G.2.5 Appendix A (within G.2): Connector Pinout Details (Consolidated)
+[If pinouts are extensive, consolidate them here with references from Section 2.]
+
+##### G.2.6 Appendix B (within G.2): Data Dictionary for Data Interfaces
+[If data messages are complex, provide a full data dictionary here.]
+
+
+---
+#### G.3 Test Procedure Template
+**INFOCODE Structure Example:** `TST-[DOMAIN]-[CATEGORY_OR_SYSTEM]-[TEST_LEVEL]-[ITEM_ID]-V#R#P#-[STATUS]`
+(e.g., `TST-SP-AOCS-SYSVAL-SATQ2A-V1R0P0-APPROVED`)
+
+
+---
+title: "Test Procedure for [Test Subject/System Name] - [Test Type/Level]"
+infocode: "TST-[DO]-[CATEGORY]-[LEVEL]-[ITEM_ID]-V#R#P#-[STATUS]"
+gaia_qao_object_id_tested: "[GQOIS_ID_of_DUT/SUT, if applicable]"
+version: "X.Y.Z"
+status: "Draft | In Review | Approved for Execution | Executed | Obsolete"
+date_created: "YYYY-MM-DD"
+date_modified: "YYYY-MM-DD"
+authors:
+  - name: "[Test Engineer Name]"
+    role: "Test Engineer"
+approvers:
+  - name: "[Test Lead/Manager Name]"
+    role: "Test Lead"
+    date: "YYYY-MM-DD"
+security_classification: "GAIA-QAO Public | Internal | Project Confidential"
+keywords: "Test Procedure, [System Tested], [Test Level e.g., Unit, Integration, System, Acceptance], Verification"
+related_infocodes:
+  - "[INFOCODE_OF_TEST_PLAN]"
+  - "[INFOCODE_OF_SYSTEM_SPECIFICATION_BEING_VERIFIED]"
+  - "[INFOCODE_OF_REQUIREMENTS_BEING_VERIFIED (e.g., REQ-SP-AOCS-...)]"
+abstract: |
+  This document details the step-by-step procedure for conducting the
+  [Test Name/ID] test on the [Test Subject/System Name]. It aims to verify
+  [specific requirements or functionalities].
+change_log_ref: "[INFOCODE_OF_CHANGELOG_DOCUMENT_OR_LINK_TO_GIT_HISTORY]"
+---
+
+# Test Procedure: [Test Name/ID] for [Test Subject/System Name]
+
+##### G.3.1 Document Control
+*(Patterned after G.1.1: Revision History, Referenced Documents)*
+
+###### G.3.1.1 Revision History
+*(Table as in G.1.1.1)*
+
+###### G.3.1.2 Referenced Documents
+*(Table as in G.1.1.2)*
+
+##### G.3.2 Introduction
+
+###### G.3.2.1 Purpose
+This document provides detailed instructions for executing the [Test Name/ID] test. The purpose of this test is to verify [list specific objectives, e.g., "the nominal performance of the Quantum Star Tracker under simulated orbital conditions," or "correct data exchange between the On-Board Computer and the Payload Interface Unit"].
+
+###### G.3.2.2 Scope
+This procedure covers:
+*   Test setup and configuration.
+*   Step-by-step execution instructions.
+*   Expected results and pass/fail criteria for each step.
+*   Data recording requirements.
+*   Safety precautions.
+
+###### G.3.2.3 Test Subject (Device/System Under Test - DUT/SUT)
+*   **Name:** [Full Name of DUT/SUT]
+*   **GQOIS ID (if applicable):** `[Full GQOIS ID, including CC if specific]`
+*   **Hardware Version:** [e.g., Rev B]
+*   **Software/Firmware Version:** [e.g., FSW Load 3.2.1, INFOCODE: FSW-SP-OBC-MAIN-V3R2P1]
+
+##### G.3.3 Test Requirements to be Verified
+
+| Requirement ID (INFOCODE or System Spec Ref) | Requirement Description Summary                      | Test Case Mapping (This Procedure covers TC-XXX) |
+| :------------------------------------------- | :--------------------------------------------------- | :--------------------------------------------- |
+| `REQ-SP-AOCS-STRK-ACC-001`                   | Star Tracker shall provide attitude quaternion with accuracy < 1 arcsec. | TC-STRKVAL-005                                 |
+| `REQ-SP-CDHS-IF-SPW-003`                     | OBC shall transmit health packet via SpaceWire every 1s. | TC-OBCIF-012                                   |
+| ...                                          | ...                                                  | ...                                            |
+
+##### G.3.4 Test Setup
+
+###### G.3.4.1 Required Personnel
+*   Test Conductor: [Name/Role]
+*   Test Operator(s): [Name(s)/Role(s)]
+*   QA Witness (if required): [Name/Role]
+
+###### G.3.4.2 Required Equipment & Software
+| Item ID (GSE INFOCODE if applicable) | Equipment/Software Name & Model             | Quantity | Calibration Due Date (if applicable) |
+| :----------------------------------- | :------------------------------------------ | :------- | :--------------------------------- |
+| `GSE-PWR-LABSUP-001`                 | DC Power Supply XYZ-123                     | 1        | YYYY-MM-DD                           |
+| `GSE-TST-OSCOPE-002`                 | Digital Oscilloscope Tek-ABC                | 1        | YYYY-MM-DD                           |
+| `SW-SIM-ORBITENV-V1R2`               | Orbital Environment Simulator Software      | 1        | N/A                                  |
+| `[DUT_SPECIFIC_CABLE_HARNESS_ID]`    | Custom Test Harness for [DUT]               | 1        | N/A (Inspect before use)             |
+| ...                                  | ...                                         | ...      | ...                                  |
+
+###### G.3.4.3 Test Configuration Diagram
+[A diagram (Mermaid or linked SVG) showing the interconnection of the DUT/SUT with all test equipment, stimuli sources, and data acquisition systems.]
+```mermaid
+graph TD
+    subgraph Test Setup
+        direction LR
+        TE1["Test Equipment 1 (e.g., Power Supply)"]
+        TE2["Test Equipment 2 (e.g., Data Logger)"]
+        DUT["Device Under Test ([GQOIS_ID])"]
+        Stim["Stimulus Source (e.g., Simulator HIL)"]
+    end
+    TE1 --> DUT
+    Stim --> DUT
+    DUT --> TE2
+```
+
+###### G.3.4.4 Pre-Test Setup Steps
+1.  Verify all personnel are trained for this procedure.
+2.  Ensure all test equipment is calibrated and operational. Record serial numbers.
+3.  Connect DUT to test harness as per [Drawing INFOCODE XXX].
+4.  Power on test equipment in sequence: [Sequence details].
+5.  Load DUT Software/Firmware: [FSW INFOCODE XXX, Version Y.Z].
+6.  Configure Orbital Environment Simulator to [Scenario ID: SCEN-ORB-LEOSUNSYNC-001].
+7.  Perform pre-test self-check of DUT: [Procedure, e.g., "Run BIT sequence"]. Record results.
+
+##### G.3.5 Test Execution Steps
+
+| Step No. | Action / Instruction                                    | Expected Result / Observation                                  | Actual Result (To be filled during test) | Pass/Fail | Tester Initials / Timestamp |
+| :------- | :------------------------------------------------------ | :------------------------------------------------------------- | :--------------------------------------- | :-------- | :-------------------------- |
+| G.3.5.1  | Command DUT to enter [Operational Mode X].              | DUT reports Mode X active. Telemetry parameter [TM_PARAM_Y] = [Value Z]. |                                          |           |                             |
+| G.3.5.2  | Apply stimulus [Stimulus A, e.g., simulated Sun pulse]. | DUT sensor [Sensor_ID] output changes from [Val1] to [Val2] ± [Tol]. Response time < [T] ms. |                                          |           |                             |
+| G.3.5.3  | Monitor [TM_PARAM_Q] for [Duration D].                  | [TM_PARAM_Q] remains stable within range [R1] to [R2].         |                                          |           |                             |
+| ...      | ...                                                     | ...                                                            |                                          |           |                             |
+| G.3.5.N  | Command DUT to safe mode.                               | DUT reports Safe Mode active. All non-essential outputs disabled. |                                          |           |                             |
+
+##### G.3.6 Data Recording
+*   All "Actual Result" fields in Section G.3.5 must be completed.
+*   Test Log File INFOCODE: `LOG-TST-[DO]-[CAT]-[ITEM_ID]-TESTLOG-[YYYYMMDDHHMMSS]`
+*   Screenshots/Data Plots: Save as `[StepNo]_[Description].[png/csv]` and reference in Test Log.
+*   Record any anomalies, deviations from procedure, or unexpected events in detail in the Test Log.
+
+##### G.3.7 Pass/Fail Criteria
+*   The overall test is considered **PASSED** if ALL steps in Section G.3.5 meet their individual Pass/Fail criteria.
+*   Any step marked as "Fail" renders the overall test **FAILED**, requiring investigation and re-test after corrective action.
+
+##### G.3.8 Post-Test Procedures
+1.  Power down DUT and test equipment in reverse order of setup.
+2.  Disconnect DUT from test harness.
+3.  Secure all test data (logs, plots, notes).
+4.  Complete Test Report (INFOCODE: `RPT-TST-[...]-V#R#P#`).
+5.  Update Test Status in [Test Management System/Database].
+
+##### G.3.9 Safety Precautions
+*   [e.g., Ensure ESD protection is used when handling DUT.]
+*   [e.g., Verify high voltage interlocks are active before powering system.]
+*   [e.g., Follow all lab safety procedures for [Specific Hazard, e.g., cryogenic handling, laser operation].]
+
+
+
+
+---
+#### G.4 Air System (ATA-based) Technical Document Template
+**INFOCODE Structure Example:** `MNL-AS-MAINTSKD-[GQOIS_ID_OF_AIRCRAFT_MODEL]-ATA[XX-YY-ZZ]-V#R#P#-[STATUS]`
+(Where ATA[XX-YY-ZZ] refers to ATA Chapter-Section-Subject)
+
+
+---
+title: "[Aircraft Model Name/GQOIS ID] - ATA [XX-YY-ZZ] - [ATA Subject Name] - [Document Type, e.g., Maintenance Procedure, Description & Operation]"
+infocode: "MNL-AS-MAINTSKD-[GQOIS_MDL_ID]-ATA[XXYYZZ]-V#R#P#-[STATUS]"
+gaia_qao_object_id: "[Full GQOIS_ID of Aircraft Model this doc applies to, e.g., AS-P-QAO-PAX-Q1H]" # Example using new ID structure
+version: "X.Y.Z"
+status: "Draft | In Review | Approved | Superseded"
+date_created: "YYYY-MM-DD"
+date_modified: "YYYY-MM-DD"
+authors:
+  - name: "[Author/Team Name]"
+    role: "Technical Writer / System Engineer"
+security_classification: "GAIA-QAO Public | Internal | Project Confidential | [Specific Export Control]"
+keywords: "[Aircraft Model], ATA [XX], [ATA Subject], [Document Type], Maintenance, Operations"
+applicability: "This document applies to [Aircraft Model Name/GQOIS ID], all serial numbers unless specified."
+related_infocodes: # e.g., Service Bulletins, related ATA sections
+  - "[SB-AS-...]"
+  - "[MNL-AS-MAINTSKD-...-ATA[PREV_RELATED_SECTION]]"
+abstract: |
+  This document provides [description/operation/maintenance/troubleshooting] information
+  for the [System/Component Name] corresponding to ATA Chapter [XX-YY-ZZ]
+  for the [Aircraft Model Name] aircraft.
+change_log_ref: "[INFOCODE_OF_CHANGELOG_DOCUMENT_OR_LINK_TO_GIT_HISTORY]"
+---
+
+# [Aircraft Model Name] - Technical Documentation
+## ATA Chapter [XX]: [ATA Chapter Name]
+### Section [XX-YY]: [ATA Section Name]
+#### Subject [XX-YY-ZZ]: [ATA Subject Name] - [DOCUMENT TYPE]
+
+*(Content below structured according to S1000D principles or a simplified ATA-like format, focusing on procedures, descriptions, or troubleshooting related to the specific ATA subject. For Q-SPACE, this template is less directly applicable but included for AGI completeness. Template G.5 is for Space Systems.)*
+
+##### G.4.1 Description and Operation (Example Section)
+
+###### G.4.1.1 General
+[Provide a general description of the system/component covered by this ATA subject.]
+[Include purpose, main functions, and location on the aircraft.]
+[Reference overall system schematics using INFOCODEs if available.]
+
+###### G.4.1.2 Components
+[List key components of this system/subsystem.]
+*   Component A ([Part Number], [GQOIS Subsystem ID if applicable, e.g., `{Parent_ID} :: SSS-MDLs-SERs`]) - [Brief Function]
+*   Component B ([Part Number], [GQOIS Subsystem ID if applicable]) - [Brief Function]
+
+###### G.4.1.3 System Operation
+[Describe how the system operates during different flight phases or conditions.]
+*   Normal Operation
+*   Abnormal/Emergency Operation (if applicable)
+*   Interfaces with other aircraft systems.
+
+##### G.4.2 Maintenance Procedures (Example Section if a Maintenance Task Document)
+
+###### G.4.2.1 Safety Precautions
+[List all specific safety precautions to be observed before, during, and after the maintenance task. Reference general aircraft safety procedures.]
+
+###### G.4.2.2 Required Tools and Equipment
+| Tool/Equipment Name | Part Number / INFOCODE | Quantity | Notes |
+| :------------------ | :--------------------- | :------- | :---- |
+| [Tool A]            | [P/N or GSE ID]        | 1        |       |
+| ...                 | ...                    | ...      | ...   |
+
+###### G.4.2.3 Required Consumables
+| Consumable Name     | Specification / Part Number | Quantity | Notes |
+| :------------------ | :-------------------------- | :------- | :---- |
+| [Lubricant X]       | [Spec YYY]                  | A/R      |       |
+| ...                 | ...                         | ...      | ...   |
+
+###### G.4.2.4 Removal Procedure for [Component Name]
+*(Step-by-step instructions, with warnings, cautions, and notes interspersed)*
+1.  **WARNING:** ENSURE HYDRAULIC SYSTEM IS DEPRESSURIZED BEFORE DISCONNECTING LINES.
+2.  Access Panel [Panel Number]: Open access panel.
+3.  Electrical Connector [Connector ID]: Disconnect.
+4.  ...
+5.  Component [Component Name]: Remove mounting bolts and carefully withdraw component.
+
+###### G.4.2.5 Installation Procedure for [Component Name]
+*(Step-by-step instructions, including torque values, functional checks after installation)*
+1.  Component [Component Name]: Position component and install mounting bolts. Torque to [Value] Nm.
+2.  ...
+3.  Functional Test: Perform [Test Procedure INFOCODE XXX] to verify operation.
+
+##### G.4.3 Troubleshooting (Example Section)
+*(Symptom-based troubleshooting table)*
+| Symptom                                 | Probable Cause                         | Isolation Procedure (Ref ATA Sub-Subject) | Corrective Action (Ref ATA Sub-Subject) |
+| :-------------------------------------- | :------------------------------------- | :---------------------------------------- | :-------------------------------------- |
+| [Symptom A, e.g., "No Power to Unit X"] | 1. Circuit Breaker [CB ID] tripped     | XX-YY-ZA                                  | Reset CB. If trips again, investigate.  |
+|                                         | 2. Connector [Connector ID] loose/dirty| XX-YY-ZB                                  | Inspect, clean, re-seat connector.      |
+|                                         | 3. Unit X internal failure             | XX-YY-ZC                                  | Replace Unit X.                         |
+| ...                                     | ...                                    | ...                                       | ...                                     |
+
+##### G.4.4 Appendix A (within G.4): Illustrations
+[Include or reference diagrams, schematics, and component location figures relevant to this ATA subject. Use INFOCODEs for drawing references.]
+
+---
+
+
+#### G.5 Space System (SS-based) Technical Document Template
+**INFOCODE Structure Example:** `MNL-SP-OPS-[GQOIS_ID_OF_SPACECRAFT_MODEL]-SS[XX.Y.Z]-V#R#P#-[STATUS]`
+(Where SS[XX.Y.Z] refers to GAIA-QAO Space System Chapter-Section-Subject from Part 9.3.4)
+
+
+---
+title: "[Spacecraft Model Name/GQOIS ID] - SS [XX.Y.Z] - [SS Subject Name] - [Document Type, e.g., System Description, Operations Procedure]"
+infocode: "MNL-SP-OPS-[GQOIS_MDL_ID]-SS[XXYZ]-V#R#P#-[STATUS]" # XXYZ for XX.Y.Z
+gaia_qao_object_id: "[Full GQOIS_ID of Spacecraft Model this doc applies to, e.g., SP-P-QAO-SAT-Q2A]" # Example using new ID structure
+version: "X.Y.Z"
+status: "Draft | In Review | Approved | Superseded"
+date_created: "YYYY-MM-DD"
+date_modified: "YYYY-MM-DD"
+authors:
+  - name: "[Author/Team Name]"
+    role: "Systems Engineer / Mission Operations Specialist"
+security_classification: "GAIA-QAO Public | Internal | Project Confidential | [Specific Export Control/Mission Sensitivity]"
+keywords: "[Spacecraft Model], SS [XX], [SS Subject], [Document Type], Space Operations, System Description"
+applicability: "This document applies to [Spacecraft Model Name/GQOIS ID], all serial numbers unless specified, during [Mission Phase(s)]."
+related_infocodes: # e.g., Mission CONOPS, related SS sections, ICDs
+  - "[SPC-SP-MISSION-CONOPS-...]"
+  - "[MNL-SP-OPS-...-SS[PREV_RELATED_SECTION]]"
+  - "[SPC-SYS-ICD-...]"
+abstract: |
+  This document provides [description/operational procedures/technical data]
+  for the [System/Subsystem Name] corresponding to Space System chapter SS [XX.Y.Z]
+  for the [Spacecraft Model Name].
+change_log_ref: "[INFOCODE_OF_CHANGELOG_DOCUMENT_OR_LINK_TO_GIT_HISTORY]"
+---
+
+# [Spacecraft Model Name] - Technical Documentation
+## SS [XX]: [Space System Chapter Name from Part 9.3.4]
+### SS [XX.Y]: [Space System Section Name]
+#### SS [XX.Y.Z]: [Space System Subject Name] - [DOCUMENT TYPE]
+
+*(Content below structured according to GAIA-QAO Space System chapters (SS 00-99, see Part 9.3.4). This template focuses on Q-SPACE system documentation.)*
+
+##### G.5.1 System Description and Operation (Example Section - for SS XX.00 General or specific subsystem)
+
+###### G.5.1.1 General
+[Provide a general description of the system/subsystem covered by this SS subject. For Q-SPACE, this could be a quantum payload, an advanced propulsion system, or an autonomous GNC module.]
+[Include purpose, main functions within the spacecraft, and its location or logical placement.]
+[Reference overall spacecraft architecture diagrams using INFOCODEs if available.]
+
+###### G.5.1.2 Key Components / Sub-Modules
+[List key components or sub-modules of this system/subsystem. Reference their Tier 2 GQOIS IDs if they are individually tracked items.]
+*   **Component/Sub-module A:** (`{Parent_GQOIS_ID} :: SSS-MDLs-SERs`) - [Brief Function]
+    *   Key Performance Parameter 1: [Value] [Units]
+    *   Key Performance Parameter 2: [Value] [Units]
+*   **Component/Sub-module B:** (`{Parent_GQOIS_ID} :: SSS-MDLs-SERs`) - [Brief Function]
+
+###### G.5.1.3 Principle of Operation
+[Describe how the system/subsystem operates. For Q-SPACE, this might involve explaining quantum principles if SS 19, or complex control logic if SS 10 or SS 17.]
+*   Nominal Operational Modes (e.g., Science Acquisition, Station Keeping, QKD Link Establishment).
+*   Degraded Operational Modes (if applicable).
+*   Key algorithms or physical processes involved.
+*   Interfaces with other spacecraft systems (reference ICDs - `SPC-SYS-ICD-...`).
+
+###### G.5.1.4 Performance Characteristics
+[Detail key performance specifications. Refer to System Spec (G.1) or Subsystem Spec.]
+*   Accuracy: [Value] ± [Tolerance]
+*   Data Rate: [Value] Mbps
+*   Power Consumption (Nominal/Peak): [Value] W
+*   Mass: [Value] kg
+*   Reliability (MTBF): [Value] hours
+*   *(For quantum systems under SS 19: Qubit count, coherence times, gate fidelities, entanglement rates, sensor sensitivities, etc.)*
+
+##### G.5.2 Operational Procedures (Example Section - if an Operations Manual)
+
+###### G.5.2.1 Safety Precautions & Constraints
+[List all specific safety precautions for operating this system/subsystem. Include operational constraints, keep-out zones for RF/Optical, or thermal limits.]
+*   **WARNING:** DO NOT ACTIVATE [QUANTUM SENSOR X] DURING THRUSTER FIRING TO PREVENT SATURATION.
+*   Constraint: Maximum continuous operation of [Payload Y] is [Z] hours due to thermal limits.
+
+###### G.5.2.2 Pre-Operation Setup / Activation Sequence
+*(Step-by-step command sequences or ground procedures)*
+1.  Verify Spacecraft State: [e.g., Attitude stable, Power > X Watts, Thermal within Y-Z °C].
+2.  Command Sequence ID: `CMDSEQ-SP-SS[XX]-ACTIVATE-[SYSTEM]-001`
+    *   Step G.5.2.2.1: Send Telecommand `TC_PWR_ON_[SUBSYSTEM_ID]`
+    *   Step G.5.2.2.2: Verify Telemetry `TM_PWR_STATUS_[SUBSYSTEM_ID]` = ON
+    *   Step G.5.2.2.3: ...
+3.  Initialize [Quantum System Parameters, if applicable] via `TC_QPARAM_LOAD_[...]`.
+
+###### G.5.2.3 Nominal Operations
+[Procedures for routine operation, data acquisition, monitoring.]
+
+###### G.5.2.4 Deactivation / Safe-Mode Procedures
+[Procedures to safely deactivate the system or place it in a safe, low-power mode.]
+
+##### G.5.3 Telemetry and Telecommand List (Example Section)
+[Reference to a dedicated Telemetry & Telecommand Database or document if extensive.]
+
+###### G.5.3.1 Key Telemetry Points
+| Parameter ID (CCSDS APID/PID) | Description                       | Units | Nominal Range | Yellow Limits | Red Limits |
+| :---------------------------- | :-------------------------------- | :---- | :------------ | :------------ | :--------- |
+| `TM_QSN_TEMP_001`             | Quantum Sensor Detector Temp      | K     | 4.0 - 4.5     | 3.8 - 4.7     | 3.5 - 5.0  |
+| `TM_EPS_BATT_VOLT_003`        | Battery Bus C Voltage             | V     | 27.5 - 33.0   | 27.0 - 33.5   | <26.5, >34.0|
+| ...                           | ...                               | ...   | ...           | ...           | ...        |
+
+###### G.5.3.2 Key Telecommands
+| Command ID (CCSDS APID/FuncCode) | Description                             | Parameters (if any)         | Confirmation Telemetry  |
+| :------------------------------- | :-------------------------------------- | :-------------------------- | :---------------------- |
+| `TC_PLD_IMG_START_001`           | Start Imager Payload Acquisition        | Duration (sec), Target_ID   | `TM_PLD_STATUS_001`     |
+| `TC_QKD_KEY_EXCH_INIT_005`       | Initiate Quantum Key Exchange with Ground | Ground_Station_ID, Seq_No | `TM_QKD_LINK_STATUS_003`|
+| ...                              | ...                                     | ...                         | ...                     |
+
+##### G.5.4 FDIR & Contingency Procedures (Example Section)
+[Fault Detection, Isolation, and Recovery procedures specific to this SS XX system.]
+| Anomaly Signature (Telemetry Pattern) | Probable Cause(s)                 | Automated Response (if any)           | Ground/Crew Action Required                                 |
+| :------------------------------------ | :-------------------------------- | :------------------------------------ | :---------------------------------------------------------- |
+| `TM_QCS_QUBIT_ERR_RATE` > Threshold X | Decoherence, QPU Thermal Anomaly  | Initiate QPU Recalibration Sequence   | Analyze detailed QPU diagnostics. Consider QPU reset.       |
+| ...                                   | ...                               | ...                                   | ...                                                         |
+
+##### G.5.5 Appendix A (within G.5): System Block Diagram
+[Detailed block diagram of the system/subsystem described in this document. Mermaid or linked SVG. Show interfaces.]
+
+##### G.5.6 Appendix B (within G.5): Interface Summary
+[Summarize key interfaces to other SS XX systems or external entities, with INFOCODEs to relevant ICDs (G.2).]
+
+
+
+---
+#### G.6 Quantum System Specification Template
+**INFOCODE Structure Example:** `SPC-SP-QTM-[GQOIS_ID_OF_QUANTUM_SYSTEM_MODEL]-V#R#P#-[STATUS]`
+(This template is specifically for systems where quantum phenomena are central to their primary function, often falling under SS 19 or specialized quantum SSS codes.)
+
+
+---
+title: "Quantum System Specification for [Full Quantum System Name]"
+infocode: "SPC-SP-QTM-[ITEM_ID]-V#R#P#-[STATUS]" # ITEM_ID could be MDL or SSS-MDLs
+gaia_qao_object_id: "[GQOIS_ID_of_the_Quantum_System/Model this spec applies to]"
+version: "X.Y.Z"
+status: "Draft | In Review | Approved | Superseded"
+date_created: "YYYY-MM-DD"
+date_modified: "YYYY-MM-DD"
+authors:
+  - name: "[Lead Quantum Physicist/Engineer Name]"
+    role: "[Role]"
+  - name: "[Contributing Team Name]"
+security_classification: "GAIA-QAO Internal | Project Confidential [Quantum Sensitive]"
+keywords: "Quantum System, [Qubit Type/Sensor Principle], Specification, [Application e.g., QKD, Quantum Computing, Quantum Sensing]"
+related_infocodes:
+  - "[INFOCODE_OF_PARENT_SYSTEM_SPEC_IF_SUBSYSTEM]"
+  - "[INFOCODE_OF_ALGORITHM_DESIGN_DOC_IF_QPU]"
+  - "[INFOCODE_OF_OPTICAL_DESIGN_DOC_IF_PHOTONIC]"
+abstract: |
+  This document defines the detailed specifications for the GAIA-QAO
+  [Full Quantum System Name], including its quantum operational principles,
+  key performance metrics, physical characteristics, interfaces, and
+  environmental requirements for space application.
+change_log_ref: "[INFOCODE_OF_CHANGELOG_DOCUMENT_OR_LINK_TO_GIT_HISTORY]"
+---
+
+# Quantum System Specification: [Full Quantum System Name] ([GQOIS ID])
+
+##### G.6.1 Document Control
+*(Patterned after G.1.1: Revision History, Referenced Documents)*
+
+###### G.6.1.1 Revision History
+*(Table as in G.1.1.1)*
+
+###### G.6.1.2 Referenced Documents
+*(Table as in G.1.1.2)*
+
+##### G.6.2 Introduction
+
+###### G.6.2.1 Purpose of this Document
+This document specifies the requirements and characteristics of the [Full Quantum System Name] (hereafter "the Q-System"), designed for [primary application, e.g., "secure space-to-ground communication using QKD," or "high-precision gravimetric mapping using a cold atom interferometer"].
+
+###### G.6.2.2 Scope of the Q-System
+[Describe the boundaries of the Q-System, its major quantum and classical components, and its role within a larger spacecraft or mission architecture. Specify interfaces to classical spacecraft bus systems.]
+
+###### G.6.2.3 Q-System Overview
+[Provide a high-level description of the Q-System. Explain its fundamental quantum principle of operation in conceptual terms. Include a high-level functional block diagram (Mermaid or linked SVG) showing key quantum and classical processing stages.]
+
+###### G.6.2.4 Definitions, Acronyms, and Abbreviations (Quantum Specific)
+[In addition to standard aerospace terms, define all quantum-specific terminology used (e.g., qubit, entanglement, decoherence, superposition, specific quantum algorithm names like QAOA, VQE, QKD protocols like BB84, E91).]
+
+##### G.6.3 Quantum Operational Principles and Architecture
+
+###### G.6.3.1 Underlying Quantum Phenomenon Utilized
+[e.g., Superposition and Entanglement for QKD/Quantum Computing, Atomic Interferometry for Quantum Sensing, Squeezed Light for Enhanced Optical Readout.]
+
+###### G.6.3.2 Quantum Hardware Architecture
+[Describe the core quantum hardware components.]
+*   **Qubit Technology (if applicable):** [e.g., Superconducting transmons, trapped ions, photonic qubits, NV centers.] Number of physical/logical qubits.
+*   **Quantum State Preparation:** [Methodology and components, e.g., laser systems for ion cooling/trapping, microwave pulses for qubit manipulation.]
+*   **Quantum Evolution/Interaction:** [Description of how quantum states evolve or interact, e.g., gate sequences, interferometer design, entanglement swapping mechanism.]
+*   **Quantum Readout/Measurement:** [Methodology and components for measuring final quantum states, e.g., single-photon detectors, fluorescence detection, homodyne detection.]
+*   **Cryogenics/Vacuum/Environment Control (if applicable):** [Requirements and key components, e.g., dilution refrigerator, vacuum chamber, magnetic shielding.]
+
+###### G.6.3.3 Classical Control and Interface Hardware
+[Describe the classical electronics and software required to control, interface with, and read out the quantum hardware.]
+*   Arbitrary Waveform Generators (AWGs), FPGAs for pulse sequencing.
+*   Low-noise amplifiers, ADCs/TDCs for signal acquisition.
+*   Dedicated real-time control computer (potentially an OBC from SS 02).
+*   Interface to main spacecraft C&DH system (e.g., SpaceWire, Ethernet).
+
+###### G.6.3.4 Operational Modes of the Q-System
+[e.g., Initialization/Calibration Mode, Standby Mode, Quantum Processing/Sensing Mode, Data Downlink Mode, Safe Mode.]
+
+##### G.6.4 Q-System Performance Specifications
+
+###### G.6.4.1 Key Quantum Performance Metrics (KQPMs)
+[Quantifiable metrics specific to the quantum nature of the system.]
+*   **For Quantum Computers/Simulators:**
+    *   Qubit Coherence Times (T1, T2/T2*): [Value] [Units]
+    *   Gate Fidelities (Single-qubit, Two-qubit): [e.g., >99.9%]
+    *   Readout Fidelity: [e.g., >99%]
+    *   Quantum Volume / CLOPS / Other Benchmarks: [Value]
+*   **For Quantum Sensors:**
+    *   Sensitivity: [e.g., X nT/√Hz for magnetometer, Y E/√Hz for gravimeter]
+    *   Measurement Bandwidth: [Hz]
+    *   Dynamic Range:
+    *   Bias Stability / Drift:
+*   **For QKD Systems:**
+    *   Secure Key Rate (SKR): [bps] at [distance km] under [channel loss dB]
+    *   Quantum Bit Error Rate (QBER): [%]
+    *   Basis Mismatch Rate:
+    *   Finite Key Security Bounds:
+*   **For Entanglement Sources:**
+    *   Entangled Pair Generation Rate: [pairs/sec]
+    *   Fidelity to Target Entangled State (e.g., Bell state): [Value]
+    *   Concurrence / Other Entanglement Measures:
+
+###### G.6.4.2 Classical Performance Metrics
+*   Processing Time for Quantum Task (including classical overhead):
+*   Data Output Rate (for sensors or QKD):
+*   Power Consumption (for different operational modes):
+*   Mass and Volume (for the entire Q-System, including support hardware):
+*   Reliability (MTBF for classical components, predicted lifetime for quantum core under space conditions):
+
+##### G.6.5 Q-System Interface Requirements
+[Detailed specification of interfaces, similar to G.2 ICD Template, but focusing on the Q-System's external interfaces to the parent spacecraft/platform.]
+
+###### G.6.5.1 Mechanical Interface
+[Mounting points, envelope, mass, center of gravity, connectors.]
+
+###### G.6.5.2 Electrical Interface
+[Power requirements (voltage, current, quality), grounding, signal lines for classical control/data.]
+
+###### G.6.5.3 Data Interface
+[To spacecraft C&DH: e.g., SpaceWire for high-speed data, MIL-STD-1553 for C&C. Define protocols, data formats (CCSDS PUS for quantum payload management).]
+
+###### G.6.5.4 Thermal Interface
+[Heat dissipation, required operating temperature range for quantum core and classical electronics, conductive/radiative interface points to spacecraft TCS.]
+
+###### G.6.5.5 Optical Interface (if applicable)
+[For QKD, optical clocks, some quantum sensors: Fiber optic connections, free-space optical ports, alignment tolerances, wavelength, beam characteristics.]
+
+##### G.6.6 Q-System Environmental Requirements (Space Specific)
+[Detailing tolerance to:]
+*   Launch Vibrations and Shock.
+*   In-Orbit Thermal Cycles and Vacuum.
+*   Radiation Environment (TID, SEU/SEL for classical electronics; impact on qubit coherence/stability for quantum components).
+*   Electromagnetic Interference/Compatibility (EMI/EMC) - crucial for sensitive quantum systems.
+*   MMOD Protection (if external facing components).
+*   Planetary Protection (if for planetary probe, ensuring sterility).
+
+##### G.6.7 Q-System Software Requirements (Control & Data Processing)
+*   Software Architecture for Q-System control and data handling.
+*   Real-time control requirements for quantum state manipulation/readout.
+*   Onboard data processing algorithms (e.g., error correction for quantum data, signal processing for sensor output).
+*   Interface to Flight Software (SS 11) for tasking and telemetry.
+*   Security of control software and quantum algorithms.
+
+##### G.6.8 Q-System Verification and Validation (V&V) Approach
+[Outline specific V&V challenges and strategies for quantum systems.]
+*   Calibration procedures for quantum hardware.
+*   Methods for verifying KQPMs (Key Quantum Performance Metrics).
+*   Use of specialized quantum measurement equipment and testbeds.
+*   Role of HIL simulation (Part 2) incorporating quantum physics models.
+*   Validation of classical control interface and software.
+*   Environmental qualification specific to quantum components' sensitivity.
+
+##### G.6.9 Appendix A (within G.6): Detailed Quantum Parameters
+[Tables listing specific parameters for qubits, lasers, detectors, cryo-system, etc.]
+
+##### G.6.10 Appendix B (within G.6): Q-System Operational Concept
+[Detailed CONOPS for different mission phases or operational modes.]
+
+---
+#### G.7 Project Management Plan (PMP) Template
+**INFOCODE Structure Example:** `PJT-SP-PROGPLAN-[PROJECT_NAME_OR_ID]-V#R#P#-[STATUS]`
+
+
 ---
 title: "Project Management Plan for [Project Name]"
 infocode: "PJT-[DO/CS]-[PMG]-[PROJECT_ID]-V#R#P#-[STATUS]"
@@ -3908,7 +4918,7 @@ In GAIA-QAO, component and module distinctions are “collapsed” from conceptu
 This “foundational disambiguation” section is placed immediately before the main Project Management Plan content to ensure universal clarity and to align all project actors, agents, and systems (human and AI) with GAIA-QAO’s quantum-informed documentation standard.
 
 ---
-*(The PMP template continues with its own Document Control, Revision History, Table of Contents, and then Sections 1 through 13, where each main PMP section is renumbered under G.7. For example, PMP Section 1. Introduction becomes G.7.1 Introduction, PMP Section 1.1 Project Purpose becomes G.7.1.1 Project Purpose, and so on.)*
+*(The PMP template continues with its own Document Control, Revision History, Table of Contents, and then Sections 1 through 13, where each main PMP section number (1, 2, 3...) becomes G.7.1, G.7.2, G.7.3... and their subsections G.7.1.1, G.7.1.2 etc. The content of those PMP sections remains as provided in Turn 137, ready to be filled in for a specific project like "GAIA-Q-SPACE-TEAM-PROJECT".)*
 
 ##### G.7.1 Document Control (for this PMP)
 
@@ -3934,7 +4944,6 @@ This “foundational disambiguation” section is placed immediately before the 
 
 ##### G.7.3 Table of Contents (for this PMP)
 
-*(This mirrors the PMP's own Table of Contents, re-prefixed with G.7.X)*
 *   G.7.4 Introduction
     *   G.7.4.1 Project Purpose
     *   G.7.4.2 Project Goals and Success Criteria
@@ -4001,11 +5010,311 @@ The primary purpose of the Project is to:
 *   **Criterion 3:** [e.g., "No 'Critical' or 'Major' non-conformances outstanding at QR."]
 *   **Criterion 4:** [e.g., "Project Sponsor and Lead Technical Authority formally sign off on TRL 6 achievement and EM delivery."]
 
----
-*(Sections G.7.5 through G.7.16 would continue to mirror the PMP structure from Turn 137, Sections 2 through 13, with their internal subsections also renumbered accordingly. The content within those placeholders would be exactly as provided in Turn 137 for a generic PMP, ready to be filled in for a specific project like "GAIA-Q-SPACE-TEAM-PROJECT".)*
+##### G.7.5 Project Scope Management (PMP Section 2)
+
+###### G.7.5.1 Project Scope Statement (PMP Section 2.1)
+The scope of the Project includes:
+*   [Provide a concise summary of the project scope, including major objectives and key activities. Example for Q-SPACE: "The project encompasses the design, development, prototyping, assembly, integration, and testing of the GQM1B Quantum Magnetometer subsystem. This includes the sensor head (Component: `P/N:QMAG-HEAD-01A`), control electronics module (Module ID: `{PARENT_ID} :: AVNE-QMAGCTRL-V1A-SNXXX`), and associated firmware (FSW ID: `FSW-SP-QSEN-QMAGCTRL-V2R1`). The project covers activities from SRR through QR, including environmental testing (TVAC, vibration) and performance characterization. Deliverables include hardware (EM), software/firmware, test data, and a complete technical documentation package compliant with GAIA-QAO standards."]
+
+###### G.7.5.2 Key Project Deliverables (PMP Section 2.2)
+The following are the major deliverables for this Project (with example INFOCODEs):
+1.  **D01:** Detailed Design & Analysis Report (`RPT-SP-QTM-QSENGQM1B-DDR-V1R0`)
+2.  **D02:** Engineering Model (EM) Hardware (`{PROJ_GQOIS_ID} :: QSEN-GQM1B-EM001`)
+3.  **D03:** Qualified Firmware vX.Y (`FSW-SP-QSEN-QMAGCTRL-VXRY`)
+4.  **D04:** Test Procedures & Reports (`TST-SP-QTM-QSENGQM1B-QUALTEST-V1R0`)
+5.  **D05:** User & ICD Manuals (`MNL-SP-QTM-QSENGQM1B-USER-V1R0`, `SPC-SYS-ICD-QSENGQM1B-...`)
+6.  **D06:** Qualification Data Package & Certificate of Qualification (CoQ)
+
+###### G.7.5.3 Scope Exclusions (PMP Section 2.3)
+The following items are explicitly excluded from the scope of this Project:
+*   [e.g., "Flight Model (FM) fabrication and flight unit qualification (covered by a subsequent project)."]
+*   [e.g., "Integration of the GQM1B EM onto a specific spacecraft platform (responsibility of the platform integrator)."]
+*   [e.g., "Development of the ground segment software for GQM1B data processing beyond basic test interfaces."]
+
+###### G.7.5.4 Project Assumptions (PMP Section 2.4)
+The execution of this Project is based on the following assumptions:
+*   [e.g., "Required quantum material (e.g., NV-diamond) with specified purity will be available from Supplier X on schedule."]
+*   [e.g., "Access to GAIA-Q-HPC resources for quantum sensor simulation will be provided."]
+*   [e.g., "Interface specifications from the target spacecraft bus (ICD-SP-BUS-PLDIF-V2R0) are stable."]
+
+###### G.7.5.5 Project Constraints (PMP Section 2.5)
+The Project must operate within the following constraints:
+*   **Schedule:** QR completion by [Fixed Date] to align with [Next Level Program, e.g., "Lunar Probe PDR"].
+*   **Budget:** Total project budget not to exceed [€X,XXX,XXX].
+*   **Resources:** Access to [Specialized Quantum Lab Y] for [Z hours/week]. Max [N] FTEs.
+*   **Technical:** Adherence to [ECSS-E-ST-32C for structural design, ECSS-Q-ST-70-01C for materials].
+*   **Export Control:** [e.g., "Components X and Y are subject to ITAR regulations; all handling must comply."]
+
+##### G.7.6 Work Breakdown Structure (WBS) (PMP Section 3)
+
+###### G.7.6.1 WBS Overview (PMP Section 3.1)
+The Project's total scope of work is decomposed into manageable work packages using a Work Breakdown Structure (WBS). The WBS serves as the foundation for planning, scheduling, costing, and progress tracking. For GAIA-QAO projects, WBS elements should align with the "Component vs. Module" disambiguation (Section G.7.0).
+
+*   The WBS is structured hierarchically, typically by project phase and then by major module/deliverable.
+*   A detailed WBS Dictionary, outlining each work package's description, deliverables (with INFOCODEs), responsible owner, estimated effort (person-hours), budget allocation, and dependencies, is maintained at: `[Link to WBS Dictionary Document or MetaNube Location, e.g., PJT-SP-PMG-QSENGQM1B-WBSDICT-V1R0]`
+
+###### G.7.6.2 WBS Summary (Top Levels - Example for GQM1B Project) (PMP Section 3.2)
+*   **1.0 GQM1B Quantum Magnetometer Development Project**
+    *   **1.1 Project Management**
+        *   1.1.1 Project Planning & Control
+        *   1.1.2 Stakeholder, Risk, & Comms Management
+        *   1.1.3 QA & Configuration Management
+    *   **1.2 System Engineering & Design**
+        *   1.2.1 Requirements Definition & Management (SRR Gate)
+        *   1.2.2 Architectural Design (Sensor Head, Control Electronics, FW) (PDR Gate)
+        *   1.2.3 Detailed Design (Component Specs, ICDs) (CDR Gate)
+        *   1.2.4 Quantum Performance Modeling & Simulation
+    *   **1.3 Sensor Head Module Development (Module ID: ...GQM1B-EM001::HDWR-SNSHEAD-MOD1)**
+        *   1.3.1 Quantum Transducer Component Design & Fab (Component P/N: ...)
+        *   1.3.2 Optics & Photonics Component Integration
+        *   1.3.3 Shielding & Housing Component Design
+        *   1.3.4 Sensor Head Assembly & Unit Test
+    *   **1.4 Control Electronics Module Development (Module ID: ...GQM1B-EM001::HDWR-CTRLELEC-MOD1)**
+        *   1.4.1 Analog Front-End Component Design
+        *   1.4.2 Digital Processing (FPGA/Microcontroller) Component Design
+        *   1.4.3 Power Interface Component Design
+        *   1.4.4 Control Electronics PCB Layout, Fab, Assembly & Unit Test
+    *   **1.5 Firmware Development (FSW ID: FSW-SP-QSEN-QMAGCTRL-VEM)**
+        *   1.5.1 Low-Level Drivers & Hardware Abstraction Layer (HAL)
+        *   1.5.2 Quantum State Control & Readout Algorithms
+        *   1.5.3 Data Processing & Telemetry Formatting
+        *   1.5.4 Firmware Unit & Integration Testing
+    *   **1.6 GQM1B EM Integration & System Verification**
+        *   1.6.1 Sensor Head - Control Electronics Integration
+        *   1.6.2 Firmware - Hardware Integration
+        *   1.6.3 System Performance Testing (Lab Environment)
+        *   1.6.4 Environmental Testing (TVAC, Vibration, Radiation) (QR Gate)
+    *   **1.7 Documentation, Delivery & Project Closure**
+        *   1.7.1 Technical Documentation Package (As per GAIA-CO-ASD-LIB)
+        *   1.7.2 EM Delivery & Acceptance
+        *   1.7.3 Final Project Report & Lessons Learned
+
+##### G.7.7 Project Organization & Stakeholders (PMP Section 4)
+
+###### G.7.7.1 Project Team Structure (PMP Section 4.1)
+* A visual Project Organization Chart is available at: `[Link to Org Chart Image/Document]`
+* The project team operates within the [GAIA-QAO Program Name] structure and reports to [Steering Committee/Program Manager Name].
+
+###### G.7.7.2 Key Roles & Responsibilities (PMP Section 4.2)
+
+| Role                    | Name / Department        | Key Responsibilities                                                                 |
+| :---------------------- | :----------------------- | :----------------------------------------------------------------------------------- |
+| Project Sponsor         | [Name]                   | Champions the project, provides resources, ultimate decision-maker.                  |
+| Project Manager         | [Name]                   | Overall execution, planning, control, risk, budget, schedule, team leadership.       |
+| Lead Systems Engineer   | [Name / Systems Eng. Dept] | Technical integrity, requirements, architecture, V&V lead.                             |
+| Hardware Lead           | [Name / HW Dept]         | Manages hardware design, development, procurement, and testing activities.           |
+| Software Lead           | [Name / SW Dept]         | Manages software design, development, integration, and testing activities.           |
+| QA Manager              | [Name / QA Dept]         | Ensures quality processes, conducts audits, reviews deliverables for compliance.       |
+| Procurement Officer     | [Name / Procurement Dept]| Manages acquisition of external components and services.                             |
+| User Representative(s)  | [e.g., Astronaut Office, Science Team Lead] | Provides user input, participates in UAT, validates usability.                       |
+| MetaNube Admin          | [Name / IT Dept]         | Manages project documentation and data configuration in MetaNube.                    |
+
+###### G.7.7.3 Stakeholder Management (PMP Section 4.3)
+Key stakeholders for this Project include:
+
+| Stakeholder Group        | Key Contact(s) | Interest / Influence                                      | Engagement Strategy                                 |
+| :----------------------- | :------------- | :-------------------------------------------------------- | :-------------------------------------------------- |
+| GAIA-QAO Program Office  | [Name]         | Funding, oversight, strategic alignment                   | Monthly progress reports, steering committee meetings |
+| [User Community, e.g., Science Directorate] | [Name]         | End-user requirements, operational usability, UAT         | Regular demos, UAT participation, feedback sessions |
+| [Regulatory/Certifying Body, e.g., Internal PA] | [Name]         | Compliance with aerospace standards, qualification        | Formal review submissions, audit support            |
+| Engineering Departments  | Dept. Heads    | Resource allocation, technical expertise                  | Bi-weekly coordination meetings                     |
+| External Suppliers (Quantum Components) | Account Mgrs.  | Component delivery, technical support                     | Regular supplier reviews, contract management       |
+
+A detailed Stakeholder Register and Engagement Plan is maintained at: `[Link to Stakeholder Register INFOCODE]`
+
+##### G.7.8 Schedule Management (PMP Section 5)
+
+###### G.7.8.1 Master Schedule / Timeline Summary (PMP Section 5.1)
+* A detailed Project Schedule (Gantt chart) is maintained in [Scheduling Tool, e.g., MS Project Online, OpenProject] and accessible via: `[Link to Live Schedule]`
+* **Projected Start Date:** [YYYY-MM-DD]
+* **Projected End Date:** [YYYY-MM-DD]
+* **Total Estimated Duration:** [Number] Weeks/Months
+
+###### G.7.8.2 Key Milestones (PMP Section 5.2)
+
+| ID  | Milestone Description                       | Planned Date | Responsible       | Verification Method                         |
+| :-- | :------------------------------------------ | :----------- | :---------------- | :------------------------------------------ |
+| M01 | Project Kick-Off                            | [YYYY-MM-DD] | Project Manager   | Meeting Minutes & Plan Baseline Approved    |
+| M02 | System Requirements Review (SRR) Successful | [YYYY-MM-DD] | Lead Systems Eng. | SRR Board Approval                          |
+| M03 | Preliminary Design Review (PDR) Successful  | [YYYY-MM-DD] | Lead Systems Eng. | PDR Board Approval                          |
+| M04 | Critical Design Review (CDR) Successful     | [YYYY-MM-DD] | Lead Systems Eng. | CDR Board Approval                          |
+| M05 | Key Long-Lead Items Procured                | [YYYY-MM-DD] | Procurement       | Goods Received & Inspected                  |
+| M06 | Software/Firmware Alpha Release Complete    | [YYYY-MM-DD] | Software Lead     | Alpha Test Report                           |
+| M07 | Hardware Engineering Model (EM) Ready       | [YYYY-MM-DD] | Hardware Lead     | Hardware Test Readiness Review (TRR)        |
+| M08 | System Integration (EM) Complete            | [YYYY-MM-DD] | Lead Systems Eng. | Integration Test Report                     |
+| M09 | Qualification Testing Complete              | [YYYY-MM-DD] | QA Manager        | Qualification Test Report (QTR) Approved    |
+| M10 | Qualification Review (QR) Successful        | [YYYY-MM-DD] | Project Manager   | QR Board Approval                           |
+| M11 | Final Project Deliverables Accepted         | [YYYY-MM-DD] | Project Manager   | Project Sponsor Sign-off                    |
+| M12 | Project Closure                             | [YYYY-MM-DD] | Project Manager   | Closure Report Approved                     |
+
+###### G.7.8.3 Schedule Management Approach (PMP Section 5.3)
+* The schedule will be baselined after initial approval of this PMP.
+* Progress will be tracked against the baseline schedule on a [weekly/bi-weekly] basis using [Tracking Method/Tool].
+* The critical path will be identified and monitored closely. Any delays impacting the critical path by more than [X days, e.g., 5 days] will trigger an immediate review and corrective action plan.
+* Schedule performance will be reported using Earned Value Management (EVM) metrics (Schedule Performance Index - SPI, Schedule Variance - SV) where appropriate.
+
+##### G.7.9 Cost Management (PMP Section 6)
+
+###### G.7.9.1 Overall Project Budget (PMP Section 6.1)
+* Total Approved Project Budget: **€[XXX,XXX.XX]** (or other currency)
+* Budget Baseline Date: [YYYY-MM-DD]
+
+###### G.7.9.2 Budget Allocation Summary (by WBS Top Level or Cost Category) (PMP Section 6.2)
+
+| WBS / Cost Category    | Allocated Budget (€) | Notes                                          |
+| :--------------------- | :------------------- | :--------------------------------------------- |
+| 1.1 Project Management | [Amount]             | Labor, PM tools                                |
+| 1.2 System Engineering | [Amount]             | Labor, simulation tools, specialized software  |
+| 1.3 Hardware Dev. (Sensor Head) | [Amount]    | Labor, materials, quantum components, fab, test equip. |
+| 1.4 Hardware Dev. (Control Elec.) | [Amount]  | Labor, PCBs, COTS parts, assembly              |
+| 1.5 Firmware Dev.      | [Amount]             | Labor, licenses, development tools             |
+| 1.6 Integration & V&V  | [Amount]             | Labor, lab fees (env. testing), consumables    |
+| 1.7 Documentation etc. | [Amount]             | Labor, publication costs                       |
+| Travel                 | [Amount]             | For reviews, supplier visits, test campaigns   |
+| Contingency Reserve    | [Amount]             | ([Y]% of total, for identified risks)          |
+| Management Reserve     | [Amount]             | (For unidentified risks, requires sponsor approval) |
+| **Total Budget**       | **[Amount]**         |                                                |
+
+A detailed cost baseline is maintained at: `[Link to Detailed Budget Spreadsheet/System INFOCODE]`
+
+###### G.7.9.3 Cost Management Approach (PMP Section 6.3)
+* Costs will be tracked against WBS elements using [Financial System Name or Spreadsheet Template INFOCODE].
+* Budget performance will be reviewed [monthly] by the Project Manager and reported to the Project Sponsor/Steering Committee.
+* Earned Value Management (EVM) will be used to assess cost performance (Cost Performance Index - CPI, Cost Variance - CV).
+* Any anticipated overrun exceeding [Z]% of a WBS element's budget or [Q]% of the total project budget requires a formal change request (see Section G.7.14).
+
+##### G.7.10 Quality Management (PMP Section 7)
+
+###### G.7.10.1 Quality Objectives (PMP Section 7.1)
+The Project aims to:
+* Ensure all deliverables, particularly the GQM1B EM and its documentation, meet or exceed the requirements specified in `SPC-SP-QTM-QSENGQM1B-V1R0P0` and other applicable GAIA-QAO/ECSS/NASA standards.
+* Adhere to GAIA-QAO quality processes (ref: `QAO-QMS-MANUAL-V1R0`) and aerospace best practices.
+* Achieve a defect density of less than [X defects/KSLOC] for new firmware.
+* Ensure all qualification tests are passed on the first attempt for [Y]% of test cases.
+* Achieve high stakeholder satisfaction, evidenced by formal acceptance of deliverables.
+
+###### G.7.10.2 Key Quality Activities (PMP Section 7.2)
+* **Reviews:** Formal technical reviews at key milestones (SRR, PDR, CDR, TRR, QR). Peer reviews for all design documents, code modules, firmware, and test procedures.
+* **Audits:** [Periodic/milestone-based] internal quality audits against this PMP and GAIA-QAO QMS. Support for potential external audits by stakeholders or partners.
+* **Testing:** Comprehensive V&V testing at all levels (component, module, subsystem, system) as per the GQM1B Test Plan: `TST-SP-QTM-QSENGQM1B-MASTERPLAN-V1R0`.
+* **Standards Compliance:** Adherence to specified documentation standards (GAIA-CO-ASD-LIB, Part 9.3) and technical standards (e.g., ECSS for space hardware).
+* **Non-conformance Management:** A process for identifying, documenting, tracking (e.g., JIRA, Redmine, or internal GAIA-QAO tool), analyzing root cause, and resolving non-conformances (NCRs) will be implemented.
+* **Process Monitoring:** Key process metrics will be tracked (e.g., review comment closure rate, test pass rate).
+
+The overall Quality Management Plan for GAIA-QAO projects can be found at: `QAO-QMS-GLOBALPLAN-V1R0`
+
+##### G.7.11 Resource Management (PMP Section 8)
+
+###### G.7.11.1 Key Resources Required (PMP Section 8.1)
+* **Personnel:** [e.g., "1x Lead Quantum Physicist, 2x RF Engineers, 1x Cryogenics Specialist, 2x Embedded FW Developers, 1x Systems Engineer, 0.5x QA Engineer"].
+* **Equipment:** [e.g., "Dilution Refrigerator Access, Vector Network Analyzer (up to X GHz), Spectrum Analyzer, Atomic Force Microscope, Space-Qualified FPGA Dev Kits, Thermal Vacuum Chamber"].
+* **Facilities:** [e.g., "Class 1000 Clean Room, RF Shielded Test Chamber, Quantum Optics Lab Bench Space"].
+* **Software/Tools:** [e.g., "COMSOL/ANSYS for multiphysics simulation, MATLAB/Simulink, Qiskit/Cirq for quantum algorithm prototyping, Cadence/Altium for PCB design, GNAT Pro, LDRA Testbed, MetaNube PLM"].
+
+###### G.7.11.2 Resource Allocation and Management (PMP Section 8.2)
+* Resources will be allocated based on the project schedule and WBS task requirements.
+* A detailed Resource Plan (including skills matrix and allocation timeline) is available at: `PJT-SP-PMG-QSENGQM1B-RESPN-V1R0`
+* Resource availability and potential conflicts will be reviewed [weekly/bi-weekly] by the Project Manager in coordination with GAIA-QAO department heads or resource managers.
+* Any critical resource shortages will be escalated to the Project Sponsor and GAIA-Q-SPACE Program Lead.
+
+##### G.7.12 Communication Management (PMP Section 9)
+
+###### G.7.12.1 Communication Strategy (PMP Section 9.1)
+Effective communication is critical for project success. The strategy includes:
+
+| Audience                 | Communication Vehicle              | Frequency     | Owner           | Purpose                                         |
+| :----------------------- | :--------------------------------- | :------------ | :-------------- | :---------------------------------------------- |
+| Project Core Team        | Daily Stand-ups (Virtual/Physical) / Weekly Technical Meetings | Daily / Weekly| Project Manager | Progress, roadblocks, task coordination        |
+| Project Sponsor/Steering Committee | Formal Progress Reports (Email + Presentation) / Monthly Review Meetings | Monthly       | Project Manager | Status (Schedule, Cost, Risk, Quality), decisions needed, escalations |
+| Key Technical Stakeholders (e.g., Q-SPACE SMEs, other GAIA-QAO module leads if interface) | Technical Interchange Meetings (TIMs) / Email Updates / Wiki Updates | As Needed / Bi-Weekly | PM / Lead Sys Eng | Technical progress, interface discussions, issue resolution |
+| Wider GAIA-QAO Org.      | GAIA-QAO Intranet Project Page / Internal Newsletter Snippets | Monthly/Quarterly | PM / Comms Liaison | General awareness, major achievements, lessons learned sharing |
+| External Partners/Suppliers | Regular Progress Calls / Formal Supplier Reviews / Email | Weekly/Monthly/As per Contract | PM / Procurement | Delivery status, technical queries, performance |
+
+###### G.7.12.2 Reporting Plan (PMP Section 9.2)
+* **Weekly Internal Team Status Snippets:** Distributed via [Team Chat/Email List].
+* **Bi-Weekly Technical Progress Summaries:** To Lead Systems Engineer and relevant Technical Leads.
+* **Monthly Formal Progress Reports (MPR):** To Project Sponsor and Steering Committee. Template INFOCODE: `RPT-PMG-PROJSTAT-TEMPLATE-V1R0`. Includes:
+    *   Executive Summary
+    *   Progress against Milestones
+    *   Schedule Performance (SPI, SV)
+    *   Cost Performance (CPI, CV)
+    *   Key Risks & Issues Update (Top 5)
+    *   Quality Metrics Summary
+    *   Upcoming Activities
+    *   Decisions/Support Needed
+* All formal project documentation will be managed, versioned, and stored in the MetaNube repository, under project ID `PJT-SP-QTM-QSENGQM1B`. Primary communication records (key decisions, meeting minutes) will also be archived in MetaNube.
+
+##### G.7.13 Risk Management (PMP Section 10)
+
+###### G.7.13.1 Risk Management Approach (PMP Section 10.1)
+A proactive and iterative approach to risk management will be followed throughout the project lifecycle:
+1.  **Risk Identification:** Risks will be identified continuously through team brainstorming sessions, lessons learned from previous GAIA-QAO projects (especially Q-SPACE initiatives), expert interviews, FMEA (for technical risks), and checklists.
+2.  **Risk Analysis:** Each identified risk will be qualitatively and quantitatively assessed for its probability of occurrence (e.g., Low/Med/High or 1-5 scale) and its potential impact (e.g., on cost, schedule, technical performance/quality, safety).
+3.  **Risk Evaluation/Prioritization:** Risks will be prioritized using a Risk Matrix (Probability x Impact) to determine overall risk exposure (e.g., High, Medium, Low).
+4.  **Risk Treatment/Response Planning:** For each significant risk, one or more response strategies will be developed:
+    *   **Mitigation:** Actions to reduce probability or impact.
+    *   **Avoidance:** Changing plans to eliminate the risk.
+    *   **Transference:** Shifting impact to a third party (e.g., insurance, outsourcing specific high-risk task).
+    *   **Acceptance:** Acknowledging residual risk (typically for low-priority risks or after mitigation).
+5.  **Risk Monitoring & Review:** The Risk Register will be reviewed at least [bi-weekly] in project team meetings and [monthly] with the Project Sponsor. New risks will be identified, and existing risk statuses updated. Effectiveness of response plans will be monitored.
+
+###### G.7.13.2 Risk Register (PMP Section 10.2)
+A detailed Risk Register is maintained in MetaNube at: `PJT-SP-PMG-QSENGQM1B-RISKREG-VCRNT`
+This register includes: Risk ID, Description, Category (Technical, Schedule, Cost, Resource, External, Quantum-Specific), Probability, Impact, Overall Score/Priority, Risk Owner, Response Plan(s), Mitigation Actions, Contingency Plan (if any), Status, Date Identified, Last Reviewed.
+
+###### G.7.13.3 Initial Key Risks (Examples for Q-SPACE GQM1B Project) (PMP Section 10.3)
+*   **R001 (Technical/Quantum):** Quantum sensor core (NV-diamond array) fails to achieve target sensitivity (<1 pT/√Hz) under simulated space thermal/vacuum conditions due to unmodeled noise sources or material degradation.
+*   **R002 (Supply Chain/Technical):** Delays in procurement or inconsistent quality of specialized cryogenic components (e.g., micro-cryocooler) required for sensor head operation.
+*   **R003 (Resource):** Loss or unavailability of key personnel with unique expertise in quantum magnetometry or space-qualified electronics design.
+*   **R004 (Schedule/Integration):** Unforeseen complexities in integrating the quantum sensor head with the classical control electronics and firmware, leading to schedule slips.
+*   **R005 (Technical/Performance):** Firmware algorithms for quantum state manipulation and readout do not achieve required speed or precision on the target rad-hard FPGA/microcontroller.
+*   **R006 (External/Environmental):** Ground-based EMI/RFI interfering with highly sensitive quantum measurements during lab testing, requiring costly shielding or facility changes.
+
+##### G.7.14 Change Management (PMP Section 11)
+
+###### G.7.14.1 Change Control Process (PMP Section 11.1)
+All changes to the project's baselined scope, schedule, cost, or key technical requirements must follow a formal change control process:
+1.  **Change Request (CR) Identification & Submission:** Any project stakeholder can identify a potential change. The change initiator documents the proposed change, its justification, and preliminary impact assessment using the official Change Request Form (INFOCODE: `QAO-PMG-FORM-CR-V1R0`).
+2.  **CR Logging & Initial Review:** The Project Manager logs the CR in the Change Request Log (INFOCODE: `PJT-SP-PMG-QSENGQM1B-CRLOG-VCRNT`) and conducts an initial review for completeness and clarity.
+3.  **Impact Analysis:** The Project Manager assigns relevant team members (e.g., Lead Systems Engineer, Hardware Lead, Software Lead, QA) to conduct a detailed impact analysis of the proposed change on scope, schedule, cost, resources, technical feasibility, risk, and quality.
+4.  **Change Control Board (CCB) Review:** The CCB (composition defined in G.7.14.2) reviews the CR, the impact analysis, and any proposed solutions or alternatives.
+5.  **Decision & Communication:** The CCB decides to Approve, Reject, Defer, or Request More Information on the CR. The decision, rationale, and any conditions are documented in the CR Log. The Project Manager communicates the decision to all relevant stakeholders.
+6.  **Implementation (if Approved):** If the CR is approved, the Project Manager updates all relevant project plans (PMP, WBS, Schedule, Budget, Risk Register), baselines, and technical documents. The change is then implemented and tracked.
+
+###### G.7.14.2 Change Control Board (CCB) (PMP Section 11.2)
+*   **Chair:** Project Sponsor (or delegated Program Manager for Q-SPACE).
+*   **Core Members:**
+    *   Project Manager ([Project Name])
+    *   Lead Systems Engineer ([Project Name])
+    *   GAIA-QAO QA Representative
+    *   GAIA-Q-SPACE Technical Authority (or delegate)
+*   **Ad-hoc Members:** SMEs from Hardware, Software, Quantum Physics, Procurement, etc., as required by the nature of the CR.
+*   **Meeting Frequency:** As needed upon submission of CRs requiring CCB review (typically for changes impacting baselines). Routine changes within PM authority may be handled differently.
+
+##### G.7.15 Project Acceptance Criteria (PMP Section 12)
+The overall **[Project Name]** Project will be considered complete and accepted when the following criteria are met:
+1.  All key project deliverables listed in Section G.7.5.2 (Key Project Deliverables) have been completed, formally reviewed, and accepted by the designated approvers, culminating in acceptance by the Project Sponsor.
+2.  All critical project success criteria defined in Section G.7.4.2 (Project Goals and Success Criteria) have been demonstrably achieved and documented.
+3.  All Level 1 (and critical Level 2) technical requirements for the [e.g., GQM1B Quantum Magnetometer EM], as defined in its governing System Specification (`SPC-SP-QTM-QSENGQM1B-V1R0P0`), have been verified as per the approved Verification and Validation Plan and Qualification Test Reports.
+4.  User Acceptance Testing (UAT), if applicable (e.g., for a ground test interface or data product simulator), has been successfully completed, and formal sign-off received from designated User Representatives.
+5.  The Project has been completed within the finally approved budget and schedule (including all approved changes), or any deviations are documented and accepted by the Project Sponsor.
+6.  A Final Project Report (INFOCODE: `RPT-SP-PMG-QSENGQM1B-FINAL-V1R0`), including a comprehensive lessons learned section, has been submitted, reviewed, and approved by the Project Sponsor and GAIA-QAO PMO.
+7.  All project documentation, hardware, software, and data are archived in MetaNube according to GAIA-QAO standards.
+
+##### G.7.16 Supporting Documents & Appendices (for this PMP) (PMP Section 13)
+*   **Referenced Project Charter / Mandate:** `[INFOCODE]`
+*   **Governing Top-Level Project Specification (TPSL):** `[e.g., SPC-SP-QTM-QSENGQM1B-V1R0P0]`
+*   **Detailed WBS & Dictionary:** `PJT-SP-PMG-QSENGQM1B-WBSDICT-VCRNT`
+*   **Detailed Project Schedule (Link or INFOCODE):** `PJT-SP-PMG-QSENGQM1B-SCHEDULE-VCRNT`
+*   **Detailed Budget & Cost Baseline:** `PJT-SP-PMG-QSENGQM1B-BUDGET-VCRNT`
+*   **Risk Register:** `PJT-SP-PMG-QSENGQM1B-RISKREG-VCRNT`
+*   **Stakeholder Register & Engagement Plan:** `PJT-SP-PMG-QSENGQM1B-STAKEHOLDERS-VCRNT`
+*   **Quality Assurance Plan (Project Specific):** `PJT-SP-QA-QSENGQM1B-QAPLAN-VCRNT` (if not fully covered by GAIA-QAO QMS)
+*   **Master Test Plan:** `TST-SP-QTM-QSENGQM1B-MASTERPLAN-VCRNT`
+*   **Change Request Log:** `PJT-SP-PMG-QSENGQM1B-CRLOG-VCRNT`
+*   **Lessons Learned Register (Living Document):** `PJT-SP-PMG-QSENGQM1B-LESSONS-VCRNT`
+*   **Acronyms and Definitions List (Project Specific):** `PJT-SP-PMG-QSENGQM1B-ACRONYMS-VCRNT`
 
 ---
 **End of Project Management Plan Template (G.7)**
 ---
-
-
